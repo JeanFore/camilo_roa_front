@@ -1,0 +1,145 @@
+// Establecer el tipo de letra para el navbar
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iceland&family=Sofia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+
+// Colores
+$color-topbar: rgba(203, 203, 203, .9);
+$color-bottombar: #CBCBCB;
+$color-icon: #1a6ab6;
+$color-line: #677D00;
+$color-font: #2e2725;
+
+.topbar, .bottombar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $color-font;
+  padding: 30px 0;
+
+  .icon {
+    font-size: 20px;
+    margin: 0 10px;
+    color: $color-icon;
+  }
+
+  .line {
+    border-right: 1px solid $color-line;
+    height: 40px;
+    width: 1px;
+    margin: 0 10px;
+  }
+
+  .socialIcons {
+    display: flex;
+    align-items: center;
+    margin-right: 100px;
+  }
+
+  .svg-logo {
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+
+  a[href^="tel"], a[href^="mailto"] {
+    margin: 0 5px;
+    color: $color-font;
+  }
+}
+
+.topbar {
+  background-color: $color-topbar;
+}
+
+.bottombar {
+  background-color: $color-bottombar;
+  padding: 15px 0 15px 30px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin-right: 20px;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      margin-right: 30px; // Añade un margen a la derecha del menú desplegable
+
+      .dropdownContent {
+        display: none;
+        position: absolute;
+        min-width: 60px;
+        background-color: $color-bottombar;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,50);
+        border-radius: 10px;
+        z-index: 1;
+
+        a {
+          color: $color-line;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          line-height: 0.1;
+        }
+      }
+
+      &:hover .dropdownContent {
+        display: block;
+      }
+    } 
+  }
+
+  .list {
+    list-style: none;
+    li {
+      margin-bottom: 1px;
+      border-bottom: 1px solid $color-line; // Añade esto
+      padding: 5px 10px; // Añade esto
+  
+      &:last-child {
+        border-bottom: none; // Asegúrate de que no haya línea en el último elemento
+      }
+  
+      a {
+        text-decoration: none;
+        color: $color-font;
+      }
+    }
+  }
+  .buttons {
+    margin-left: auto; // Mueve los botones a la derecha
+    margin-right: 20px;
+  
+    button {
+      margin-left: 20px; // Espacio entre los botones
+      padding: 10px 20px; // Espacio interno de los botones
+      border: none;
+      border-radius: 5px;
+      background-color: #677D00;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+
+      &:hover {
+        background-color: darken(#677D00, 10%); // Oscurece el color de fondo al pasar el ratón por encima
+      }
+    }
+  }
+}
+
+
+
+
+  
+  
