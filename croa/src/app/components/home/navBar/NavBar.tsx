@@ -1,17 +1,26 @@
 "use client"
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './navBar.module.scss';
-import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaEnvelope, FaComments } from 'react-icons/fa';
-import Logo from './logo';
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaEnvelope, FaComments, FaHome, FaCog, FaAppleAlt, FaCommentAlt, FaBoxOpen, FaChartLine, FaBars } from 'react-icons/fa';
+import Image from 'next/image';
+import logcroa from '../navBar/logocroa.png';
 
 
 const NavBar = () => {
-  const topBarLinks = ["Inicio", "Como Funciona", "Recetas", "Comentarios", "Que Incluye?", "Planes"];
+  const topBarLinks = [
+    { icon: <FaHome />, name: " Inicio" },
+    { icon: <FaCog />, name: " Cómo Funciona" },
+    { icon: <FaAppleAlt />, name: " Recetas" },
+    { icon: <FaCommentAlt />, name: " Comentarios" },
+    { icon: <FaBoxOpen />, name: " Qué Incluye?" },
+    { icon: <FaChartLine />, name: " Planes" },
+  ];
   const bottomBarLinks = ["Ultimo Post", "Preguntas", "Videos", "Galeria", "PostCast"];
 
   const [dropdownIsOpen, setDropdownIsOpen] = useState(false);
   const dropdownButtonRef = useRef<HTMLButtonElement>(null);
   const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0 });
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     if (dropdownButtonRef.current) {
@@ -26,8 +35,12 @@ const NavBar = () => {
   return (
     <>
       <header>
-        <nav className={styles.topbar}>
-          <Logo />
+      <nav className={styles.topbar}>
+      <div className={styles.logoContainer}>
+    <FaBars className={styles.menuButton} onClick={() => setMobileMenuOpen(!mobileMenuOpen)} />
+    <Image src={logcroa} alt="Logo" className={styles.logo} />
+  </div>
+          
           <div className={styles.socialIcons}>
             <FaComments className={styles.icon} />
             <a href="tel:+573132556327">+573132556327</a>
@@ -45,10 +58,13 @@ const NavBar = () => {
             <div className={styles.line} />
           </div>
         </nav>
-        <nav className={styles.bottombar}>
-          <div className={styles.menu}>
+        <nav className={`${styles.bottombar} ${mobileMenuOpen ? styles.open : ''}`}>
+          
+          <div className={styles.menuItem}>
             {topBarLinks.map((link, index) => (
-              <a key={index} href={`/${link.toLowerCase()}`}>{link}</a>
+              <a key={index} href={`/${link.name.toLowerCase().replace(/\s+/g, '')}`} className={styles.menuItem}>
+                {link.icon}{link.name}
+              </a>
             ))}
             <div className={styles.dropdown}>
               <button ref={dropdownButtonRef} onClick={() => setDropdownIsOpen(!dropdownIsOpen)}>Post</button>

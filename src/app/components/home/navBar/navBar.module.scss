@@ -1,0 +1,166 @@
+// Establecer el tipo de letra para el navbar
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Iceland&family=Sofia&display=swap');
+
+// Colores
+$color-topbar: rgba(203, 203, 203, .9);
+$color-bottombar: #CBCBCB;
+$color-icon: #1a6ab6;
+$color-line: #677D00;
+$color-font: #2e2725;
+
+// Estilos comunes
+.topbar, .bottombar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+
+.topbar {
+  background-color: $color-topbar;
+  color: $color-font;
+
+  @media (max-width: 360px) and (orientation: portrait) { 
+    justify-content: space-between; 
+  
+    .icon, .socialIcons, a[href^="tel"], a[href^="mailto"], .line {
+      display: none; 
+    }
+
+    .logoContainer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; // ajusta esto según tus necesidades
+      padding-left: 20px;
+    }
+  
+    .menuButton {
+      display: block;
+    }
+  
+    .logo {
+      transform: scale(1);
+      margin-left: 0px;
+    }
+    
+    padding: 5px 0;
+  }
+
+
+  .icon {
+    font-size: 20px;
+    margin: 0 10px;
+    color: $color-icon;
+  }
+  .line {
+    border-right: 1px solid $color-line;
+    height: 40px;
+    width: 1px;
+    margin: 0 10px;
+  }
+  .socialIcons {
+    display: flex;
+    align-items: center;
+    margin-right: 100px;
+  }
+  .logo {
+    width: 300px; /* Ajusta el ancho de la imagen según tus necesidades */
+    height: auto; /* La altura se ajustará automáticamente según la proporción de la imagen */
+    padding-left: 100px; /* Ajusta el padding alrededor de la imagen según tus necesidades */
+  }
+  a[href^="tel"], a[href^="mailto"] {
+    margin: 0 5px;
+    color: $color-font;
+  }
+}
+
+.bottombar {
+  background-color: $color-bottombar;
+  padding: 15px 0 15px 30px;
+  @media (max-width: 768px) {
+    display: none; // Ocultamos la barra inferior en vista móvil
+  }
+  .menuItem {
+    display: flex;
+    align-items: center;
+  
+    svg {
+      color: $color-icon;
+      margin-right: 10px;
+    }
+  
+    a {
+      color: $color-font;
+      &:hover {
+        color: darken($color-line, 10%);
+      }
+    }
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    a {
+      margin-right: 20px;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      margin-right: 30px;
+      .dropdownContent {
+        display: none;
+        position: absolute;
+        min-width: 60px;
+        background-color: $color-bottombar;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,50);
+        border-radius: 10px;
+        z-index: 1;
+        a {
+          color: $color-line;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          line-height: 0.1;
+        }
+      }
+      &:hover .dropdownContent {
+        display: block;
+      }
+    }
+  }
+  .list {
+    list-style: none;
+    li {
+      margin-bottom: 1px;
+      border-bottom: 1px solid $color-line;
+      padding: 5px 10px;
+      &:last-child {
+        border-bottom: none;
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+  .buttons {
+    margin-left: auto;
+    margin-right: 20px;
+    button {
+      margin-left: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #677D00;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      &:hover {
+        background-color: darken(#677D00, 10%);
+      }
+    }
+  }
+}
+
+//Video by MART  PRODUCTION: https://www.pexels.com/video/cloud-of-paint-underwater-7565833/
