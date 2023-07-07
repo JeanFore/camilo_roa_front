@@ -12,7 +12,7 @@ interface datatype {
 const Aboutdata: datatype[] = [
     {
         heading: "Nosotros.",
-        imgSrc: "/images/aboutus/vegs.png",
+        imgSrc: "/images/aboutus/foodpiram.png",
         paragraph: 'Somos especialistas en nutrición y nuestra diferencia es la personalización.',
         
         link: 'Conoce más'
@@ -24,9 +24,9 @@ const Aboutdata: datatype[] = [
         link: 'Conoce más'
     },
     {
-        heading: "Our Works.",
-        imgSrc: "/images/aboutus/imgThree.svg",
-        paragraph: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem',
+        heading: "Nuestro trabajo.",
+        imgSrc: "/images/aboutus/health.png",
+        paragraph: 'Nos enfocamos en tus metas y creamos la rutina mas adecuada, para tu bienestar.',
         link: 'Learn more'
     },
 ]
