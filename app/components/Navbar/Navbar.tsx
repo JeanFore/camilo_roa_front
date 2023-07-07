@@ -34,7 +34,7 @@ const Navbar = () => {
                     {/* LOGO */}
                     <div className="w-1/4 flex justify-start items-center">
                         <Link href="/">
-                            <Image
+                            <img
                                 src="/images/navBar/logo.png"
                                 alt="Logo CROA"
                                 width={254}  // ajusta esto según tus necesidades
