@@ -19,7 +19,7 @@ const Aboutdata: datatype[] = [
     },
     {
         heading: "Servicios.",
-        imgSrc: "/images/aboutus/force.png",
+        imgSrc: "/images/aboutus/doc.png",
         paragraph: 'Están desarrollados para proporcionar la mejor alternativa para tú objetivo.',
         link: 'Conoce más'
     },
