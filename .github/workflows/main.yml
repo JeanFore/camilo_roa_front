@@ -32,4 +32,6 @@ jobs:
 
       - name: Deploy
         if: success()
-        run: aws s3 sync ./out s3://croanutricionitsta.co
+        run: |
+          aws s3 sync ./out s3://croanutricionitsta.co
+          aws s3 sync ./public s3://croanutricionitsta.co
