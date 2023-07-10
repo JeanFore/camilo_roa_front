@@ -14,7 +14,7 @@ interface NavigationItem {
 }
 
 const navigation: NavigationItem[] = [
-    { name: '¿Cómo funciona?', href: '#aboutus-section', current: false },
+    { name: '¿Cómo FUNCIONA?', href: '#aboutus-section', current: false },
     { name: 'Recetas', href: '#services-section', current: false },
     { name: 'Preguntas Frecuentes', href: '#faq-section', current: false },
     { name: 'Planes', href: '#plans-section', current: false },
