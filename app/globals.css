@@ -25,7 +25,6 @@ html:not([data-scroll="0"]) .navbar {
   /* height: 20px; */
   z-index: 3;
 }
-
 html:not([data-scroll="0"]) .navbar>div>div {
   height: 3rem;
 }
@@ -43,12 +42,71 @@ html {
   border-bottom: 0.5px solid rgba(196, 196, 196, 0.75);
   ;
 }
+.titulo {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.form-email-input input,
+.password-input-field {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem; 
+   
+  /* Ajusta el tamaño del padding y el valor del border-radius según tus preferencias */
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.toggle-password-visibility {
+  position: absolute;
+  right: 10px;
+  top: 42%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
 
 .logo {
   /* Styles for the logo */
-  width: 128px; /* Adjust as necessary */
-  height: 64px; /* Adjust as necessary */
+  width: 254px; /* Adjust as necessary */
+  height: auto; /* Adjust as necessary */
 }
+
+.centered-button {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 40px;
+}
+.btn-login2 {
+  background-color: #697bad; /* Ajusta el color según tus necesidades */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px; /* Ajusta el tamaño de fuente según tus necesidades */
+  transition: background-color 0.2s;
+}
+
+.recover-password-link {
+  text-align: right;
+  margin-bottom: 5px; /* Ajusta el espaciado según tus necesidades */
+}
+
+.recover-password-link a {
+  color: #697bad; /* Ajusta el color según tus necesidades */
+  text-decoration: underline;
+}
+
 .btn-login {
   background-color: #697bad; /* Ajusta el color según tus necesidades */
   color: white;
@@ -76,6 +134,56 @@ html {
 .btn-register:hover {
   background-color: #153E90; /* Ajusta el color de hover según tus necesidades */
 }
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0;
+  margin-top: 40px;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ccc; /* Ajusta el color según tus necesidades */
+}
+
+.divider span {
+  margin: 0 10px;
+  color: #ccc; /* Ajusta el color según tus necesidades */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-icons .icon {
+  margin: 0 5px;
+  font-size: 28px;
+  color: #ccc; /* Ajusta el color según tus necesidades */
+}
+
+.bg-white2 {
+  width: 100%;
+  height: 100%;
+  max-height: calc(100vh - 2rem); /* Resta el margen vertical del modal */
+  display: flex;
+  padding: 0; /* Elimina el relleno */
+}
+
+.form-section {
+  background-color: white;
+  border-radius: 0 10px 10px 0;
+  padding: 10px;
+  overflow: hidden; /* Para ocultar cualquier contenido que sobresalga del contenedor */
+}
+
+
 
 .hover-underline {
   display: inline-flex;

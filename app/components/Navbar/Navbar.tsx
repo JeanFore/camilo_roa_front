@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import Drawer from "./Drawer";
 import Drawerdata from "./Drawerdata";
+import Signin from './Signdialog';
 
 
 interface NavigationItem {
@@ -14,7 +15,7 @@ interface NavigationItem {
 }
 
 const navigation: NavigationItem[] = [
-    { name: '¿Cómo FUNCIONA?', href: '#aboutus-section', current: false },
+    { name: '¿Cómo funciona?', href: '#aboutus-section', current: false },
     { name: 'Recetas', href: '#services-section', current: false },
     { name: 'Preguntas Frecuentes', href: '#faq-section', current: false },
     { name: 'Planes', href: '#plans-section', current: false },
@@ -54,10 +55,11 @@ const Navbar = () => {
 
                     {/* BUTTONS */}
                     <div className="w-1/1 flex justify-end items-center space-x-4 md:block hidden">
-                        <Link href="/login" className="btn-login px-3 py-2 rounded-lg text-lg font-semibold">
-                            Inicia Sesión
-                        </Link>
-                        <Link href="/register" className="btn-register px-3 py-2 rounded-lg text-lg font-semibold">
+                        <Signin />
+                        <Link
+                            href="/register"
+                            className="btn-register px-3 py-2 rounded-lg text-lg font-semibold"
+                        >
                             Regístrate
                         </Link>
                     </div>
@@ -76,8 +78,5 @@ const Navbar = () => {
     )
 
 }
-
-
-
 
 export default Navbar;
