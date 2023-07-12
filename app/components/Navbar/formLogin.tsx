@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FormEvent } from 'react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
-import './Navbar.css';
+
 import Link from 'next/link';
 import { FiFacebook, FiLinkedin, FiTwitter } from 'react-icons/fi';
 import { SlSocialGoogle } from "react-icons/sl";

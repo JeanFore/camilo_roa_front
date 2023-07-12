@@ -1,6 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useEffect, useRef, useState } from 'react';
-import './Navbar.css';
+
 import LoginForm from './formLogin';
 
 const Signin = () => {
