@@ -14,6 +14,7 @@ import Joinus from './components/Joinus/index';
 import Insta from './components/Insta/index';
 
 
+
 export default function Home() {
   return (
     <main>

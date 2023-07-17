@@ -6,6 +6,7 @@ import { Bars3Icon } from '@heroicons/react/24/outline';
 import Drawer from "./Drawer";
 import Drawerdata from "./Drawerdata";
 import Signin from './Signdialog';
+import Register from './Registerdialog';
 
 
 interface NavigationItem {
@@ -56,12 +57,7 @@ const Navbar = () => {
                     {/* BUTTONS */}
                     <div className="w-1/1 flex justify-end items-center space-x-4 md:block hidden">
                         <Signin />
-                        <Link
-                            href="/register"
-                            className="btn-register px-3 py-2 rounded-lg text-lg font-semibold"
-                        >
-                            Regístrate
-                        </Link>
+                        <Register />
                     </div>
 
                     {/* DRAWER FOR MOBILE VIEW */}

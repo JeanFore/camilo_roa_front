@@ -7,6 +7,8 @@
 /* SLICK CAROUSEL LINKS */
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
+/*Phone codes*/
+@import 'react-phone-input-2/lib/bootstrap.css';
 
 body {
   margin: 0;
@@ -50,6 +52,15 @@ html {
   margin-top: 40px;
 }
 
+.titulo2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+
 .form-email-input input,
 .password-input-field {
   width: 100%;
@@ -57,6 +68,18 @@ html {
   border: 1px solid #ccc;
   border-radius: 0.5rem;
   margin-bottom: 0.5rem; 
+  box-shadow: none;
+   
+  /* Ajusta el tamaño del padding y el valor del border-radius según tus preferencias */
+}
+
+.form-email-input2 input {
+  width: 100%;
+  padding: 0.5rem;
+  border-right: 1px solid #a31919;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem; 
+  box-shadow: none;
    
   /* Ajusta el tamaño del padding y el valor del border-radius según tus preferencias */
 }
@@ -81,6 +104,12 @@ html {
   height: auto; /* Adjust as necessary */
 }
 
+.centered-button2 {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
+}
 .centered-button {
   display: block;
   margin: 0 auto;
@@ -531,3 +560,205 @@ html {
 .manage > div:nth-child(2) h3 {
   color: #747474;
 }
+
+
+
+/*desce aca*/
+.phone-input-container {
+  position: relative;
+  width: 100%;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.phone-input-container .react-tel-input {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.phone-input-container .flag-dropdown {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-10%);
+  box-shadow: none !important;
+}
+
+.phone-input-container input.form-control {
+  font-size: 16px;
+  background: #FFFFFF;
+  border: 1px solid #CACACA;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+  padding: 18.5px 14px 18.5px 60px;
+  transition: box-shadow ease .25s, border-color ease .25s;
+  color: #495057;
+  box-shadow: none !important;
+}
+
+.phone-input-container input.form-control:focus {
+  background-color: #fff;
+  border-color: #0c0c0c;
+  outline: none;
+  box-shadow: none !important;
+}
+
+.phone-input-container input.form-control.invalid-number {
+  box-shadow: none !important;
+}
+
+.phone-input-container .selected-flag {
+  outline: none;
+  position: relative;
+  width: 52px;
+  height: 100%;
+  padding: 0 0 0 11px;
+  border-radius: 3px 0 0 3px;
+  box-shadow: none !important;
+}
+
+.phone-input-container .selected-flag:before,
+.react-tel-input .phone-input-container .selected-flag:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  border-radius: 4px 2px 2px 4px;
+  border: none !important;
+  transition: box-shadow ease .25s, border-color ease .25s;
+  box-shadow: none !important;
+}
+
+.react-tel-input .selected-flag:focus:before,
+.react-tel-input .selected-flag.open:before {
+  border-color: none !important;
+  box-shadow: none !important;
+}
+
+.phone-input-container .country-list {
+  outline: none;
+  z-index: 1;
+  list-style: none;
+  position: absolute;
+  padding: 0;
+  margin: 10px 0 10px -1px;
+  box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  width: 300px;
+  max-height: 220px;
+  overflow-y: scroll;
+  border-radius: 7px;
+  box-shadow: none !important;
+}
+
+.phone-input-container .country-list .country {
+  position: relative;
+  padding: 12px 9px 13px 46px;
+  box-shadow: none !important;
+}
+
+.phone-input-container .country-list .country:hover,
+.phone-input-container .country-list .country.highlight {
+  background-color: #f1f1f1;
+  box-shadow: none !important;
+}
+
+.phone-input-container .country-list .country .flag {
+  display: inline-block;
+  position: absolute;
+  left: 13px;
+  top: 8px;
+  box-shadow: none !important;
+}
+
+.phone-input-container .country-list .country .dial-code {
+  color: #6b6b6b;
+  box-shadow: none !important;
+}
+
+.phone-input-container .country-list .divider {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+  box-shadow: none !important;
+}
+
+.phone-input-container .country-list .search {
+  z-index: 2;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  padding: 10px 0 6px 10px;
+  box-shadow: none !important;
+}
+
+.phone-input-container .country-list .search-box {
+  border: 1px solid #cacaca;
+  border-radius: 3px;
+  font-size: 15px;
+  line-height: 15px;
+  margin-left: 6px;
+  padding: 3px 8px 5px;
+  outline: none;
+  box-shadow: none !important;
+}
+
+.phone-input-container .country-list .no-entries-message {
+  padding: 7px 10px 11px;
+  opacity: .7;
+  box-shadow: none !important;
+}
+
+.phone-input-container .invalid-number-message {
+  position: absolute;
+  z-index: 1;
+  font-size: 13px;
+  left: 25px;
+  top: -7px;
+  background: #fff;
+  padding: 0 5px;
+  color: #de0000;
+  box-shadow: none !important;
+}
+
+.phone-input-container .special-label {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  font-size: 13px;
+  left: 25px;
+  top: -7px;
+  background: #fff;
+  padding: 0 5px;
+  white-space: nowrap;
+  box-shadow: none !important;
+}
+
+.phone-input-container .flag-dropdown .selected-flag .arrow {
+  display: block;
+  box-shadow: none;
+  box-shadow: none !important;
+}
+
+.bannerContainer {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.sliderElement {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+
+
+
