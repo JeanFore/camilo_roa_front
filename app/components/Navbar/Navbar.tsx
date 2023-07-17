@@ -1,6 +1,6 @@
 import { Disclosure } from '@headlessui/react';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import Drawer from "./Drawer";
@@ -27,6 +27,19 @@ const navigation: NavigationItem[] = [
 const Navbar = () => {
 
     const [isOpen, setIsOpen] = React.useState(false);
+    const [isScrolled, setIsScrolled] = useState(false); // Estado para manejar si se ha hecho scroll
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 50; // Cambia este valor según necesites
+            setIsScrolled(isScrolled);
+        };
+
+        document.addEventListener("scroll", handleScroll);
+        return () => {
+            document.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
         <Disclosure as="nav" className="navbar">
@@ -48,7 +61,7 @@ const Navbar = () => {
                     {/* LINKS */}
                     <div className="w-1/2 flex justify-center items-center space-x-6 md:block hidden">
                         {navigation.map((item) => (
-                            <Link key={item.name} href={item.href} className="px-3 py-2 text-lg font-normal hover:text-black whitespace-nowrap">
+                            <Link key={item.name} href={item.href} className={`px-3 py-2 text-lg font-normal whitespace-nowrap ${isScrolled ? 'text-black' : 'text-white'}`}>
                                 {item.name}
                             </Link>
                         ))}
