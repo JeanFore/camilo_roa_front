@@ -41,30 +41,30 @@ export default class MultipleItems extends Component {
     render() {
         const settings = {
             dots: true,
-            appendDots: (dots: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | React.PromiseLikeOfReactNode | null | undefined) => (
+            appendDots: (dots: React.ReactNode) => (
                 <div
-                    style={{
-                        backgroundColor: "transparent",
-                        borderRadius: "10px",
-                        position: "absolute",
-                        bottom: "25px",     // Mueve los puntos hacia la parte inferior de la imagen
-                        width: "100%",
-                        display: "flex",
-                        justifyContent: "center",     // Alinea los puntos al centro
-                        padding: "10px",
-                        color: "black"
-                    }}
+                  style={{
+                    backgroundColor: "transparent",
+                    borderRadius: "10px",
+                    position: "absolute",
+                    bottom: "25px",     // Mueve los puntos hacia la parte inferior de la imagen
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "center",     // Alinea los puntos al centro
+                    padding: "10px",
+                    color: "black"
+                  }}
                 >
-                    <ul style={{ margin: "0px" }}> {dots} </ul>
+                  <ul style={{ margin: "0px" }}>{dots}</ul>
                 </div>
-            ),
-            
+              ),
+
             infinite: true,
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
             autoplay: true,          // Activa el desplazamiento automático
-        autoplaySpeed: 3000,     // Configura el desplazamiento cada 3 segundos
+            autoplaySpeed: 3000,     // Configura el desplazamiento cada 3 segundos
             speed: 500,
             fade: true,
             cssEase: "linear",
@@ -85,36 +85,36 @@ export default class MultipleItems extends Component {
             <div className="bg-bgblue py-20 marginFeature bg-featured">
                 <div className='mx-auto max-w-full sm:py-4 lg:px-8 '>
 
-                <div className="text-center pt-48 pb-10 md:pt-96 desktop-title">
-    <h3 className="text-4xl sm:text-6xl font-bold text-white my-2">Queremos guiarte para alcanzar tu objetivo.</h3>
-</div>
+                    <div className="text-center pt-48 pb-10 md:pt-96 desktop-title">
+                        <h3 className="text-4xl sm:text-6xl font-bold text-white my-2">Queremos guiarte para alcanzar tu objetivo.</h3>
+                    </div>
 
-<div style={{ marginTop: '-50px' }}>
-  <Slider ref={c => (this.slider = c)} {...settings}>
-    {postData.map((items, i) => (
-      <div key={i}>
-                                <div className='bg-transparent m-3 pb-12 my-10 rounded-3xl'>
-                                    <div style={{ width: "100%", position: "relative", height: "620px", overflow: "hidden", borderRadius: "20px" }}>
-                                        <Image
-                                            src={items.imgSrc}
-                                            alt="gaby"
-                                            layout="fill"
-                                            objectFit="cover"
-                                            className="rounded-2xl"
-                                        />
-                                        <SampleNextArrow onClick={this.next} style={undefined} />
-                                        <SamplePrevArrow onClick={this.previous} style={undefined} />
-                                        <div style={{ position: 'absolute', top: '80%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', color: '#fff' }}>
-                                        <h4 className='sm:text-5xl text-3xl font-bold sm:pt-6 text-center sm:text-start mt-10 text-white' style={{
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)', // Agrega sombra al texto
-}}>{items.heading}</h4>
+                    <div style={{ marginTop: '-50px' }}>
+                        <Slider ref={c => (this.slider = c)} {...settings}>
+                            {postData.map((items, i) => (
+                                <div key={i}>
+                                    <div className='bg-transparent m-3 pb-12 my-10 rounded-3xl'>
+                                        <div style={{ width: "100%", position: "relative", height: "620px", overflow: "hidden", borderRadius: "20px" }}>
+                                            <Image
+                                                src={items.imgSrc}
+                                                alt="gaby"
+                                                layout="fill"
+                                                objectFit="cover"
+                                                className="rounded-2xl"
+                                            />
+                                            <SampleNextArrow onClick={this.next} style={undefined} />
+                                            <SamplePrevArrow onClick={this.previous} style={undefined} />
+                                            <div style={{ position: 'absolute', top: '80%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', color: '#fff' }}>
+                                                <h4 className='sm:text-5xl text-3xl font-bold sm:pt-6 text-center sm:text-start mt-10 text-white' style={{
+                                                    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)', // Agrega sombra al texto
+                                                }}>{items.heading}</h4>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </Slider>
-                </div>
+                            ))}
+                        </Slider>
+                    </div>
                 </div>
             </div>
         );
@@ -131,10 +131,10 @@ function SampleNextArrow(props: { style: any; onClick: any; }) {
     const { style, onClick } = props;
     return (
         <div
-        className="arrow absolute right-0 mr-6 top-1/2 transform -translate-y-1/2 z-50"
-    onClick={onClick}
+            className="arrow absolute right-0 mr-6 top-1/2 transform -translate-y-1/2 z-50"
+            onClick={onClick}
         >
-            <ArrowSVG/>
+            <ArrowSVG />
         </div>
     );
 }
@@ -143,10 +143,10 @@ function SamplePrevArrow(props: { style: any; onClick: any; }) {
     const { style, onClick } = props;
     return (
         <div
-        className="arrow absolute left-0 ml-6 top-1/2 transform -translate-y-1/2 z-50"
-    onClick={onClick}
+            className="arrow absolute left-0 ml-6 top-1/2 transform -translate-y-1/2 z-50"
+            onClick={onClick}
         >
-            <ArrowSVG/>
+            <ArrowSVG />
         </div>
     );
 }
