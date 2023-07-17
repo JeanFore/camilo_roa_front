@@ -89,9 +89,10 @@ export default class MultipleItems extends Component {
     <h3 className="text-4xl sm:text-6xl font-bold text-white my-2">Queremos guiarte para alcanzar tu objetivo.</h3>
 </div>
 
-                    <Slider ref={c => (this.slider = c)} {...settings} style={{ marginTop: '-50px' }}>
-                        {postData.map((items, i) => (
-                            <div key={i}>
+<div style={{ marginTop: '-50px' }}>
+  <Slider ref={c => (this.slider = c)} {...settings}>
+    {postData.map((items, i) => (
+      <div key={i}>
                                 <div className='bg-transparent m-3 pb-12 my-10 rounded-3xl'>
                                     <div style={{ width: "100%", position: "relative", height: "620px", overflow: "hidden", borderRadius: "20px" }}>
                                         <Image
@@ -114,6 +115,7 @@ export default class MultipleItems extends Component {
                         ))}
                     </Slider>
                 </div>
+                </div>
             </div>
         );
     }
@@ -132,7 +134,7 @@ function SampleNextArrow(props: { style: any; onClick: any; }) {
         className="arrow absolute right-0 mr-6 top-1/2 transform -translate-y-1/2 z-50"
     onClick={onClick}
         >
-            <ArrowSVG className="text-white" />
+            <ArrowSVG/>
         </div>
     );
 }
@@ -144,7 +146,7 @@ function SamplePrevArrow(props: { style: any; onClick: any; }) {
         className="arrow absolute left-0 ml-6 top-1/2 transform -translate-y-1/2 z-50"
     onClick={onClick}
         >
-            <ArrowSVG className="text-white" left />
+            <ArrowSVG/>
         </div>
     );
 }
