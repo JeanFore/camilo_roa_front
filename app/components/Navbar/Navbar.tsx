@@ -19,7 +19,7 @@ const navigation: NavigationItem[] = [
     { name: '¿Cómo funciona?', href: '#aboutus-section', current: false },
     { name: 'Recetas', href: '#services-section', current: false },
     { name: 'Preguntas Frecuentes', href: '#faq-section', current: false },
-    { name: 'Planes', href: '#plans-section', current: false },
+    { name: 'Planes', href: '#services-section', current: false },
     { name: 'Blog', href: '#blog-section', current: false },
     { name: 'Testimonios', href: '#testimonial-section', current: false },
 ]

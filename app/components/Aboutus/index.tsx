@@ -1,64 +1,137 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ChevronRightIcon } from '@heroicons/react/20/solid'
+"use client"
+import React, { useState } from "react";
+import Link from 'next/link';
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
 
-interface datatype {
+
+interface DataType {
     heading: string;
-    imgSrc: string;
+    color: string;
     paragraph: string;
-    link: string;
+    linkText: string; // Aquí para el texto del enlace
+    linkURL: string;
+    index: number;
 }
 
-const Aboutdata: datatype[] = [
+const AboutData: DataType[] = [
     {
-        heading: "Nosotros.",
-        imgSrc: "/images/aboutus/foodpiram.png",
-        paragraph: 'Somos especialistas en nutrición y nuestra diferencia es la personalización.',
-        
-        link: 'Conoce más'
+        heading: "Adquiere un plan",
+        color: "red",
+        paragraph: 'Selecciona el mejor plan que se acomode a tu necesidad.',
+        linkText: 'Conoce nuestros planes', // Texto del enlace
+        linkURL: '#services-section',
+        index: 1
     },
     {
         heading: "Servicios.",
-        imgSrc: "/images/aboutus/doc.png",
+        color: "blue",
         paragraph: 'Están desarrollados para proporcionar la mejor alternativa para tú objetivo.',
-        link: 'Conoce más'
+        linkText: 'Conoce más',
+        linkURL: '/manage',
+        index: 2
     },
     {
         heading: "Nuestro trabajo.",
-        imgSrc: "/images/aboutus/health.png",
-        paragraph: 'Nos enfocamos en tus metas y creamos la rutina mas adecuada, para tu bienestar.',
-        link: 'Learn more'
+        color: "green",
+        paragraph: 'Nos enfocamos en tus metas y creamos la rutina más adecuada, para tu bienestar.',
+        linkText: 'Conoce más',
+        linkURL: '/manage',
+        index: 3
     },
+    {
+        heading: "Nuestro trabajo.",
+        color: "black",
+        paragraph: 'Nos enfocamos en tus metas y creamos la rutina más adecuada, para tu bienestar.',
+        linkText: 'Conoce más',
+        linkURL: '/manage',
+        index: 4
+    },
+    {
+        heading: "Nuestro trabajo.",
+        color: "white",
+        paragraph: 'Nos enfocamos en tus metas y creamos la rutina más adecuada, para tu bienestar.',
+        linkText: 'Conoce más',
+        linkURL: '/manage',
+        index: 5
+    },
+    {
+        heading: "Nuestro trabajo.",
+        color: "ligthgrey",
+        paragraph: 'Nos enfocamos en tus metas y creamos la rutina más adecuada, para tu bienestar.',
+        linkText: 'Conoce más',
+        linkURL: '/manage',
+        index: 6
+    },
+    {
+        heading: "Nuestro trabajo.",
+        color: "white",
+        paragraph: 'Nos enfocamos en tus metas y creamos la rutina más adecuada, para tu bienestar.',
+        linkText: 'Conoce más',
+        linkURL: '/manage',
+        index: 7
+    },
+    {
+        heading: "Nuestro trabajo.",
+        color: "ligthgrey",
+        paragraph: 'Nos enfocamos en tus metas y creamos la rutina más adecuada, para tu bienestar.',
+        linkText: 'Conoce más',
+        linkURL: '/manage',
+        index: 8
+    },
+    {
+        heading: "Nuestro trabajo.",
+        color: "white",
+        paragraph: 'Nos enfocamos en tus metas y creamos la rutina más adecuada, para tu bienestar.',
+        linkText: 'Conoce más',
+        linkURL: '/manage',
+        index: 9
+    },
+    {
+        heading: "Nuestro trabajo.",
+        color: "ligthgrey",
+        paragraph: 'Nos enfocamos en tus metas y creamos la rutina más adecuada, para tu bienestar.',
+        linkText: 'Conoce más',
+        linkURL: '/manage',
+        index: 10
+    }
 ]
+const AboutUs = () => {
+    const [scroll, setScroll] = useState(0);
 
-const Aboutus = () => {
+    const scrollLeft = () => {
+        setScroll(oldScroll => Math.max(oldScroll - 1, 0));
+    };
+    
+    const scrollRight = () => {
+        setScroll(oldScroll => Math.min(oldScroll + 1, AboutData.length-1.7));  
+    };
+
     return (
-
-        <div id="aboutus-section">
-            <div className='mx-auto max-w-7xl px-4 py-24 my-32 lg:px-10 bg-lightgrey rounded-3xl relative'>
-                <Image src="/images/aboutus/dots.svg" width={100} height={100} alt="dots-image" className="absolute bottom-1 -left-20" />
-                <h3 className='text-center text-blue text-lg tracking-widest'>¿CÓMO FUNCIONA?</h3>
-                <h4 className='text-center text-4xl lg:text-65xl font-bold'>Un método diferente para estar bien.</h4>
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-16 gap-x-16 lg:gap-x-32'>
-                    {Aboutdata.map((item, i) => (
-                        <div key={i} className='hover:bg-navyblue bg-white rounded-3xl mt-16 pt-10 pl-8 pb-10 pr-6 shadow-xl group'>
-                            
-                            <h4 className='text-4xl font-semibold  text-black mb-5 group-hover:text-white'>{item.heading}</h4>
-                            <Image src={item.imgSrc} alt={item.imgSrc} width={100} height={100} className="mb-5" />
-                            <h4 className='text-lg font-normal text-black group-hover:text-offwhite mb-5'>{item.paragraph}</h4>
-                            <Link href="#" className='text-lg font-semibold group-hover:text-white text-blue hover-underline'>
-                                {item.link}
-                                <ChevronRightIcon width={20} height={20} />
+        <div id="aboutus-section" className='carrouselContainer'>
+            <h3 className='abouttext'>¿CÓMO FUNCIONA?</h3>
+            <h4 className='subabouttext'>Un método diferente para estar bien.</h4>
+            <div className='carouselabbout'>
+                <button onClick={scrollLeft} className='buttonNextPrev'>Prev</button>
+                <div className='aboutcardContainer'
+                    style={{ transform: `translateX(-${scroll * (100 / (AboutData.length-3))}%)` }}>
+                    {AboutData.map((item, index) => (
+                        <div key={index} className='aboutcard'>
+                            <h4 className='about-card-heading'>{item.heading}</h4>
+                            <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="25" cy="25" r="20" fill={item.color} />
+                                <text x="50%" y="50%" textAnchor="middle" stroke="#51c5cf" strokeWidth="2px" dy=".3em">{item.index}</text>
+                            </svg>
+                            <h4 className='about-card-paragraph'>{item.paragraph}</h4>
+                            <Link href={item.linkURL} className='text-lg font-semibold group-hover:text-white text-blue hover-underline'>
+                                {item.linkText}
+                                <ChevronRightIcon className="inline-block" width={20} height={20} />
                             </Link>
-                            
                         </div>
-                        
                     ))}
                 </div>
+                <button onClick={scrollRight} className='buttonNextPrev'>Next</button>
             </div>
         </div>
-
-    )
-}
-
-export default Aboutus;
+    );
+};
+export default AboutUs;

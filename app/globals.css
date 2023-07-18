@@ -515,6 +515,8 @@ html {
 }
 
 
+
+
 .imageContainer {
   max-width: 100%;
   max-height: 100%;
@@ -804,6 +806,168 @@ html {
   }
 
 
+  .center .slick-center {
+    margin-left: 20px;  
+    margin-right: 20px; 
+}
+
+.slider-card {
+  margin: 0 30px !important;
+}
+
+/* Carrousel */
+.buttonNextPrev {
+  background-color: navy;
+  color: white;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;  /* Esto centra el texto verticalmente */
+  text-align: center; /* Esto centra el texto horizontalmente */
+  border-radius: 50%; /* Esto hace el botón circular */
+  border: none;
+  cursor: pointer;
+  opacity: 0.8; /* Esto hace que el botón sea un poco transparente */
+  transition: background-color 0.5s, opacity 0.5s; /* Transiciones suaves al cambiar el color de fondo y la opacidad */
+
+  /* Permite el posicionamiento absoluto de los botones */
+  position: absolute;
+  top: 70%;  /* Centra el botón verticalmente */
+  transform: translateY(-50%);  /* Centra el botón verticalmente */
+}
+
+.buttonNextPrev:hover {
+  background-color: lightblue; /* Cambia el color de fondo en hover */
+  opacity: 1; /* Aumenta la opacidad en hover */
+}
+
+.buttonNextPrev:active {
+  opacity: 0.6; /* Disminuye la opacidad cuando se hace clic en el botón */
+}
+
+/* Posiciona el botón "Prev" a la izquierda del carrusel */
+.buttonNextPrev:first-child {
+  left: -25px;  /* Ajusta esto según la distancia deseada del borde */
+  z-index: 1;
+}
+
+/* Posiciona el botón "Next" a la derecha del carrusel */
+.buttonNextPrev:last-child {
+  right: -25px;  /* Ajusta esto según la distancia deseada del borde */
+  z-index: 1;
+}
+
+.carrouselContainer {
+  width: 95%;  /* Ancho del carrusel será el 90% del ancho de la página */
+  margin: 200px auto;  /* Centra el carrusel en la página */
+  padding: 24px;  /* Agrega un relleno alrededor del carrusel */
+  border-radius: 30px;  /* Agrega bordes redondeados al carrusel */
+  background-color: #f7f4f4;  /* Color de fondo claro para el carrusel */
+  position: relative;  /* Permite el posicionamiento absoluto de los elementos hijos en relación a este contenedor */
+}
+
+.abouttext {
+  font-size: 1.325rem; /* Equivalente a 'text-lg' en Tailwind CSS */
+  text-align: center; /* Centra el texto */
+  color: #1D4ED8; /* Equivalente a 'text-blue' en Tailwind CSS */
+  letter-spacing: 0.05em; /* Aumenta el espaciado entre letras, equivalente a 'tracking-widest' en Tailwind CSS */
+  font-weight: normal; /* Hace que la fuente tenga el peso normal, puedes cambiar esto si quieres que sea bold, etc. */
+  margin-bottom: 1em; /* Añade un poco de espacio debajo del heading */
+}
+
+.subabouttext {
+  font-size: 4.25rem; /* Equivalente a 'text-4xl' en Tailwind CSS */
+  text-align: center; /* Centra el texto */
+  font-weight: bold; /* Equivalente a 'font-bold' en Tailwind CSS */
+  margin-top: 0.3em; /* Añade un poco de espacio encima del heading */
+  margin-bottom: 1em; /* Añade un poco de espacio debajo del heading */
+}
+
+.carouselabbout {
+  display: flex;  
+  align-items: stretch;  
+  justify-content: center;  
+  width: 100%;  
+  background-color: transparent;  
+  padding: 1em;  
+  overflow: hidden; /* Permite el desplazamiento horizontal */
+  white-space: nowrap; /* Evita que los elementos se ajusten a la siguiente línea */
+  overflow-x: auto;  /* Añade desplazamiento solo horizontal y auto oculta la barra cuando no se necesita */
+  scrollbar-width: none;  /* Oculta la barra de desplazamiento en Firefox */
+  -ms-overflow-style: none;  /* Oculta la barra de desplazamiento en Internet Explorer y Edge */
+  justify-content: space-around;
+  
+}
+.carouselabbout::-webkit-scrollbar {
+  display: none;
+}
+
+.aboutcard {
+  background-color: white;
+  border-radius: 1em; 
+  height: 350px;
+  padding: 1.25rem 0.625rem;
+  transition: background-color 0.3s;
+  margin: 0 15px;
+  width: calc((100% / 5) - 50px);  /* 5 es el número de tarjetas que se muestran a la vez, 30px es el margen total (15px a cada lado) */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box; 
+  flex: 1 0 20%;
+}
+
+.about-card-heading, .about-card-paragraph {
+  font-size: 1rem; 
+  font-weight: 400; 
+  color: #000; 
+  margin-bottom: 1.25rem; 
+  transition: color 0.3s; 
+  word-wrap: break-word;
+  white-space: normal; 
+}
+
+.about-card-heading {
+  font-size: 1.875rem; /* Equivalente a 'text-3xl' en Tailwind CSS */
+  font-weight: 600; /* Equivalente a 'font-semibold' en Tailwind CSS */
+  color: #000; /* Equivalente a 'text-black' en Tailwind CSS */
+  margin-bottom: 1.25rem; /* Equivalente a 'mb-5' en Tailwind CSS */
+  transition: color 0.3s; /* Para una transición suave del color de texto */
+}
+
+.about-card-heading:hover {
+  color: #fff; /* Cambia el color del texto a blanco en hover */
+}
+
+.aboutcard:hover {
+  background-color: navy; /* Cambia el color de fondo a navy en hover */
+  /* Nota: 'group-hover:text-white' se maneja en la sección .group:hover a continuación */
+}
+
+.aboutcard:hover .text-black {
+  color: white; /* Cambia el color del texto a blanco en hover */
+}
+
+.aboutcard:hover .text-offwhite {
+  color: #F7F7F7; /* Cambia el color del texto a off-white en hover */
+}
 
 
 
+.about-card-paragraph {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 1.25rem;
+  transition: color 0.3s;
+  overflow-wrap: break-word;
+}
+
+.about-card-paragraph:hover {
+  color: #F8F8F8;
+}
+
+.aboutcardContainer {
+  display: inline-flex;
+  transition: transform 0.3s ease-out;
+  width: 100%;
+}
