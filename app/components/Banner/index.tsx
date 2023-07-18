@@ -127,11 +127,17 @@ const ArrowSVG = ({ left = false }) => (
     </svg>
 );
 
+const ArrowSVG2 = ({ left = true }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-8 h-8 text-white">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={left ? "M15 19l-7-7 7-7" : "M9 5l7 7-7 7"} />
+    </svg>
+);
+
 function SampleNextArrow(props: { style: any; onClick: any; }) {
     const { style, onClick } = props;
     return (
         <div
-            className="arrow absolute right-0 mr-6 top-1/2 transform -translate-y-1/2 z-50"
+            className="arrow2 absolute right-0 mr-6 top-1/2 transform -translate-y-1/2 z-50"
             onClick={onClick}
         >
             <ArrowSVG />
@@ -143,10 +149,10 @@ function SamplePrevArrow(props: { style: any; onClick: any; }) {
     const { style, onClick } = props;
     return (
         <div
-            className="arrow absolute left-0 ml-6 top-1/2 transform -translate-y-1/2 z-50"
+            className="arrow2 absolute left-0 ml-6 top-1/2 transform -translate-y-1/2 z-50"
             onClick={onClick}
         >
-            <ArrowSVG />
+            <ArrowSVG2 />
         </div>
     );
 }

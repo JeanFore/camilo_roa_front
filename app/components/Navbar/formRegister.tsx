@@ -20,11 +20,27 @@ interface RegisterFormProps {
     showPassword: boolean;
     setShowPassword: (value: boolean) => void;
     handleSubmit: (event: FormEvent) => void;
+    openModal: () => void;
 }
 
 
 
-const RegisterForm: React.FC<RegisterFormProps> = ({ name, setName, lastName, setLastName, phone, setPhone, email, setEmail, password, setPassword, showPassword, setShowPassword, handleSubmit }) => {
+const RegisterForm: React.FC<RegisterFormProps> = ({
+    name,
+    setName,
+    lastName,
+    setLastName,
+    phone,
+    setPhone,
+    email,
+    setEmail,
+    password,
+    setPassword,
+    showPassword,
+    setShowPassword,
+    handleSubmit,
+    openModal
+}) => {
     const [isFocused, setIsFocused] = useState(false);
     const [inputStyle, setInputStyle] = useState({
         paddingLeft: '50px',
@@ -40,11 +56,14 @@ const [lastNameError, setLastNameError] = useState('');
 const [phoneError, setPhoneError] = useState('');
 const [emailError, setEmailError] = useState('');
 const [passwordError, setPasswordError] = useState('')
-
+const handleFormSubmit = (e: FormEvent) => {
+    handleSubmit(e);  // Ejecuta la función original de envío
+    openModal();     // Luego abre el modal
+};
 
 
     return (
-        <form onSubmit={handleSubmit} className="LoginForm form-section">
+        <form onSubmit={handleFormSubmit} className="LoginForm form-section">
             <div className="form-email-input">
                 <input
                     type="name"
@@ -87,7 +106,7 @@ const [passwordError, setPasswordError] = useState('')
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         required
-                        style={{ display: 'block' }} // Oculta el campo de entrada nativo
+                        style={{ display: 'none' }} // Oculta el campo de entrada nativo
                     />
                 </div>
             </div>

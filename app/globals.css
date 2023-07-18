@@ -760,22 +760,22 @@ html {
 
 
 /* Banner */
-.arrow {
+.arrow2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 255, 0.4);
+  background: rgba(17, 0, 255, 0.4);
   padding: 12px;
   border-radius: 50%;
 }
 
-.arrow svg {
+.arrow2 svg {
   width: 16px;
   height: 16px;
 }
 
 @media (max-width: 768px) {
-  .arrow svg {
+  .arrow2 svg {
       width: 9px;
       height: 9px;
   }
@@ -939,7 +939,7 @@ html {
 }
 
 .aboutcard:hover {
-  background-color: navy; /* Cambia el color de fondo a navy en hover */
+  background-color: rgba(45, 45, 143, 0.719); /* Cambia el color de fondo a navy en hover */
   /* Nota: 'group-hover:text-white' se maneja en la sección .group:hover a continuación */
 }
 
