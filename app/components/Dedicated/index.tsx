@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Dedicated = () => {
     return (
-        <div className="relative">
+        <div className="relative" id="home-section">
 
             <Image src="/images/dedicated/spiral.svg" height={272} width={686} alt="spiral-design" className="absolute left-0 hidden lg:block -z-10" />
 

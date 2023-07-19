@@ -44,11 +44,13 @@ export default function Home(this: any) {
   return (
     <main>
       {isModalOpen && <MyModal onClose={closeModal} />} {/* <- Renderiza el modal si isModalOpen es true */}
-      <Banner />
-      <Aboutus openModal={openModal}/>
       <Dedicated />
+      <Banner />
+      
+      <Aboutus openModal={openModal}/>
+      
       <Digital />
-      <Beliefs />
+      {/* <Beliefs /> */}
       <Wework />
       <Ourteam />
       {/* <Featured /> */}

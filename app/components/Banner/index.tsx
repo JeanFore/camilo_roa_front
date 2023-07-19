@@ -65,7 +65,7 @@ export default class MultipleItems extends Component {
             arrows: false,
             autoplay: true,          // Activa el desplazamiento automático
             autoplaySpeed: 3000,     // Configura el desplazamiento cada 3 segundos
-            speed: 500,
+            speed: 2500,
             fade: true,
             cssEase: "linear",
             responsive: [
@@ -82,7 +82,7 @@ export default class MultipleItems extends Component {
         };
 
         return (
-            <div className="bg-bgblue py-20 marginFeature bg-featured">
+            <div className="bg-bgblue py-20 marginFeature bg-featured" >
                 <div className='mx-auto max-w-full sm:py-4 lg:px-8 '>
 
                     <div className="text-center pt-48 pb-10 md:pt-96 desktop-title">
