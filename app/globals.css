@@ -1005,6 +1005,12 @@ html {
   width: auto;  /* Esto hará que el ancho se ajuste automáticamente al contenido */
   min-width: 50px;  /* Asegura que tenga al menos este ancho */
   max-width: 250px;  /* Esto asegura que tenga al menos 120px de ancho, ajusta según tu necesidad */
+  transition: opacity 0.3s ease; /* Esta línea crea la transición */
+    opacity: 1; 
+}
+
+.dropdown-menu.fade-out {
+  opacity: 0;
 }
 
 .dropdown-list {
@@ -1042,9 +1048,6 @@ html {
   
 }
 
-.menu-item:hover {
-  color: #007BFF;
-}
 
 @keyframes fadeIn {
   from {
@@ -1068,7 +1071,7 @@ html {
 /* Hover effect */
 .menu-item:hover {
   background-color: transparent; /* No hay fondo en hover */
-  color: #007BFF; /* Cambia a tu color deseado al pasar el ratón */
+  color: #16163b; /* Cambia a tu color deseado al pasar el ratón */
   text-decoration: none;
   font-size: 20px;
 }

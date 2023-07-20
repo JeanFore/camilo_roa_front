@@ -6,6 +6,7 @@ const MenuBar: React.FC = () => {
     const [isDropdownVisible, setDropdownVisible] = useState(false);
     const [lastScrollTop, setLastScrollTop] = useState(0);
     const [showMenu, setShowMenu] = useState(true);
+    const [menuCloseTimeout, setMenuCloseTimeout] = useState<null | ReturnType<typeof setTimeout>>(null);
 
     const menuItems = [
         { icon: FaHome, href: "#home-section", label: "Inicio" },
@@ -16,21 +17,34 @@ const MenuBar: React.FC = () => {
         { icon: FaBlog, href: "#blog-section", label: "Blog" },
         { icon: FaStar, href: "#testimonial-section", label: "Testimonios" },
     ];
-    
+    const showDropdown = () => {
+        if (window.innerWidth > 768) {
+            // Si hay un timeout, lo limpiamos
+            if (menuCloseTimeout) {
+                clearTimeout(menuCloseTimeout);
+                setMenuCloseTimeout(null);
+            }
+            setDropdownVisible(true);
+        }
+    }
+
+    const hideDropdown = () => {
+        if (window.innerWidth > 768) {
+            // Establecemos una demora de 3 segundos antes de esconder el menú
+            const timeout = setTimeout(() => {
+                setDropdownVisible(false);
+            }, 1000);
+            setMenuCloseTimeout(timeout);
+        }
+    }
 
     return (
         <div
             className="menu-container"
-            onMouseEnter={() => {
-                if (window.innerWidth > 768) {
-                    setDropdownVisible(true);
-                }
-            }}
-            onMouseLeave={() => {
-                if (window.innerWidth > 768) {
-                    setDropdownVisible(false);
-                }
-            }}
+            onMouseEnter={showDropdown}
+            onMouseLeave={hideDropdown}
+            
+            
         >
             {/* Logo */}
             <Link href="/">
