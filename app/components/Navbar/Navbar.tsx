@@ -10,6 +10,7 @@ import Register from './Registerdialog';
 import MenuBar from './menubar';
 
 
+
 interface NavigationItem {
     name: string;
     href: string;
@@ -85,13 +86,13 @@ const Navbar = () => {
                     </div>
 
                     {/* DRAWER FOR MOBILE VIEW */}
-                    <div className='md:hidden absolute right-0 mr-4'>
+                    {/* <div className='md:hidden absolute right-0 mr-4'>
                         <Bars3Icon className="block h-6 w-6" aria-hidden="true" onClick={() => setIsOpen(true)} />
                     </div>
 
                     <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
                         <Drawerdata />
-                    </Drawer>
+                    </Drawer> */}
                 </div>
             </div>
         </Disclosure>

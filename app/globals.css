@@ -999,7 +999,7 @@ html {
   top: 100%;
   left: 50px;
   z-index: 10;
-  background-color: transparent; 
+  background-color: none; 
   box-shadow: none;
   animation: fadeIn 0.5s forwards;
   width: auto;  /* Esto hará que el ancho se ajuste automáticamente al contenido */
@@ -1020,7 +1020,7 @@ html {
 }
 
 .dropdown-item {
-  background-color: transparent;
+  background-color: none;
   box-shadow: none;
   display: inline-flex;  /* Esto hará que el ítem se ajuste automáticamente al tamaño de su contenido (icono + texto) */
   margin: 5px 0;  /* Añade un pequeño margen entre ítems para que no se toquen */
@@ -1070,7 +1070,7 @@ html {
 
 /* Hover effect */
 .menu-item:hover {
-  background-color: transparent; /* No hay fondo en hover */
+  background-color: none; /* No hay fondo en hover */
   color: #16163b; /* Cambia a tu color deseado al pasar el ratón */
   text-decoration: none;
   font-size: 20px;
@@ -1133,4 +1133,27 @@ html {
 	.demo-1 .main-title {
 		font-size: 3em;
 	}
+}
+
+/* Icon */
+
+.hb {
+  width: 50px;
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  color: #000; /* Este es el color que tomará el SVG gracias a "currentColor". */
+  right: -60px; /* Alinea el SVG a la derecha */
+  top: 55%; /* Centrarlo verticalmente */
+  transform: translateY(-50%); /* Centrarlo verticalmente */
+}
+
+.hb:hover {
+  stroke-width: 1.2; /* o el valor que actives la animación */
+  color: #313ab9;
+}
+
+.menu-container:hover .hb {
+  stroke-width: 0.6; /* o el valor original de strokeWidth */
+  stroke: #313ab9;
 }

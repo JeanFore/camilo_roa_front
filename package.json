@@ -16,6 +16,7 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
+    "chroma-js": "^2.4.2",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "gsap": "^3.12.2",
@@ -32,6 +33,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@types/chroma-js": "^2.4.0",
     "@types/react-slick": "^0.23.10"
   }
 }
