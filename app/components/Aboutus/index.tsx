@@ -114,7 +114,7 @@ const AboutUs: React.FC<AboutUsProps> = ({ openModal }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
-        <div id="aboutus-section" className='carrouselContainer'>
+        <div id="aboutus-section" className='carrouselContainer' >
             <h3 className='abouttext'>¿CÓMO FUNCIONA?</h3>
             <h4 className='subabouttext'>Un método diferente para estar bien.</h4>
             <div className='carouselabbout'>

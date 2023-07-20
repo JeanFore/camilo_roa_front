@@ -31,7 +31,7 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false); // Estado para manejar si se ha hecho scroll
     const [lastScrollTop, setLastScrollTop] = useState(0); // Posición anterior del scroll
     const [showMenu, setShowMenu] = useState(true);
-    
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -40,7 +40,7 @@ const Navbar = () => {
             // Mostrar menú al desplazarse hacia arriba
             if (currentScrollTop < lastScrollTop) {
                 setShowMenu(true);
-            } 
+            }
             // Ocultar menú al desplazarse hacia abajo
             else {
                 setShowMenu(false);
@@ -61,13 +61,13 @@ const Navbar = () => {
 
     return (
         <Disclosure as="nav" className={`navbar ${showMenu ? '' : 'hidden md:block'}`}>
-            <div className="mx-auto max-w-8xl p-3 md:p-4 lg:px-6 pl-10">
-                <div className="flex items-center justify-between">
+        <div className="mx-auto max-w-8xl p-3 md:p-4 lg:px-6 pl-10">
+            <div className="flex items-center justify-between">
 
-                    {/* Menu Bar */}
-                    <div className="w-1/1 flex justify-start items-center">
-                        <MenuBar />
-                    </div>
+                {/* Menu Bar */}
+                <div className="w-1/4 flex justify-start items-center">
+                    <MenuBar />
+                </div>
 
                     {/* LINKS */}
                     {/* <div className="w-1/2 flex justify-center items-center space-x-6 md:block hidden">
@@ -80,9 +80,9 @@ const Navbar = () => {
 
                     {/* BUTTONS */}
                     <div className="hidden md:flex w-1/4 justify-end items-center space-x-4">
-    <Signin />
-    <Register />
-</div>
+                        <Signin />
+                        <Register />
+                    </div>
 
                     {/* DRAWER FOR MOBILE VIEW */}
                     <div className='md:hidden absolute right-0 mr-4'>

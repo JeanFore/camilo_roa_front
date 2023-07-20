@@ -977,26 +977,75 @@ html {
 /* Estilos del contenedor del menú */
 .menu-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   font-family: 'Lato', sans-serif;
+  position: relative;
 }
+
+.menu-text {
+  position: absolute;
+  left: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all 0.3s;
+  width: 0;
+}
+
+
+
 .dropdown-menu {
-  margin-left: 50px; /* Añadimos un margen a la izquierda para que comience un poco más a la derecha */
+  position: absolute;
+  top: 100%;
+  left: 50px;
+  z-index: 10;
+  background-color: transparent; 
+  box-shadow: none;
+  animation: fadeIn 0.5s forwards;
+  width: auto;  /* Esto hará que el ancho se ajuste automáticamente al contenido */
+  min-width: 50px;  /* Asegura que tenga al menos este ancho */
+  max-width: 250px;  /* Esto asegura que tenga al menos 120px de ancho, ajusta según tu necesidad */
 }
 
-/* Estilos para las opciones del menú */
+.dropdown-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 0;  /* Agrega padding superior e inferior para separación */
+}
+
+.dropdown-item {
+  background-color: transparent;
+  box-shadow: none;
+  display: inline-flex;  /* Esto hará que el ítem se ajuste automáticamente al tamaño de su contenido (icono + texto) */
+  margin: 5px 0;  /* Añade un pequeño margen entre ítems para que no se toquen */
+  position: relative;
+}
+
 .menu-item {
-  
-  padding: 10px 10px;
-  white-space: nowrap; /* Esto evitará que los ítems del menú se desborden a la siguiente línea */
-  opacity: 0; /* Inicialmente, los ítems estarán ocultos */
-  animation: fadeIn 0.5s forwards; /* Aplicamos la animación de desvanecimiento */
+  display: block;
   font-family: 'Lato', sans-serif;
-  font-size: 18px; /* Aumentamos el tamaño de la fuente a 18px */
+  font-size: 18px;
   font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  animation: fadeIn 2s forwards;
+}
+.menu-link-container {
+  display: flex;
+  align-items: center;
 }
 
-/* Animación de desvanecimiento */
+.menu-icon {
+  margin-right: 40px;
+  vertical-align: middle;
+  font-size: 40px;
+  
+}
+
+.menu-item:hover {
+  color: #007BFF;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1007,37 +1056,78 @@ html {
 }
 
 /* Retrasos para la aparición de los ítems */
-.menu-item:nth-child(1) { /* Planes */
-  animation-delay: 0.1s;
-}
-.menu-item:nth-child(2) { /* Planes */
-  animation-delay: 0.2s;
-}
-.menu-item:nth-child(3) { /* Planes */
-  animation-delay: 0.3s;
-}
+.menu-item:nth-child(1) {animation-delay: 0s;}
+.menu-item:nth-child(2) {animation-delay: 1s;}
+.menu-item:nth-child(3) {animation-delay: 2s;}
+.menu-item:nth-child(4) {animation-delay: 3s;}
+.menu-item:nth-child(5) {animation-delay: 4s;}
+.menu-item:nth-child(6) {animation-delay: 5s;}
+.menu-item:nth-child(7) {animation-delay: 6s;}
 
-.menu-item:nth-child(4) { /* Preguntas Frecuentes */
-  animation-delay: 0.4s;
-}
-
-.menu-item:nth-child(5) { /* Recetas */
-  animation-delay: 0.5s;
-}
-
-.menu-item:nth-child(6) { /* ¿Cómo funciona? */
-  animation-delay: 0.6s;
-}
-
-.menu-item:nth-child(7) { /* Inicio */
-  animation-delay: 0.7s;
-}
 
 /* Hover effect */
 .menu-item:hover {
   background-color: transparent; /* No hay fondo en hover */
   color: #007BFF; /* Cambia a tu color deseado al pasar el ratón */
   text-decoration: none;
+  font-size: 20px;
+}
+
+.menu-link-container:hover > Link {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu-link-container:hover .menu-text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.dropdown-item:hover .menu-text {
+  width: auto;
+  left: 70%;  /* Ajusta este valor según el espacio que quieras entre el ícono y el texto */
 }
 
 
+/* Header animated */
+.large-header {
+	position: relative;
+	width: 100%;
+	background: #333;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	z-index: 1;
+}
+
+#large-header {
+	background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
+}
+
+.main-title {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	color: #f9f1e9;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
+}
+
+.demo-1 .main-title {
+	text-transform: uppercase;
+	font-size: 4.2em;
+	letter-spacing: 0.1em;
+}
+
+.main-title .thin {
+	font-weight: 200;
+}
+
+@media only screen and (max-width : 768px) {
+	.demo-1 .main-title {
+		font-size: 3em;
+	}
+}
