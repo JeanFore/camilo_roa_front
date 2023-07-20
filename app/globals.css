@@ -14,6 +14,7 @@
 body {
   margin: 0;
   font-family: 'Urbanist', sans-serif;
+  background-color: none;
 }
 
 html:not([data-scroll="0"]) .navbar {
@@ -39,6 +40,10 @@ html:not([data-scroll="0"]) .border-right {
 html {
   --scroll-behavior: smooth !important;
   scroll-behavior: smooth !important;
+}
+
+body, html {
+  background-color: #ffffff;
 }
 
 .navbar {
