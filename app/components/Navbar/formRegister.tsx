@@ -20,7 +20,7 @@ interface RegisterFormProps {
     showPassword: boolean;
     setShowPassword: (value: boolean) => void;
     handleSubmit: (event: FormEvent) => void;
-    openModal: () => void;
+    openModal?: () => void;
 }
 
 
@@ -58,7 +58,7 @@ const [emailError, setEmailError] = useState('');
 const [passwordError, setPasswordError] = useState('')
 const handleFormSubmit = (e: FormEvent) => {
     handleSubmit(e);  // Ejecuta la función original de envío
-    openModal();     // Luego abre el modal
+    //openModal();     // Luego abre el modal
 };
 
 
