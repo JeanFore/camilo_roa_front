@@ -3,9 +3,11 @@ import React, { useRef, ForwardRefRenderFunction } from 'react';
 interface AnimatedSVGProps {
     onStartAnimation: (ref: React.RefObject<SVGSVGElement>) => void;
     onReverseAnimation: (ref: React.RefObject<SVGSVGElement>) => void;
+    isDropdownVisible: boolean;
+    setDropdownVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const AnimatedSVG: ForwardRefRenderFunction<SVGSVGElement, AnimatedSVGProps> = ({ onStartAnimation, onReverseAnimation }, ref) => {
+const AnimatedSVG: ForwardRefRenderFunction<SVGSVGElement, AnimatedSVGProps> = ({ onStartAnimation, onReverseAnimation, isDropdownVisible, setDropdownVisible }, ref) => {
     const handleMouseEnter = () => {
         if (ref && typeof ref === 'object' && ref.current) {
             onStartAnimation(ref);
@@ -17,8 +19,24 @@ const AnimatedSVG: ForwardRefRenderFunction<SVGSVGElement, AnimatedSVGProps> = (
             onReverseAnimation(ref);
         }
     }
+
+    const handleToggleMenu = () => {
+        if (isDropdownVisible) {
+            if (ref && 'current' in ref) {
+                onReverseAnimation(ref as React.RefObject<SVGSVGElement>);
+            }
+            setDropdownVisible(false);
+        } else {
+            if (ref && 'current' in ref) {
+                onStartAnimation(ref as React.RefObject<SVGSVGElement>);
+            }
+            setDropdownVisible(true);
+        }
+    };
+
+
     return (
-        <svg className="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="currentColor" strokeWidth="0.6" fill="rgba(0,0,0,0)" strokeLinecap="round" style={{ cursor: 'pointer' }} ref={ref} onMouseEnter={handleMouseEnter} 
+        <svg className="hb" onClick={handleToggleMenu} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="currentColor" strokeWidth="0.6" fill="rgba(0,0,0,0)" strokeLinecap="round" style={{ cursor: 'pointer' }} ref={ref} onMouseEnter={handleMouseEnter} 
         onMouseLeave={handleMouseLeave}>
             <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
                 <animate dur="0.2s" attributeName="d" values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze" begin="start.begin" />

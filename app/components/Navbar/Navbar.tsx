@@ -70,14 +70,6 @@ const Navbar = () => {
                     <MenuBar />
                 </div>
 
-                    {/* LINKS */}
-                    {/* <div className="w-1/2 flex justify-center items-center space-x-6 md:block hidden">
-                        {navigation.map((item) => (
-                            <Link key={item.name} href={item.href} className={`px-3 py-2 text-lg font-normal whitespace-nowrap ${isScrolled ? 'text-black' : 'text-white'}`}>
-                                {item.name}
-                            </Link>
-                        ))}
-                    </div> */}
 
                     {/* BUTTONS */}
                     <div className="hidden md:flex w-1/4 justify-end items-center space-x-4">
@@ -85,14 +77,7 @@ const Navbar = () => {
                         <Register />
                     </div>
 
-                    {/* DRAWER FOR MOBILE VIEW */}
-                    {/* <div className='md:hidden absolute right-0 mr-4'>
-                        <Bars3Icon className="block h-6 w-6" aria-hidden="true" onClick={() => setIsOpen(true)} />
-                    </div>
-
-                    <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-                        <Drawerdata />
-                    </Drawer> */}
+                    
                 </div>
             </div>
         </Disclosure>

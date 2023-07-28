@@ -11,6 +11,7 @@ const MenuBar: React.FC = () => {
     const [textColor, setTextColor] = useState("black");
     const [debugCoords, setDebugCoords] = useState<{ x: number, y: number } | null>(null);
     const [textColors, setTextColors] = useState<{ [key: string]: string }>({});
+    
 
     useEffect(() => {
         let intervalId: NodeJS.Timeout | null = null;
@@ -94,12 +95,6 @@ const MenuBar: React.FC = () => {
         checkedElements.forEach(el => el.style.pointerEvents = 'auto');
     };
     
-    
-    
-
-
-
-
 
 
     const menuItems = [
@@ -192,7 +187,7 @@ const MenuBar: React.FC = () => {
             </Link>
 
             {/* Animated Icon */}
-            <AnimatedSVG ref={svgRef} onStartAnimation={startAnimation} onReverseAnimation={reverseAnimation} />
+            <AnimatedSVG ref={svgRef} onStartAnimation={startAnimation} onReverseAnimation={reverseAnimation} isDropdownVisible={isDropdownVisible}  setDropdownVisible={setDropdownVisible} />
 
             {/* Menú desplegable */}
             {/* Menú desplegable */}
