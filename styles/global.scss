@@ -1,0 +1,105 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+$primaryBlue: #0389E5;
+$white: #FFFFFF;
+$secondaryBlue: #22B0FF;
+$lightblue: #C3E7F0;
+$darkgray: #343638;
+
+@font-face {
+    font-family: 'Whiskey Girls Semi Italic';
+    src: url('/fonts/WhiskeyGirlsSemiItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;  /* Si es italic, de lo contrario usa "normal" */
+}
+
+/* Gotham Rounded Book */
+@font-face {
+    font-family: 'Gotham Rounded Book';
+    src: url('/fonts/GothamRoundedBook.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//Navbar
+
+.navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px;
+    transition: all 0.3s ease-in-out;
+    z-index: 50;
+    
+    &.bg-navbar-blue {
+        background-color: $primaryBlue;
+    }
+    
+    &.bg-navbar-dark {
+        background-color: $darkgray;
+    }
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin-left: 8px;
+    margin-right: 16px;
+
+    @media (min-width: 1024px) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.navbar-logo {
+    height: 80px;
+    transition: all 0.3s ease-in-out;
+
+    .navbar-container.bg-navbar-blue & {
+        height: 32px;
+    }
+}
+
+.social-icons {
+    display: none;
+    gap: 16px;
+    color: $secondaryBlue;
+
+    > *:not(:last-child) { 
+        margin-right: 16px; // Esto añade margen a la derecha de todos los ítems excepto el último.
+    }
+
+    @media (min-width: 1024px) {
+        display: flex;
+        margin: 0 auto;
+    }
+
+    a { 
+        transition: transform 0.3s ease;
+
+        &:hover {
+            color: $lightblue;
+            transform: scale(1.1); // El ícono se hará un 10% más grande.
+        }
+    }
+}
+
+
+.auth-buttons {
+    display: flex;
+
+    .login-btn, .register-btn {
+        display: none;
+
+        @media (min-width: 1024px) {
+            display: inline-block;
+        }
+    }
+}
+

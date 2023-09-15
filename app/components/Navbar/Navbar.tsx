@@ -1,83 +1,59 @@
-import { Disclosure } from '@headlessui/react';
-import Link from 'next/link';
-import React from 'react';
-import Image from 'next/image';
-import { Bars3Icon } from '@heroicons/react/24/outline';
-import Drawer from "./Drawer";
-import Drawerdata from "./Drawerdata";
+// @ts-ignore
+import React, { useState, useEffect } from 'react';
+import { FaLinkedin, FaInstagram, FaTwitter, FaFacebook, FaWhatsapp } from 'react-icons/fa';
 
-
-interface NavigationItem {
-    name: string;
-    href: string;
-    current: boolean;
-}
-
-const navigation: NavigationItem[] = [
-    { name: '¿Cómo funciona?', href: '#aboutus-section', current: false },
-    { name: 'Recetas', href: '#services-section', current: false },
-    { name: 'Preguntas Frecuentes', href: '#faq-section', current: false },
-    { name: 'Planes', href: '#plans-section', current: false },
-    { name: 'Blog', href: '#blog-section', current: false },
-    { name: 'Testimonios', href: '#testimonial-section', current: false },
-]
 
 const Navbar = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
 
-    const [isOpen, setIsOpen] = React.useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {  // Ajusta este valor según tus necesidades.
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);  // Limpieza en caso de desmontar el componente.
+    }, []);
 
     return (
-        <Disclosure as="nav" className="navbar">
-            <div className="mx-auto max-w-8xl p-3 md:p-4 lg:px-6 pl-10">
-                <div className="flex items-center justify-between">
+        <div className={`navbar-container ${isScrolled ? 'bg-navbar-blue h-12' : 'bg-navbar-dark h-25'}`}>
+        <div className="navbar-content">
+            {/* Logo */}
+            <img src="/images/logo.png" alt="Logo" className="navbar-logo" />
 
-                    {/* LOGO */}
-                    <div className="w-1/4 flex justify-start items-center">
-                        <Link href="/">
-                            <img
-                                src="/images/navBar/logo.png"
-                                alt="Logo CROA"
-                                width={254}  // ajusta esto según tus necesidades
-                                height={64} // ajusta esto según tus necesidades
-                            />
-                        </Link>
-                    </div>
+                {/* Iconos de redes sociales (solo en escritorio) */}
+                <div className="social-icons">
+                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                        <FaLinkedin className="h-12 w-12 hover:text-gray-500" />
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                        <FaInstagram className="h-12 w-12 hover:text-gray-500" />
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                        <FaTwitter className="h-12 w-12 hover:text-gray-500" />
+                    </a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                        <FaFacebook className="h-12 w-12 hover:text-gray-500" />
+                    </a>
+                    <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer">
+                        <FaWhatsapp className="h-12 w-12 hover:text-gray-500" />
+                    </a>
+                </div>
 
-                    {/* LINKS */}
-                    <div className="w-1/2 flex justify-center items-center space-x-6 md:block hidden">
-                        {navigation.map((item) => (
-                            <Link key={item.name} href={item.href} className="px-3 py-2 text-lg font-normal hover:text-black whitespace-nowrap">
-                                {item.name}
-                            </Link>
-                        ))}
-                    </div>
-
-                    {/* BUTTONS */}
-                    <div className="w-1/1 flex justify-end items-center space-x-4 md:block hidden">
-                        <Link href="/login" className="btn-login px-3 py-2 rounded-lg text-lg font-semibold">
-                            Inicia Sesión
-                        </Link>
-                        <Link href="/register" className="btn-register px-3 py-2 rounded-lg text-lg font-semibold">
-                            Regístrate
-                        </Link>
-                    </div>
-
-                    {/* DRAWER FOR MOBILE VIEW */}
-                    <div className='md:hidden absolute right-0 mr-4'>
-                        <Bars3Icon className="block h-6 w-6" aria-hidden="true" onClick={() => setIsOpen(true)} />
-                    </div>
-
-                    <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-                        <Drawerdata />
-                    </Drawer>
+                {/* Botones de inicio de sesión (placeholder) */}
+                <div className="auth-buttons">
+                    {/* Aquí irán tus botones de inicio de sesión cuando los crees */}
+                    <button className="hidden lg:inline-block px-4 py-2 bg-gray-600 text-white rounded-lg mr-2">Iniciar sesión</button>
+                    <button className="hidden lg:inline-block px-4 py-2 border border-gray-600 text-gray-600 rounded-lg">Registrarse</button>
                 </div>
             </div>
-        </Disclosure>
-    )
+        </div>
+    );
 
 }
-
-
-
 
 export default Navbar;

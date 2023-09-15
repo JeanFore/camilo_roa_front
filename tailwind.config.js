@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+  purge: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
 
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -42,7 +42,9 @@ module.exports = {
       'footer' : 'rgba(226, 223, 223, 0.75)',
       'linegrey' : "#C4C4C4",
       'colorButton': '#27396b',
-      'custom-hover-blue': '#1d2d44'
+      'custom-hover-blue': '#1d2d44',
+      'navbar-blue': '#0389E5', // Color base CROA
+      'navbar-dark': '#343638', //bg secundary CROA
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
