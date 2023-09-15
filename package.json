@@ -10,6 +10,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.40",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.18",
     "@types/node": "20.2.0",
@@ -23,6 +24,7 @@
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-fullpage": "^0.1.19",
     "react-icons": "^4.11.0",
     "react-slick": "^0.29.0",
     "sass": "^1.67.0",

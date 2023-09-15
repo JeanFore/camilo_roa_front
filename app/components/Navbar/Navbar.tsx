@@ -1,6 +1,6 @@
 // @ts-ignore
 import React, { useState, useEffect, useRef } from 'react';
-import { FaLinkedin, FaInstagram, FaTwitter, FaFacebook, FaWhatsapp } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaTwitter, FaFacebook, FaWhatsapp, FaTiktok } from 'react-icons/fa';
 import MenuBar from './components/MenuBar';
 
 const Navbar = () => {
@@ -53,16 +53,16 @@ const Navbar = () => {
                     <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
                         <FaLinkedin className="h-12 w-12 hover:text-gray-500" />
                     </a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.instagram.com/camiloroanutricionista/?hl=es" target="_blank" rel="noopener noreferrer">
                         <FaInstagram className="h-12 w-12 hover:text-gray-500" />
                     </a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                        <FaTwitter className="h-12 w-12 hover:text-gray-500" />
+                    <a href="https://www.tiktok.com/@camiloroanutricionista" target="_blank" rel="noopener noreferrer">
+                        <FaTiktok className="h-12 w-12 hover:text-gray-500" />
                     </a>
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.facebook.com/people/camiloroanutricionista/100080411134292/?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer">
                         <FaFacebook className="h-12 w-12 hover:text-gray-500" />
                     </a>
-                    <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://api.whatsapp.com/send/?phone=573044713952&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
                         <FaWhatsapp className="h-12 w-12 hover:text-gray-500" />
                     </a>
                 </div>

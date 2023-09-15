@@ -10,19 +10,19 @@ $darkgray: #343638;
 
 @font-face {
     font-family: 'Whiskey Girls Semi Italic';
-    src: url('/fonts/WhiskeyGirlsSemiItalic.otf') format('opentype');
+    src: url('/fonts/whiskeygirlssemital.ttf') format('truetype');  // Nota: El formato aquí cambió a 'truetype' debido a la extensión .ttf
     font-weight: normal;
     font-style: italic;
-    /* Si es italic, de lo contrario usa "normal" */
 }
 
 /* Gotham Rounded Book */
 @font-face {
     font-family: 'Gotham Rounded Book';
-    src: url('/fonts/GothamRoundedBook.otf') format('opentype');
+    src: url('/fonts/Gotham Rounded Book.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
+
 
 //Navbar
 
@@ -65,7 +65,7 @@ $darkgray: #343638;
 
         .dropdown-menu {
             border: none;
-            background-color: white;
+            background-color: none;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
             .dropdown-list {
@@ -79,7 +79,7 @@ $darkgray: #343638;
                     align-items: center;
 
                     &:hover {
-                        color: $primaryBlue;
+                        color: $secondaryBlue;
                     }
 
                     .menu-link-container {
@@ -91,10 +91,12 @@ $darkgray: #343638;
                         .menu-icon {
                             margin-right: 10px;
                             font-size: 1.5em;
+                            
                         }
 
                         .menu-text {
                             font-size: 1.2em;
+                           
                         }
                     }
                 }
@@ -149,4 +151,63 @@ $darkgray: #343638;
             display: inline-block;
         }
     }
+}
+
+//transiciones
+.section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-section {
+    background-image: url('/bg/bghome.jpg');
+    background-size: cover;  /* Cubre todo el espacio disponible sin deformarse */
+    background-position: center;  /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    filter: grayscale(100%);
+}
+
+//Home
+.section.home-section {
+    width: 100vw;
+    /* 100% del ancho de la ventana del navegador */
+    height: 100vh;
+    /* 100% de la altura de la ventana del navegador */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centrar contenido verticalmente */
+    align-items: center;
+    /* Centrar contenido horizontalmente */
+}
+
+.line1 {
+    font-family: 'Whiskey Girls Semi Italic';
+    color: $lightblue;
+    font-size: 40px;
+    line-height: 1;
+}
+
+.line2 {
+    font-family: 'Gotham Rounded Book';
+    color: $lightblue;
+    font-size: 20px;
+}
+
+.line3 {
+    font-family: 'Gotham Rounded Book';
+    color: $lightblue;
+    font-size:15px;
+}
+
+
+.line {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.line.show {
+    opacity: 1;
 }
