@@ -1,29 +1,52 @@
 // @ts-ignore
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaLinkedin, FaInstagram, FaTwitter, FaFacebook, FaWhatsapp } from 'react-icons/fa';
-
+import MenuBar from './components/MenuBar';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [showMenuBar, setShowMenuBar] = useState(false);
+    const hideMenuTimer = useRef<NodeJS.Timeout | null>(null);
+
+    const handleLogoMouseEnter = () => {
+        setShowMenuBar(true);
+        
+        if (hideMenuTimer.current) {  // Si hay un temporizador activo, lo cancelamos.
+            clearTimeout(hideMenuTimer.current);
+        }
+    };
+
+    const handleMenuMouseEnter = () => {
+        if (hideMenuTimer.current) {
+            clearTimeout(hideMenuTimer.current);
+        }
+    };
+    
+    const handleMenuMouseLeave = () => {
+        hideMenuTimer.current = setTimeout(() => {
+            setShowMenuBar(false);
+        }, 1000);
+    };
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {  // Ajusta este valor según tus necesidades.
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
+        // Limpia el temporizador en caso de desmontar el componente
+        return () => {
+            if (hideMenuTimer.current) {
+                clearTimeout(hideMenuTimer.current);
             }
         };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);  // Limpieza en caso de desmontar el componente.
     }, []);
 
     return (
         <div className={`navbar-container ${isScrolled ? 'bg-navbar-blue h-12' : 'bg-navbar-dark h-25'}`}>
-        <div className="navbar-content">
+        <div className="navbar-content"> 
             {/* Logo */}
-            <img src="/images/logo.png" alt="Logo" className="navbar-logo" />
+            <img
+                src="/images/logo.png"
+                alt="Logo"
+                className="navbar-logo"
+                onMouseEnter={() => setShowMenuBar(true)}
+            />
 
                 {/* Iconos de redes sociales (solo en escritorio) */}
                 <div className="social-icons">
@@ -49,11 +72,18 @@ const Navbar = () => {
                     {/* Aquí irán tus botones de inicio de sesión cuando los crees */}
                     <button className="hidden lg:inline-block px-4 py-2 bg-gray-600 text-white rounded-lg mr-2">Iniciar sesión</button>
                     <button className="hidden lg:inline-block px-4 py-2 border border-gray-600 text-gray-600 rounded-lg">Registrarse</button>
+
+                    {showMenuBar && (
+    <MenuBar 
+        showIcons={showMenuBar} 
+        onMouseEnter={handleMenuMouseEnter} 
+        onMouseLeave={handleMenuMouseLeave}
+    />
+)}
                 </div>
             </div>
         </div>
     );
-
 }
 
 export default Navbar;

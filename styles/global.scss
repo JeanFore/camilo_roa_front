@@ -12,7 +12,8 @@ $darkgray: #343638;
     font-family: 'Whiskey Girls Semi Italic';
     src: url('/fonts/WhiskeyGirlsSemiItalic.otf') format('opentype');
     font-weight: normal;
-    font-style: italic;  /* Si es italic, de lo contrario usa "normal" */
+    font-style: italic;
+    /* Si es italic, de lo contrario usa "normal" */
 }
 
 /* Gotham Rounded Book */
@@ -33,11 +34,11 @@ $darkgray: #343638;
     padding: 16px;
     transition: all 0.3s ease-in-out;
     z-index: 50;
-    
+
     &.bg-navbar-blue {
         background-color: $primaryBlue;
     }
-    
+
     &.bg-navbar-dark {
         background-color: $darkgray;
     }
@@ -55,10 +56,56 @@ $darkgray: #343638;
         margin-left: auto;
         margin-right: auto;
     }
+
+    .menu-container {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 100;
+
+        .dropdown-menu {
+            border: none;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+            .dropdown-list {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+
+                .dropdown-item {
+                    padding: 10px 20px;
+                    display: flex;
+                    align-items: center;
+
+                    &:hover {
+                        color: $primaryBlue;
+                    }
+
+                    .menu-link-container {
+                        display: flex;
+                        align-items: center;
+                        text-decoration: none;
+                        color: inherit;
+
+                        .menu-icon {
+                            margin-right: 10px;
+                            font-size: 1.5em;
+                        }
+
+                        .menu-text {
+                            font-size: 1.2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }
 
 .navbar-logo {
-    height: 80px;
+    height: 90px;
     transition: all 0.3s ease-in-out;
 
     .navbar-container.bg-navbar-blue & {
@@ -71,7 +118,7 @@ $darkgray: #343638;
     gap: 16px;
     color: $secondaryBlue;
 
-    > *:not(:last-child) { 
+    >*:not(:last-child) {
         margin-right: 16px; // Esto añade margen a la derecha de todos los ítems excepto el último.
     }
 
@@ -80,7 +127,7 @@ $darkgray: #343638;
         margin: 0 auto;
     }
 
-    a { 
+    a {
         transition: transform 0.3s ease;
 
         &:hover {
@@ -94,7 +141,8 @@ $darkgray: #343638;
 .auth-buttons {
     display: flex;
 
-    .login-btn, .register-btn {
+    .login-btn,
+    .register-btn {
         display: none;
 
         @media (min-width: 1024px) {
@@ -102,4 +150,3 @@ $darkgray: #343638;
         }
     }
 }
-
