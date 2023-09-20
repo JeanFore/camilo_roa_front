@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react';
 import { FaHome, FaRegListAlt, FaBook, FaQuestion, FaRegNewspaper, FaBlog, FaStar } from 'react-icons/fa';
 
 const MenuBar: React.FC<{
-    showIcons: boolean; 
-    onMouseEnter: () => void; 
+    showIcons: boolean;
+    onMouseEnter: () => void;
     onMouseLeave: () => void;
-}> = ({ showIcons, onMouseEnter, onMouseLeave }) => { 
+}> = ({ showIcons, onMouseEnter, onMouseLeave }) => {
     return (
         <div className="menu-container" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             {/* ... */}

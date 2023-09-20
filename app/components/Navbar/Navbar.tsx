@@ -10,7 +10,7 @@ const Navbar = () => {
 
     const handleLogoMouseEnter = () => {
         setShowMenuBar(true);
-        
+
         if (hideMenuTimer.current) {  // Si hay un temporizador activo, lo cancelamos.
             clearTimeout(hideMenuTimer.current);
         }
@@ -21,7 +21,7 @@ const Navbar = () => {
             clearTimeout(hideMenuTimer.current);
         }
     };
-    
+
     const handleMenuMouseLeave = () => {
         hideMenuTimer.current = setTimeout(() => {
             setShowMenuBar(false);
@@ -39,14 +39,14 @@ const Navbar = () => {
 
     return (
         <div className={`navbar-container ${isScrolled ? 'bg-navbar-blue h-12' : 'bg-navbar-dark h-25'}`}>
-        <div className="navbar-content"> 
-            {/* Logo */}
-            <img
-                src="/images/logo.png"
-                alt="Logo"
-                className="navbar-logo"
-                onMouseEnter={() => setShowMenuBar(true)}
-            />
+            <div className="navbar-content">
+                {/* Logo */}
+                <img
+                    src="/images/logo.png"
+                    alt="Logo"
+                    className="navbar-logo"
+                    onMouseEnter={() => setShowMenuBar(true)}
+                />
 
                 {/* Iconos de redes sociales (solo en escritorio) */}
                 <div className="social-icons">
@@ -74,12 +74,12 @@ const Navbar = () => {
                     <button className="hidden lg:inline-block px-4 py-2 border border-gray-600 text-gray-600 rounded-lg">Registrarse</button>
 
                     {showMenuBar && (
-    <MenuBar 
-        showIcons={showMenuBar} 
-        onMouseEnter={handleMenuMouseEnter} 
-        onMouseLeave={handleMenuMouseLeave}
-    />
-)}
+                        <MenuBar
+                            showIcons={showMenuBar}
+                            onMouseEnter={handleMenuMouseEnter}
+                            onMouseLeave={handleMenuMouseLeave}
+                        />
+                    )}
                 </div>
             </div>
         </div>

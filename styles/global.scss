@@ -62,6 +62,7 @@ $darkgray: #343638;
         top: 100%;
         left: 0;
         z-index: 100;
+        color: #ffffff;
 
         .dropdown-menu {
             border: none;
@@ -162,30 +163,46 @@ $darkgray: #343638;
     align-items: center;
 }
 .home-section {
-    background-image: url('/bg/bghome.jpg');
-    background-size: cover;  /* Cubre todo el espacio disponible sin deformarse */
-    background-position: center;  /* Centra la imagen de fondo */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    filter: grayscale(100%);
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;  
+    padding-left: 40px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url('/bg/bghome.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: grayscale(100%);
+        z-index: -1; // Esto asegura que el fondo esté detrás del contenido
+    }
 }
 
 //Home
 .section.home-section {
     width: 100vw;
-    /* 100% del ancho de la ventana del navegador */
     height: 100vh;
-    /* 100% de la altura de la ventana del navegador */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Centrar contenido verticalmente */
-    align-items: center;
-    /* Centrar contenido horizontalmente */
+    align-items: flex-start;
+    padding-left: 40px;
 }
+
 
 .line1 {
     font-family: 'Whiskey Girls Semi Italic';
-    color: $lightblue;
+    color: $secondaryBlue;
     font-size: 40px;
     line-height: 1;
 }
@@ -206,8 +223,40 @@ $darkgray: #343638;
 .line {
     opacity: 0;
     transition: opacity 0.3s ease;
+    margin-top: 10px;  // Ajusta según necesidad para controlar el espacio entre líneas.
+    margin-bottom: 10px;  // Similarmente, ajusta según necesidad.
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .9); // Añade un sombreado ligero
 }
 
 .line.show {
     opacity: 1;
+}
+
+.logo-home {
+    width: 400px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+// Estilos para dispositivos móviles (ancho máximo de 768px)
+@media (max-width: 768px) {
+    .section.home-section {
+        align-items: flex-start; // Mover el texto al comienzo en dispositivos móviles
+        padding-left: 20px; // Ajusta el espacio a la izquierda para alinear el texto
+        padding-top: -10px; // Agrega un padding en la parte superior para separar el texto del Navbar
+    }
+
+    .logo-home {
+        display: none; // Ocultar el logo en dispositivos móviles
+    }
+
+    .line {
+        margin-top: 0; // Elimina el margen superior existente
+        margin-bottom: 20px; // Ajusta según necesidad para mover el texto más arriba
+    }
+
+    // Ajusta la posición de la imagen de fondo hacia la derecha
+    .section.home-section::before {
+        background-position: 80% center; // Ajusta según necesidad para mover la imagen hacia la derecha
+    }
 }
