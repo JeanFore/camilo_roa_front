@@ -154,24 +154,25 @@ $darkgray: #343638;
     }
 }
 
-//transiciones
+
+//Home
 .section {
     height: 100vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.home-section {
+  }
+  
+  .home-section {
     position: relative;
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;  
-    padding-left: 40px;
-
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+  
     &::before {
         content: "";
         position: absolute;
@@ -188,17 +189,25 @@ $darkgray: #343638;
     }
 }
 
-//Home
+
 .section.home-section {
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     padding-left: 40px;
+    padding-top: 300px;
 }
 
+.line {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .9);
+}
 
 .line1 {
     font-family: 'Whiskey Girls Semi Italic';
@@ -207,25 +216,17 @@ $darkgray: #343638;
     line-height: 1;
 }
 
-.line2 {
+.line2, .line3 {
     font-family: 'Gotham Rounded Book';
     color: $lightblue;
+}
+
+.line2 {
     font-size: 20px;
 }
 
 .line3 {
-    font-family: 'Gotham Rounded Book';
-    color: $lightblue;
-    font-size:15px;
-}
-
-
-.line {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    margin-top: 10px;  // Ajusta según necesidad para controlar el espacio entre líneas.
-    margin-bottom: 10px;  // Similarmente, ajusta según necesidad.
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, .9); // Añade un sombreado ligero
+    font-size: 15px;
 }
 
 .line.show {
@@ -238,6 +239,44 @@ $darkgray: #343638;
     margin-bottom: 20px;
 }
 
+.section.home-section {
+    display: flex;
+    flex-direction: row; /* Esto asegura que los hijos estén en una fila */
+    align-items: center; /* Alinea verticalmente en el centro */
+    justify-content: space-between; /* Espacia entre los elementos */
+  
+    .text-container {
+      flex: 1; /* Toma el espacio necesario y permite que el otro contenedor también tome espacio */
+      padding: 20px; /* Espaciado, ajusta según lo necesites */
+    }
+  
+    .video-container {
+      flex: 1; /* Toma el espacio necesario y permite que el otro contenedor también tome espacio */
+      padding: 20px; /* Espaciado, ajusta según lo necesites */
+  
+      .home-video {
+        width: 100%; /* Ocupa todo el espacio de su contenedor */
+        height: auto; /* Mantén la relación de aspecto */
+      }
+    }
+  }
+
+  .text-container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .logo-container {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .logo-home {
+    width: 400px;
+    height: auto;
+  }
 // Estilos para dispositivos móviles (ancho máximo de 768px)
 @media (max-width: 768px) {
     .section.home-section {

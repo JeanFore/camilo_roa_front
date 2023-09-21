@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 const HomeSection: React.FC<{ reset: boolean }> = ({ reset }) => {
   const [showLine1, setShowLine1] = useState(false);
@@ -30,14 +31,22 @@ const HomeSection: React.FC<{ reset: boolean }> = ({ reset }) => {
 
   return (
     <div className="section home-section">
-      <img src="/images/logo.png" alt="Logo" className="logo-home" /> {/* Usamos la etiqueta img directamente */}
-      <div className={`line line1 ${showLine1 ? 'show' : ''}`}>Dedicado a crear nuevas</div>
-      <div className={`line line1 ${showLine2 ? 'show' : ''}`}>alternativas para tu bienestar.</div>
-      <div className={`line line2 ${showLine3 ? 'show' : ''}`}>Con seguimiento y personalización lograremos las metas propuestas.</div>
-      <div className={`line line3 ${showLine4 ? 'show' : ''}`}>Camilo Roa, Nutricionista</div>
+      <div className="text-container">
+        <img src="/images/logo.png" alt="Logo" className="logo-home" />
+        {/* Aquí están los textos */}
+        <div className={`line line1 ${showLine1 ? 'show' : ''}`}>Dedicado a crear nuevas</div>
+        <div className={`line line1 ${showLine2 ? 'show' : ''}`}>alternativas para tu bienestar.</div>
+        <div className={`line line2 ${showLine3 ? 'show' : ''}`}>Con seguimiento y personalización lograremos las metas propuestas.</div>
+        <div className={`line line3 ${showLine4 ? 'show' : ''}`}>Camilo Roa, Nutricionista</div>
+      </div>
+      
+      <div className="logo-container">
+        <Image src="/images/logo.png" alt="Logo" width={400} height={600} />
+      </div>
     </div>
   );
-}
+};
+
 
 
 
