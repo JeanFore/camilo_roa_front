@@ -1,15 +1,15 @@
 import Navbar from '../app/components/navbar/Navbar';
 import HomeSection from '../app/components/sections/HomeSection';
 import Footer from '../app/components/footer/Footer';
-import FullPageWrapper from '@/app/components/sections/FullPageWrapper';
+
+import Image from 'next/image';
+import FullPage from '@/app/components/fullPage/FullPage';
 function Home() {
   return (
     <div>
       <Navbar />
-      <FullPageWrapper />
       
-      
-      {/* ... Las demás secciones */}
+      <FullPage />
 
       <Footer />
     </div>

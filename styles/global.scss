@@ -155,147 +155,27 @@ $darkgray: #343638;
 }
 
 
-//Home
-.section {
+//Sections
+
+body, html, #section1, #section2 {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .section {
     height: 100vh;
-    width: 100vw;
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
   }
   
-  .home-section {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
-  
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-image: url('/bg/bghome.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        filter: grayscale(100%);
-        z-index: -1; // Esto asegura que el fondo esté detrás del contenido
-    }
-}
-
-
-.section.home-section {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 40px;
-    padding-top: 300px;
-}
-
-.line {
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, .9);
-}
-
-.line1 {
-    font-family: 'Whiskey Girls Semi Italic';
-    color: $secondaryBlue;
-    font-size: 40px;
-    line-height: 1;
-}
-
-.line2, .line3 {
-    font-family: 'Gotham Rounded Book';
-    color: $lightblue;
-}
-
-.line2 {
-    font-size: 20px;
-}
-
-.line3 {
-    font-size: 15px;
-}
-
-.line.show {
-    opacity: 1;
-}
-
-.logo-home {
-    width: 400px;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.section.home-section {
-    display: flex;
-    flex-direction: row; /* Esto asegura que los hijos estén en una fila */
-    align-items: center; /* Alinea verticalmente en el centro */
-    justify-content: space-between; /* Espacia entre los elementos */
-  
-    .text-container {
-      flex: 1; /* Toma el espacio necesario y permite que el otro contenedor también tome espacio */
-      padding: 20px; /* Espaciado, ajusta según lo necesites */
-    }
-  
-    .video-container {
-      flex: 1; /* Toma el espacio necesario y permite que el otro contenedor también tome espacio */
-      padding: 20px; /* Espaciado, ajusta según lo necesites */
-  
-      .home-video {
-        width: 100%; /* Ocupa todo el espacio de su contenedor */
-        height: auto; /* Mantén la relación de aspecto */
-      }
-    }
-  }
-
-  .text-container {
-    flex: 1;
-    padding: 20px;
+  #section1 {
+    background-color: #ffcccc;
   }
   
-  .logo-container {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    justify-content: flex-end;
+  #section2 {
+    background-color: #ccffcc;
   }
-  
-  .logo-home {
-    width: 400px;
-    height: auto;
-  }
-// Estilos para dispositivos móviles (ancho máximo de 768px)
-@media (max-width: 768px) {
-    .section.home-section {
-        align-items: flex-start; // Mover el texto al comienzo en dispositivos móviles
-        padding-left: 20px; // Ajusta el espacio a la izquierda para alinear el texto
-        padding-top: -10px; // Agrega un padding en la parte superior para separar el texto del Navbar
-    }
 
-    .logo-home {
-        display: none; // Ocultar el logo en dispositivos móviles
-    }
 
-    .line {
-        margin-top: 0; // Elimina el margen superior existente
-        margin-bottom: 20px; // Ajusta según necesidad para mover el texto más arriba
-    }
-
-    // Ajusta la posición de la imagen de fondo hacia la derecha
-    .section.home-section::before {
-        background-position: 80% center; // Ajusta según necesidad para mover la imagen hacia la derecha
-    }
-}

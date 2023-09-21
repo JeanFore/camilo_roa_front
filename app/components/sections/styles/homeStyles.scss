@@ -1,0 +1,57 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+$primaryBlue: #0389E5;
+$white: #FFFFFF;
+$secondaryBlue: #22B0FF;
+$lightblue: #C3E7F0;
+$darkgray: #343638;
+
+@font-face {
+    font-family: 'Whiskey Girls Semi Italic';
+    src: url('/fonts/whiskeygirlssemital.ttf') format('truetype');  // Nota: El formato aquí cambió a 'truetype' debido a la extensión .ttf
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Gotham Rounded Book */
+@font-face {
+    font-family: 'Gotham Rounded Book';
+    src: url('/fonts/Gotham Rounded Book.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//HOME
+
+/* styles.css */
+.line1 {
+    font-family: 'Whiskey Girls Semi Italic';
+    color: $secondaryBlue;
+    font-size: 30px;
+    padding-left: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .9);
+}
+
+.line2, .line3 {
+    font-family: 'Gotham Rounded Book';
+    color: $lightblue;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .9);
+} 
+
+.logo {
+    animation: latido 3s infinite;
+    animation-play-state: paused; 
+  }
+  
+  @keyframes latido {
+    0%, 100% {
+      transform: scale(1); 
+    }
+    50% {
+      transform: scale(1.2); 
+    }
+  }
