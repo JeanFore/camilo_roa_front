@@ -1,7 +1,0 @@
-<svg width="100" height="100" viewBox="0 0 100 100">
-    <path id="flecha" d="M10,50 L50,10 L50,90 Z" fill="black" />
-    <ellipse id="ovalo" cx="50" cy="50" rx="45" ry="25" fill="none" stroke="black" stroke-width="3" />
-    <line id="linea1" x1="30" y1="10" x2="30" y2="90" stroke="black" stroke-width="3" />
-    <line id="linea2" x1="50" y1="10" x2="50" y2="90" stroke="black" stroke-width="3" />
-    <line id="linea3" x1="70" y1="10" x2="70" y2="90" stroke="black" stroke-width="3" />
-</svg>
