@@ -42,7 +42,11 @@ module.exports = {
       'footer' : 'rgba(226, 223, 223, 0.75)',
       'linegrey' : "#C4C4C4",
       'colorButton': '#27396b',
-      'custom-hover-blue': '#1d2d44'
+      'custom-hover-blue': '#1d2d44',
+      'navbar-blue': '#0389E5', // Color base CROA
+      'navbar-dark': '#d3e3f1', //bg secundary CROA
+      'blue-dark': '#004B70',
+      'blue-clean': '#008FA3',
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],

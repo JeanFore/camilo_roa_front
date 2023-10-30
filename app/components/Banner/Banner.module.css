@@ -1,0 +1,70 @@
+/* Contenedor del Slider */
+.slider-container {
+  margin-top: -50px;
+}
+
+/* Estilo de las flechas del Slider */
+.arrow2 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  cursor: pointer;
+}
+
+.arrow2.left {
+  left: 0;
+  margin-left: 6px;
+}
+
+.arrow2.right {
+  right: 0;
+  margin-right: 6px;
+}
+
+/* Estilo del contenedor de cada diapositiva */
+.slide-container {
+  background-color: transparent;
+  margin: 3px;
+  padding-bottom: 3rem;
+  margin-top: 2.5rem;
+  border-radius: 1.5rem;
+  width: 65%;
+  position: relative;
+  height: 620px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* Estilo de la imagen de cada diapositiva */
+.slide-image {
+  border-radius: 1rem;
+}
+
+/* Estilo del encabezado de cada diapositiva */
+.slide-heading {
+  position: relative;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  color: #008FA3;
+}
+
+.slide-heading h4 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1rem;
+  color: #008FA3;
+}
+
+@media screen and (min-width: 640px) {
+  .slide-heading h4 {
+      font-size: 5rem;
+      padding-top: 1.5rem;
+      text-align: start;
+  }
+}

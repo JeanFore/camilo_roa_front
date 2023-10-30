@@ -96,30 +96,30 @@ const Manage = () => {
     return (
         <div id="services-section">
             <div className='mx-auto max-w-7xl sm:py-20 lg:px-8 my-16'>
-                <h3 className='text-center text-4xl sm:text-65xl font-black'>Manage All Your Social Media <br /> Profiles From One Place.</h3>
+                <h3 className='text-center text-4xl sm:text-65xl font-black'>Tenemos diferentes planes que se ajusten a tu medida <br /> </h3>
 
 
                 <div className='md:flex md:justify-around mt-20'>
                     <div className='flex gap-5 justify-center md:justify-start'>
                         <Image src="/images/manage/right.svg" alt="right-icon" width={21} height={14} />
-                        <h4 className='text-lg font-semibold'>Free 15-day trial</h4>
+                        <h4 className='text-lg font-semibold'>Asesoria sin costo</h4>
                     </div>
                     <div className='flex gap-5 justify-center md:justify-start'>
                         <Image src="/images/manage/right.svg" alt="right-icon" width={21} height={14} />
-                        <h4 className='text-lg font-semibold'>Unlimited Team Members</h4>
+                        <h4 className='text-lg font-semibold'>Planes ajustados a tu medida</h4>
                     </div>
                     <div className='flex gap-5 justify-center md:justify-start'>
                         <Image src="/images/manage/right.svg" alt="right-icon" width={21} height={14} />
-                        <h4 className='text-lg font-semibold'>Cancel Anytime</h4>
+                        <h4 className='text-lg font-semibold'>Cancelar en cualquier momento</h4>
                     </div>
                 </div>
 
 
                 <div className='mt-6 relative'>
-                    <div className='dance-text mb-5'>get 3 months free</div>
+                    <div className='dance-text mb-5'>Obten 3 recetas gratis</div>
                     <Image src="/images/manage/toggle.svg" alt="toggle-image" width={24} height={24} className="toggleImage" />
                     <div className='flex justify-center'>
-                        <h3 className='text-sm font-medium mr-5'>Billed Yearly</h3>
+                        <h3 className='text-sm font-medium mr-5'>Planes anuales</h3>
                         <Switch
                             checked={enabled}
                             onChange={toggleEnabled}
@@ -131,7 +131,7 @@ const Manage = () => {
                                 } inline-block h-4 w-4 transform rounded-full bg-white transition`}
                             />
                         </Switch>
-                        <h3 className='text-sm font-medium ml-5'>Billed Monthly</h3>
+                        <h3 className='text-sm font-medium ml-5'>Planes Mensuales</h3>
                     </div>
                 </div>
 

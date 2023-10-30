@@ -7,9 +7,9 @@ const Insta = () => {
         <div className="mx-auto max-w-2xl  pb-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <div className=" mt-24 grid grid-cols-1 gap-y-10 gap-x-16 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
 
-                <div className="mx-auto imageContainer">
+                <div className="mx-auto imageContainer custom-rounded overflow-hidden">
                     <Image src="/images/insta/insta1.png" width={306} height={306} alt="instaOne" />
-                    <Link href={"https://instagram.com"} target="_blank">
+                    <Link href={"https://www.instagram.com/p/Cy-6kqnO8qy/"} target="_blank">
                         <button
                             className="hidden text-white font-semibold absolute z-10"
                             style={{
@@ -22,9 +22,9 @@ const Insta = () => {
                     </Link>
                 </div>
 
-                <div className="mx-auto imageContainer">
+                <div className="mx-auto imageContainer custom-rounded overflow-hidden">
                     <Image src="/images/insta/insta2.png" width={306} height={306} alt="instaTwo" />
-                    <Link href={"https://instagram.com"} target="_blank">
+                    <Link href={"https://www.instagram.com/p/CyhWzAsOOzL/"} target="_blank">
                         <button
                             className="hidden text-white font-semibold absolute z-10"
                             style={{
@@ -37,9 +37,9 @@ const Insta = () => {
                     </Link>
                 </div>
 
-                <div className="mx-auto imageContainer">
+                <div className="mx-auto imageContainer custom-rounded overflow-hidden">
                     <Image src="/images/insta/insta3.png" width={306} height={306} alt="instaThree" />
-                    <Link href={"https://instagram.com"} target="_blank">
+                    <Link href={"https://www.instagram.com/p/CyJ8lA_O8YR/"} target="_blank">
                         <button
                             className="hidden text-white font-semibold absolute z-10"
                             style={{
@@ -52,9 +52,9 @@ const Insta = () => {
                     </Link>
                 </div>
 
-                <div className="mx-auto imageContainer">
+                <div className="mx-auto imageContainer custom-rounded overflow-hidden">
                     <Image src="/images/insta/insta4.png" width={306} height={306} alt="instaFour" />
-                    <Link href={"https://instagram.com"} target="_blank">
+                    <Link href={"https://www.instagram.com/p/Cw8sLL-uqBd/"} target="_blank">
                         <button
                             className="hidden text-white font-semibold absolute z-10"
                             style={{

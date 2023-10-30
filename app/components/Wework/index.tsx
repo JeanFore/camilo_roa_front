@@ -9,38 +9,45 @@ interface DataType {
     profession: string;
     name: string;
     imgSrc: string;
+    go?: string;
 }
 
 const postData: DataType[] = [
     {
-        profession: 'Co-founder',
-        name: 'John Doe',
-        imgSrc: '/images/wework/avatar.svg',
+        profession: 'Batido post-entrenamiento',
+        name: 'Tonificación',
+        imgSrc: '/images/wework/batido.jpg',
+        go: 'ir'
     },
     {
-        profession: 'Co-founder',
-        name: 'John Doe',
-        imgSrc: '/images/wework/avatar3.svg',
+        profession: 'Hamburguesa de salmon',
+        name: 'Perdida de peso',
+        imgSrc: '/images/wework/hamburguesa.jpg',
+        go: 'ir'
     },
     {
-        profession: 'Co-founder',
-        name: 'John Doe',
-        imgSrc: '/images/wework/avatar4.svg',
+        profession: 'Ensalada de naranja',
+        name: 'Saludables',
+        imgSrc: '/images/wework/ensalada.jpg',
+        go: 'ir'
     },
     {
-        profession: 'Co-founder',
-        name: 'John Doe',
-        imgSrc: '/images/wework/avatar.svg',
+        profession: 'Rollitos de polo relleno',
+        name: 'Masa Muscular',
+        imgSrc: '/images/wework/rollitos.jpg',
+        go: 'ir'
     },
     {
-        profession: 'Co-founder',
-        name: 'John Doe',
-        imgSrc: '/images/wework/avatar3.svg',
+        profession: 'Salmon con ensalada',
+        name: 'Post-cirujia',
+        imgSrc: '/images/wework/postcirugia.jpg',
+        go: 'ir'
     },
     {
-        profession: 'Co-founder',
-        name: 'John Doe',
-        imgSrc: '/images/wework/avatar4.svg',
+        profession: 'Pollo con camote y ensalada',
+        name: 'Repación muscular',
+        imgSrc: '/images/wework/pollocamote.jpg',
+        go: 'ir'
     },
 ]
 
@@ -94,16 +101,16 @@ export default class MultipleItems extends Component {
 
 
         return (
-            <div className="bg-wework py-32">
+            <div id='recipes' className="bg-wework py-32">
 
-                <div className='mx-auto max-w-2xl lg:max-w-7xl sm:py-4 lg:px-8 '>
+                <div className="text-center pb-10 ">
+                    <h3 style={{
 
-                    <div className="text-center">
-                        <h3 className="text-4xl sm:text-6xl font-bold text-black my-2">We work in several verticals.</h3>
-                        <h3 className="text-4xl sm:text-6xl font-bold text-black opacity-50 lg:mr-48 my-2">We work in several verticals.</h3>
-                        <h3 className="text-4xl sm:text-6xl font-bold text-black opacity-25 lg:-mr-32 my-2">We work in several verticals.</h3>
-                    </div>
-
+                        color: '#008FA3',
+                        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)'  // Agrega sombra al texto
+                    }} className="text-4xl sm:text-6xl font-bold text-black my-2">
+                        Recetas
+                    </h3>
                 </div>
 
                 <Slider {...settings}>
@@ -111,8 +118,10 @@ export default class MultipleItems extends Component {
                         <div key={i}>
                             <div className='bg-white m-3 py-14 my-10 text-center shadow-xl rounded-3xl'>
                                 <div className='relative'>
-                                    <Image src={items.imgSrc} alt="gaby" width={182} height={182} className="inline-block m-auto" />
-                                    <Image src={'/images/wework/linkedin.svg'} alt="greenbg" width={120} height={120} className=" absolute inline-block position-linkedin" />
+                                <div className="w-64 h-64 m-auto rounded-full overflow-hidden">
+    <Image src={items.imgSrc} alt="gaby" width={256} height={256} className="object-contain" />
+</div>
+                                    <h3 className="absolute bg-blue-clean text-2xl text-white hover:bg-blue-dark hover:shadow-xl py-3 px-6 rounded-full article-img font-bold">{items.go}</h3>
                                 </div>
                                 <h4 className='text-4xl font-bold pt-14'>{items.name}</h4>
                                 <h3 className='text-2xl font-normal pt-4 pb-2 opacity-50'>{items.profession}</h3>

@@ -1,64 +1,142 @@
+"use client"
+import React, { Component, useState } from "react";
+import Link from 'next/link';
+import { ChevronRightIcon } from "@heroicons/react/24/solid";
+import Slider from "react-slick";
 import Image from "next/image";
-import Link from "next/link";
-import { ChevronRightIcon } from '@heroicons/react/20/solid'
 
-interface datatype {
+// CAROUSEL DATA
+
+interface DataType {
+    time: string;
     heading: string;
+    heading2: string;
+    date?: string;
     imgSrc: string;
-    paragraph: string;
-    link: string;
+    name: string;
 }
 
-const Aboutdata: datatype[] = [
+const postData: DataType[] = [
     {
-        heading: "Nosotros.",
-        imgSrc: "/images/aboutus/foodpiram.png",
-        paragraph: 'Somos especialistas en nutrición y nuestra diferencia es la personalización.',
-        
-        link: 'Conoce más'
+        time: "1",
+        heading: 'Registrate y',
+        heading2: 'Logueate en nuestra aplicación!',
+        name: "Vas a llenar un formulario indicando cuál es tu objetivo, eso nos sirve para poder determinar la mejor rutina.",
+        imgSrc: '/images/aboutus/register.jpg',
     },
     {
-        heading: "Servicios.",
-        imgSrc: "/images/aboutus/doc.png",
-        paragraph: 'Están desarrollados para proporcionar la mejor alternativa para tú objetivo.',
-        link: 'Conoce más'
+        time: "2",
+        heading: 'Explicación de nuestros métodos',
+        heading2: 'Obtienes toda la asesoria!',
+        name: "Al ser personalizado, explicamos toda la metodología, que esperamos lograr, formas de pago y resolvemos tus dudas.",
+        imgSrc: '/images/aboutus/methodology.jpg',
     },
     {
-        heading: "Nuestro trabajo.",
-        imgSrc: "/images/aboutus/health.png",
-        paragraph: 'Nos enfocamos en tus metas y creamos la rutina mas adecuada, para tu bienestar.',
-        link: 'Learn more'
+        time: "3",
+        heading: 'Realiza tu pago contamos',
+        heading2: 'con diferentes medios de pago!',
+        name: "Aceptamos transferencias, Bold, TC, Nequi , Daviplata, Dale, PSE, para que puedas adquirir nuestros planes.",
+        imgSrc: '/images/aboutus/pago.jpg',
+    },
+    {
+        time: "4",
+        heading: 'Valoración, tienes que',
+        heading2: 'completar todo el formulario!',
+        name: "Vas a recibir asistencia mediante guias practicas para que completes el cuestionario de forma correcta.",
+        imgSrc: '/images/aboutus/valoracion.jpg',
+    },
+    {
+        time: "5",
+        heading: 'Creación historia clinica y plan',
+        heading2: 'nutricional personalizado!',
+        name: "Se crea la historia clinica del usuario, junto al plan nutricional, generamos notificaciones, para que cumplas tu objetivo.",
+        imgSrc: '/images/aboutus/historiaclinica.jpg',
+    },
+    {
+        time: "6",
+        heading: 'Actualización del plan nutricional',
+        heading2: 'actulizamos la rutina!',
+        name: "Dependiendo el plan que adquieras recibiras actualizaciones periodicas de tus rutinas nutricionales personalizadas.",
+        imgSrc: '/images/aboutus/actualizacion.jpg',
     },
 ]
 
-const Aboutus = () => {
-    return (
+// CAROUSEL SETTINGS
 
-        <div id="aboutus-section">
-            <div className='mx-auto max-w-7xl px-4 py-24 my-32 lg:px-10 bg-lightgrey rounded-3xl relative'>
-                <Image src="/images/aboutus/dots.svg" width={100} height={100} alt="dots-image" className="absolute bottom-1 -left-20" />
-                <h3 className='text-center text-blue text-lg tracking-widest'>¿CÓMO FUNCIONA?</h3>
-                <h4 className='text-center text-4xl lg:text-65xl font-bold'>Un método diferente para estar bien.</h4>
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 my-16 gap-x-16 lg:gap-x-32'>
-                    {Aboutdata.map((item, i) => (
-                        <div key={i} className='hover:bg-navyblue bg-white rounded-3xl mt-16 pt-10 pl-8 pb-10 pr-6 shadow-xl group'>
-                            
-                            <h4 className='text-4xl font-semibold  text-black mb-5 group-hover:text-white'>{item.heading}</h4>
-                            <Image src={item.imgSrc} alt={item.imgSrc} width={100} height={100} className="mb-5" />
-                            <h4 className='text-lg font-normal text-black group-hover:text-offwhite mb-5'>{item.paragraph}</h4>
-                            <Link href="#" className='text-lg font-semibold group-hover:text-white text-blue hover-underline'>
-                                {item.link}
-                                <ChevronRightIcon width={20} height={20} />
-                            </Link>
-                            
-                        </div>
-                        
-                    ))}
+
+export default class MultipleItems extends Component {
+
+    render() {
+        const settings = {
+            dots: false,
+            infinite: true,
+            slidesToShow: 4,
+            centerMode: true,
+            slidesToScroll: 2,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            speed: 500,
+            cssEase: "linear",
+            responsive: [
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: false
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: false
+                    }
+                }
+            ]
+        };
+
+        return (
+            <div id="how-works" className='carrouselContainer' >
+                <div className="text-center ">
+                    <h3 style={{
+
+                        color: '#008FA3',
+                        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)'  // Agrega sombra al texto
+                    }} className="text-4xl sm:text-6xl font-bold text-black my-2">
+                        ¿CÓMO FUNCIONA?
+                    </h3>
                 </div>
-            </div>
-        </div>
+                <h4 className='subabouttext'>Un método diferente para estar bien.</h4>
+                <Slider {...settings}>
+                    {postData.map((items, i) => (
+                        <div key={i} >
 
-    )
+                            <div className='bg-white m-3 px-3 pt-3 pb-12 my-10 shadow-lg rounded-3xl relative transform transition hover:scale-105 hover:bg-gray-200'>
+                                <Image src={items.imgSrc} alt="gaby" width={389} height={262} className="inline-block m-auto rounded-lg" />
+                                <Link href="/">
+                                    <h3 className="absolute bg-blue-clean text-2xl text-white hover:bg-blue-dark hover:shadow-xl py-3 px-6 rounded-full article-img font-bold">{items.time}</h3>
+                                </Link>
+                                <h4 className='text-2xl font-bold pt-6 text-black'>{items.heading}</h4>
+                                <h4 className='text-2xl font-bold pt-1 text-black'>{items.heading2}</h4>
+
+                                <div>
+                                    <h3 className='text-base font-normal pt-6 pb-2 opacity-75'>{items.name}</h3>
+                                    <h3 className='text-base font-normal pb-1 opacity-75'>{items.date}</h3>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    ))}
+                </Slider>
+            </div>
+        );
+    };
+
 }
 
-export default Aboutus;
