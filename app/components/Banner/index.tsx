@@ -42,7 +42,7 @@ export default class MultipleItems extends Component<MultipleItemsProps> {
                             color: '#008FA3',
                             textShadow: '2px 2px 4px rgba(0, 0, 0, 0.6)'  // Agrega sombra al texto
                         }} className="text-4xl sm:text-6xl font-bold text-black my-2">
-                            Queremos guiarte para alcanzar tu objetivo.
+                            Queremos guiarte para alcanzar tu objetivo!
                         </h3>
                     </div>
 
