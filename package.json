@@ -1,0 +1,40 @@
+{
+  "name": "camilo-roa-nutricionista",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.7.14",
+    "@heroicons/react": "^2.0.18",
+    "@types/node": "20.2.0",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "18.2.4",
+    "autoprefixer": "10.4.14",
+    "chroma-js": "^2.4.2",
+    "eslint": "8.40.0",
+    "eslint-config-next": "13.4.2",
+    "gsap": "^3.12.2",
+    "next": "^13.4.9",
+    "postcss": "8.4.23",
+    "react": "^18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.11.0",
+    "react-intersection-observer": "^9.5.2",
+    "react-phone-input-2": "^2.15.1",
+    "react-responsive-carousel": "^3.2.23",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/chroma-js": "^2.4.0",
+    "@types/react-slick": "^0.23.10"
+  }
+}
