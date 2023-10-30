@@ -12,7 +12,7 @@ const products: ProductType[] = [
     {
         id: 1,
         section: "Menu",
-        link: ['Home', 'Popular', 'About', 'Contact'],
+        link: ['Inicio', 'Popular', 'About', 'Contact'],
     },
     {
         id: 2,
