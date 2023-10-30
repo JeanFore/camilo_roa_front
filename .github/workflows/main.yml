@@ -25,13 +25,13 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: yarn
+        run: npm install
 
       - name: Build
-        run: yarn build
+        run: npm run build
 
       - name: Export
-        run: yarn next export
+        run: npm next export
 
       - name: Deploy
         if: success()
