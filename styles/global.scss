@@ -2,9 +2,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-$primaryBlue: #0389E5;
+$primaryBlue: #004B70;
 $white: #FFFFFF;
-$secondaryBlue: #22B0FF;
+$secondaryBlue: #008FA3;
 $lightblue: #C3E7F0;
 $darkgray: #343638;
 
@@ -40,7 +40,7 @@ $darkgray: #343638;
     }
 
     &.bg-navbar-dark {
-        background-color: $darkgray;
+        background-color: $white;
     }
 }
 
@@ -119,7 +119,7 @@ $darkgray: #343638;
 .social-icons {
     display: none;
     gap: 16px;
-    color: $secondaryBlue;
+    color: $primaryBlue;
 
     >*:not(:last-child) {
         margin-right: 16px; // Esto añade margen a la derecha de todos los ítems excepto el último.
@@ -134,7 +134,7 @@ $darkgray: #343638;
         transition: transform 0.3s ease;
 
         &:hover {
-            color: $lightblue;
+            color: $secondaryBlue;
             transform: scale(1.1); // El ícono se hará un 10% más grande.
         }
     }
@@ -153,6 +153,23 @@ $darkgray: #343638;
         }
     }
 }
+
+@media (min-width: 768px) {
+    .menu-container {
+        background-color: transparent;
+        color: #343638;
+    }
+    .menu-text {
+        color: $darkgray;
+    }
+}
+
+@media (max-width: 767px) {
+    .menu-text {
+        color: $darkgray;
+    }
+}
+
 
 
 //Sections

@@ -8,7 +8,7 @@ const MenuBar: React.FC<{
     onMouseLeave: () => void;
 }> = ({ showIcons, onMouseEnter, onMouseLeave }) => {
     return (
-        <div className="menu-container" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+        <div className="menu-container md:bg-transparent bg-white" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             {/* ... */}
             {showIcons && (
                 <div className="dropdown-menu">

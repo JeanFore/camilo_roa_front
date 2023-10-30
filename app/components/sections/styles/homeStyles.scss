@@ -2,9 +2,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-$primaryBlue: #0389E5;
+$primaryBlue: #004B70;
 $white: #FFFFFF;
-$secondaryBlue: #22B0FF;
+$secondaryBlue: #008FA3;
 $lightblue: #C3E7F0;
 $darkgray: #343638;
 
@@ -13,6 +13,7 @@ $darkgray: #343638;
     src: url('/fonts/whiskeygirlssemital.ttf') format('truetype');  // Nota: El formato aquí cambió a 'truetype' debido a la extensión .ttf
     font-weight: normal;
     font-style: italic;
+    font-display: swap;
 }
 
 /* Gotham Rounded Book */
@@ -21,6 +22,7 @@ $darkgray: #343638;
     src: url('/fonts/Gotham Rounded Book.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 //HOME
@@ -29,17 +31,17 @@ $darkgray: #343638;
 .line1 {
     font-family: 'Whiskey Girls Semi Italic';
     color: $secondaryBlue;
-    font-size: 30px;
-    padding-left: 50px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, .9);
+    font-size: 40px;
+    
+    
 }
 
 .line2, .line3 {
     font-family: 'Gotham Rounded Book';
-    color: $lightblue;
-    font-size: 20px;
+    color: $darkgray;
+    font-size: 30px;
     font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, .9);
+    
 } 
 
 .logo {
@@ -53,5 +55,23 @@ $darkgray: #343638;
     }
     50% {
       transform: scale(1.2); 
+    }
+  }
+
+  @media (max-width: 768px) {
+    .line1{
+      font-size: 20px;
+      text-align: center;
+    }
+    .line2,
+    .line3 {
+      font-size: 12px;
+      text-align: center; 
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .logo {
+      display: none !important;
     }
   }

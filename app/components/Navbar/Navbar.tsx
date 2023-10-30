@@ -6,7 +6,19 @@ import MenuBar from './components/MenuBar';
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [showMenuBar, setShowMenuBar] = useState(false);
+    const [isMobile, setIsMobile] = useState(
+        typeof window !== 'undefined' ? window.innerWidth <= 768 : true
+      );
     const hideMenuTimer = useRef<NodeJS.Timeout | null>(null);
+
+    useEffect(() => {
+        const handleResize = () => {
+          setIsMobile(window.innerWidth <= 768);
+        };
+      
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+      }, []);
 
     const handleLogoMouseEnter = () => {
         setShowMenuBar(true);
@@ -14,6 +26,14 @@ const Navbar = () => {
         if (hideMenuTimer.current) {  // Si hay un temporizador activo, lo cancelamos.
             clearTimeout(hideMenuTimer.current);
         }
+    };
+
+    const handleLogoClick = () => {
+        if (hideMenuTimer.current) {
+            clearTimeout(hideMenuTimer.current);
+        }
+    
+        setShowMenuBar(prevState => !prevState); // Esto invertirá el valor de showMenuBar cada vez que se haga clic
     };
 
     const handleMenuMouseEnter = () => {
@@ -42,10 +62,11 @@ const Navbar = () => {
             <div className="navbar-content">
                 {/* Logo */}
                 <img
-                    src="/images/logo.png"
+                    src="/images/logocroa.png"
                     alt="Logo"
                     className="navbar-logo"
-                    onMouseEnter={() => setShowMenuBar(true)}
+                    onMouseEnter={isMobile ? undefined : handleLogoMouseEnter}
+                    onClick={isMobile ? handleLogoClick : undefined}
                 />
 
                 {/* Iconos de redes sociales (solo en escritorio) */}

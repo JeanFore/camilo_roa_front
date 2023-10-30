@@ -2,6 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 <a href="https://es.vecteezy.com/vectores-gratis/healthy">Healthy Vectores por Vecteezy</a>
 ## Getting Started
 https://www.pexels.com/search/videos/food/
+Imagen de <a href="https://www.freepik.es/foto-gratis/vista-aerea-cinta-metrica-comida-pesa-gimnasia-contexto-blanco_2944420.htm#query=nutrition%20and%20fitness&position=26&from_view=search&track=ais">Freepik</a>
 First, run the development server:
 
 ```bash
