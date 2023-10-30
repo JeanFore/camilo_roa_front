@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import { FaHome, FaQuestion, FaBlog, FaRegListAlt, FaRegNewspaper, FaBook, FaStar, FaHeartbeat, FaMoneyBill, FaMoneyCheck } from 'react-icons/fa';
 import AnimatedSVG from './AnimatedIcon';
+import Image from 'next/image';
 
 const MenuBar: React.FC = () => {
     const [isDropdownVisible, setDropdownVisible] = useState(false);
@@ -72,11 +73,12 @@ const MenuBar: React.FC = () => {
         >
             {/* Logo */}
             <Link href="/" onMouseEnter={() => startAnimation(svgRef)}>
-                <img
+                <Image
                     src="/images/navBar/logocroa.png"
                     alt="Logo"
                     width={254}
                     height={64}
+                    priority={true}
                 />
             </Link>
 

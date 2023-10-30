@@ -1,5 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 
 import LoginForm from './formLogin';
 
@@ -89,7 +90,7 @@ const Signin = () => {
                 </div>
 
                 <div className="w-1/2 px-5 py-5 form-section" >
-                  <img src="/images/navBar/logo.png" alt="Logo" className="logoLogin" />
+                  <Image src="/images/navBar/logo.png" alt="Logo" className="logoLogin" priority={true}/>
                   <h1 className="titulo">Inicia Sesión</h1>
 
                   <div className="form-section">

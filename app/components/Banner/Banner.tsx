@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
-import styles from './Banner.module.css'
+
 
 interface DataType {
     heading: string;
@@ -82,6 +82,8 @@ const SliderComponent = React.forwardRef((props, ref) => {
             }
         ]
     };
+
+    SliderComponent.displayName = 'SliderComponent';
 
     return (
         <div style={{ marginTop: '-50px' }}>

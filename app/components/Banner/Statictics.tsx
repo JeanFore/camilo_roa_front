@@ -43,7 +43,7 @@ const Statistics: React.FC = () => {
     }, 50);
 
     return () => clearInterval(interval);
-  }, [inView, stats]);
+  }, [inView, stats, currentStats.usuarios, currentStats.dietas, currentStats.reviews, currentStats.paises]);
 
   const circleStyle: CSSProperties = {
     position: 'relative',
