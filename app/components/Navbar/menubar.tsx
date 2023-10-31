@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { FaHome, FaQuestion, FaBlog, FaRegListAlt, FaRegNewspaper, FaBook, FaStar, FaHeartbeat, FaMoneyBill, FaMoneyCheck } from 'react-icons/fa';
 import AnimatedSVG from './AnimatedIcon';
@@ -11,7 +11,7 @@ const MenuBar: React.FC = () => {
     const svgRef = useRef<SVGSVGElement>(null);
     const [menuCloseTimeout, setMenuCloseTimeout] = useState<null | ReturnType<typeof setTimeout>>(null);
 
-    const menuItems = [
+    const menuItems = useMemo(() => [
         { icon: FaHome, href: "#home-section", label: "Inicio", },
         { icon: FaRegListAlt, href: "#about-us", label: "Nosotros", },
         { icon: FaHeartbeat, href: "#how-works", label: "¿Cómo funciona?",  },
@@ -21,7 +21,7 @@ const MenuBar: React.FC = () => {
 
         { icon: FaRegNewspaper, href: "#join-section", label: "Suscribete"},
         // { icon: FaStar, href: "#testimonial-section", label: "Testimonios" },
-    ];
+    ],[]);
 
     const startAnimation = (ref: React.RefObject<SVGSVGElement>) => {
         if (ref.current) {
@@ -66,6 +66,11 @@ const MenuBar: React.FC = () => {
 
     
 
+    const getOffset = () => {
+        console.log(currentSection);  // Esto imprimirá la sección actual
+        return currentSection === "#home-section" ? -180 : -100;
+    };
+
     useEffect(() => {
         const handleScroll = () => {
             let found = false;
@@ -87,11 +92,6 @@ const MenuBar: React.FC = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [menuItems]);
-
-    const getOffset = () => {
-        console.log(currentSection);  // Esto imprimirá la sección actual
-        return currentSection === "#home-section" ? -180 : -100;
-    };
 
     return (
         <div
