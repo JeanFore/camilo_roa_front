@@ -95,8 +95,8 @@ const SliderComponent = React.forwardRef((props, ref) => {
                                 <Image
                                     src={items.imgSrc}
                                     alt="gaby"
-                                    layout="fill"
-                                    objectFit="cover"
+                                    width={1202} height={500}
+                                    style={{ width: "auto", height: "auto" }}
                                     className="rounded-2xl"
                                 />
                                 <SampleNextArrow onClick={next} style={undefined} />
@@ -114,7 +114,7 @@ const SliderComponent = React.forwardRef((props, ref) => {
             </Slider>
         </div>
     );
-    
+
 });
 
 export default SliderComponent;

@@ -36,13 +36,13 @@ html:not([data-scroll="0"]) .navbar {
   /* height: 20px; */
   z-index: 3;
 }
-html:not([data-scroll="0"]) .navbar>div>div {
+/* html:not([data-scroll="0"]) .navbar>div>div {
   height: 3rem;
 }
 
 html:not([data-scroll="0"]) .border-right {
   height: 4rem;
-}
+} */
 
 html {
   --scroll-behavior: smooth !important;
@@ -1248,11 +1248,26 @@ body, html {
   }
 }
 
-#about-us {
-  scroll-margin-top: 100px;  /* Ajusta este valor según la altura de tu navbar u otros elementos */
-}
+/* #about-us {
+  scroll-margin-top: 100px;  
+} */
 
 /*Instagram*/
 .custom-rounded {
   border-radius: 17px;
+}
+
+
+/* Este CSS ocultará la barra de desplazamiento, pero aún permitirá el desplazamiento */
+html {
+  scrollbar-width: thin; /* Para Firefox */
+  scrollbar-color: transparent transparent; /* Para Firefox */
+}
+body {
+  -ms-overflow-style: none; /* Para Internet Explorer y Edge */
+  scrollbar-width: thin; /* Para Firefox */
+  scrollbar-color: transparent transparent; /* Para Firefox */
+}
+body::-webkit-scrollbar {
+  display: none; /* Para Chrome, Safari y Opera */
 }

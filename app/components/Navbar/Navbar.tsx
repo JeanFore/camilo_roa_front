@@ -11,21 +11,6 @@ import MenuBar from './menubar';
 
 
 
-interface NavigationItem {
-    name: string;
-    href: string;
-    current: boolean;
-}
-
-const navigation: NavigationItem[] = [
-    { name: '¿Cómo funciona?', href: '#aboutus-section', current: false },
-    { name: 'Recetas', href: '#services-section', current: false },
-    { name: 'Preguntas Frecuentes', href: '#faq-section', current: false },
-    { name: 'Planes', href: '#services-section', current: false },
-    { name: 'Blog', href: '#blog-section', current: false },
-    { name: 'Testimonios', href: '#testimonial-section', current: false },
-]
-
 const Navbar = () => {
 
     const [isOpen, setIsOpen] = React.useState(false);
@@ -62,9 +47,6 @@ const Navbar = () => {
 
     return (
         <Disclosure as="nav" className={`${showMenu ? 'bg-navbar-white' : 'bg-navbar-dark'} navbar ${showMenu ? '' : 'hidden md:block'} p-0 m-0`}>
-
-
-
 
         <div className=" mx-auto max-w-8xl p-3 md:p-4 lg:px-6 pl-10">
             <div className="flex items-center justify-between">

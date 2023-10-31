@@ -72,7 +72,7 @@ export default class MultipleItems extends Component {
             infinite: true,
             slidesToShow: 4,
             centerMode: true,
-            slidesToScroll: 2,
+            slidesToScroll: 1,
             arrows: false,
             autoplay: true,
             autoplaySpeed: 3000,
@@ -101,7 +101,7 @@ export default class MultipleItems extends Component {
         };
 
         return (
-            <div id="how-works" className='carrouselContainer' >
+            <div id="how-works" className='carrouselContainer'>
                 <div className="text-center ">
                     <h3 style={{
 

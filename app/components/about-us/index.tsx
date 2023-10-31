@@ -27,9 +27,9 @@ export default class MultipleItems extends Component<MultipleItemsProps> {
         return (
             <div id="about-us" style={{
                 backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/banner/fitness.png')",
-                backgroundSize: 'cover',
+                backgroundSize: 'cover', backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
-                minHeight: '500px'
+                
             }} className={`py-20 marginFeature ${this.props.className}`}>
 
 

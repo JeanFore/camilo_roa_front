@@ -1,23 +1,25 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { FaHome, FaQuestion, FaBlog, FaRegListAlt, FaRegNewspaper, FaBook, FaStar, FaHeartbeat, FaMoneyBill, FaMoneyCheck } from 'react-icons/fa';
 import AnimatedSVG from './AnimatedIcon';
 import Image from 'next/image';
+import { Link as ScrollLink } from 'react-scroll';
 
 const MenuBar: React.FC = () => {
     const [isDropdownVisible, setDropdownVisible] = useState(false);
+    const [currentSection, setCurrentSection] = useState('');
     const svgRef = useRef<SVGSVGElement>(null);
     const [menuCloseTimeout, setMenuCloseTimeout] = useState<null | ReturnType<typeof setTimeout>>(null);
 
     const menuItems = [
-        { icon: FaHome, href: "#home-section", label: "Inicio" },
-        { icon: FaRegListAlt, href: "#about-us", label: "Nosotros" },
-        { icon: FaHeartbeat, href: "#how-works", label: "¿Cómo funciona?" },
-        { icon: FaBook, href: "#recipes", label: "Recetas" },
-        { icon: FaMoneyCheck, href: "#services-section", label: "Planes" },
-        { icon: FaQuestion, href: "#faq-section", label: "Preguntas Frecuentes" },
+        { icon: FaHome, href: "#home-section", label: "Inicio", },
+        { icon: FaRegListAlt, href: "#about-us", label: "Nosotros", },
+        { icon: FaHeartbeat, href: "#how-works", label: "¿Cómo funciona?",  },
+        { icon: FaBook, href: "#recipes", label: "Recetas", },
+        { icon: FaMoneyCheck, href: "#services-section", label: "Planes", },
+        { icon: FaQuestion, href: "#faq-section", label: "Preguntas Frecuentes"},
 
-        { icon: FaRegNewspaper, href: "#join-section", label: "Suscribete" },
+        { icon: FaRegNewspaper, href: "#join-section", label: "Suscribete"},
         // { icon: FaStar, href: "#testimonial-section", label: "Testimonios" },
     ];
 
@@ -62,8 +64,34 @@ const MenuBar: React.FC = () => {
         }
     }
 
+    
 
+    useEffect(() => {
+        const handleScroll = () => {
+            let found = false;
+            for (let i = 0; i < menuItems.length && !found; i++) {
+                const item = menuItems[i];
+                const element = document.querySelector(item.href);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= 0 && rect.bottom >= 0) {
+                        setCurrentSection(item.href);
+                        found = true;  // Para salir del bucle una vez que encontramos la sección actual
+                    }
+                }
+            }
+        };
 
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [menuItems]);
+
+    const getOffset = () => {
+        console.log(currentSection);  // Esto imprimirá la sección actual
+        return currentSection === "#home-section" ? -180 : -100;
+    };
 
     return (
         <div
@@ -79,6 +107,7 @@ const MenuBar: React.FC = () => {
                     width={254}
                     height={64}
                     priority={true}
+
                 />
             </Link>
 
@@ -91,7 +120,12 @@ const MenuBar: React.FC = () => {
                     <ul className="dropdown-list" role="menu" aria-orientation="vertical">
                         {menuItems.map((item, index) => (
                             <li key={index} className="dropdown-item menu-item">
-                                <Link href={item.href}>
+                                <ScrollLink
+                                    to={item.href.replace("#", "")}
+                                    smooth={true}
+                                    offset={getOffset()}  // Ajusta este valor según sea necesario
+                                    duration={100}  // Duración de la animación
+                                >
                                     <div className="menu-link-container">
                                         <div className="icon-container">
                                             <item.icon className="menu-icon" style={{ color: '#008FA3' }} />
@@ -102,8 +136,7 @@ const MenuBar: React.FC = () => {
                                             </span>
                                         </div>
                                     </div>
-
-                                </Link>
+                                </ScrollLink>
                             </li>
                         ))}
                     </ul>
