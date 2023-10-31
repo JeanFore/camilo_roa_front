@@ -84,7 +84,7 @@ interface DedicatedProps {
                     <div className="relative flex flex-col items-start justify-center">
                         <Image src="images/dedicated/comma.svg" alt="comma-image" width={200} height={106} className="absolute comma-pos hidden lg:block" />
                         <h2 className="text-4xl lg:text-65xl pt-4 font-bold sm:leading-tight mt-5 text-center lg:text-start">Dedicado a crear nuevas alternativas para tu bienestar.</h2>
-                        <p className="font-medium text-lightblack text-2xl mt-5 text-center lg:text-start">Con seguimiento y personalización lograremos las metas propuestas</p>
+                        <p className="font-medium text-lightblack text-2xl mt-5 text-center lg:text-start">Con seguimiento y personalización lograremos las metas propuestas.</p>
                     </div>
 
                 </div>
