@@ -6,76 +6,76 @@ import Image from 'next/image';
 
 const names = [
     {
-        heading: "Startup",
-        price: 41,
-        user: 'per user, per month',
-        button: "Start My 15-day Trial",
-        profiles: '5 Social Profiles',
-        posts: '5 Scheduled Posts Per Profile',
-        templates: "400+ Templated",
-        view: "Calendar View",
-        support: '24/7 Support',
-        category: 'yearly'
-    },
-    {
-        heading: "Business",
-        price: 29,
-        user: 'per user, per month',
-        button: "Start My 15-day Trial",
-        profiles: '10 Social Profiles',
-        posts: '5 Scheduled Posts Per Profile',
-        templates: "600+ Templated",
-        view: "Calendar View",
-        support: '24/7 VIP Support',
-        category: 'yearly'
-    },
-    {
-        heading: "Agency",
-        price: 139,
-        user: 'per user, per month',
-        button: "Start My 15-day Trial",
-        profiles: '100 Social Profiles',
-        posts: '100 Scheduled Posts Per Profile',
-        templates: "800+ Templated",
-        view: "Calendar View",
-        support: '24/7 VIP Support',
-        category: 'yearly'
-    },
-    {
-        heading: "Agency",
-        price: 139,
-        user: 'per user, per yearly',
-        button: "Start My 15-day Trial",
-        profiles: '100 Social Profiles',
-        posts: '100 Scheduled Posts Per Profile',
-        templates: "800+ Templated",
-        view: "Calendar View",
-        support: '24/7 VIP Support',
+        heading: "Inicial",
+        price: 150000,
+        user: 'Usuario por trimestre',
+        button: "Comience ahora",
+        profiles: 'Valoración',
+        posts: '1 rutina personalizada',
+        templates: "3 controles",
+        view: "Acceso a croa app",
+        support: 'Soporte online',
         category: 'monthly'
     },
     {
-        heading: "Startup",
-        price: 41,
-        user: 'per user, per yearly',
-        button: "Start My 15-day Trial",
-        profiles: '5 Social Profiles',
-        posts: '5 Scheduled Posts Per Profile',
-        templates: "400+ Templated",
-        view: "Calendar View",
-        support: '24/7 Support',
+        heading: "Medio",
+        price: 185000,
+        user: 'Usuario por trimestre',
+        button: "Comience ahora",
+        profiles: 'Valoración avanzada',
+        posts: '1 rutina por objetivos personalizada',
+        templates: "6 controles",
+        view: "Acceso a croa app + recetas",
+        support: 'Soporte online priorizado',
         category: 'monthly'
     },
     {
-        heading: "Business",
-        price: 29,
-        user: 'per user, per yearly',
-        button: "Start My 15-day Trial",
-        profiles: '10 Social Profiles',
-        posts: '5 Scheduled Posts Per Profile',
-        templates: "600+ Templated",
-        view: "Calendar View",
-        support: '24/7 VIP Support',
+        heading: "Avanzado",
+        price: 350000,
+        user: 'Usuario por trimestre',
+        button: "Comience ahora",
+        profiles: 'Valoración nutricional y deportiva',
+        posts: '1 rutina nutricional y de ejercicios',
+        templates: "12 controles ",
+        view: "Acceso a croa app + recetas y rutinas online",
+        support: 'Soporte online priorizado',
         category: 'monthly'
+    },
+    {
+        heading: "Inicial",
+        price: 550000,
+        user: 'Usuario por año',
+        button: "Comience ahora",
+        profiles: 'Valoración',
+        posts: '4 rutina personalizada',
+        templates: "12 controles",
+        view: "Acceso a croa app",
+        support: 'Soporte online',
+        category: 'yearly'
+    },
+    {
+        heading: "Medio",
+        price: 700000,
+        user: 'Usuario por trimestre',
+        button: "Comience ahora",
+        profiles: 'Valoración avanzada',
+        posts: '4 rutina por objetivos personalizada',
+        templates: "24 controles",
+        view: "Acceso a croa app + recetas",
+        support: 'Soporte online priorizado',
+        category: 'yearly'
+    },
+    {
+        heading: "Avanzado",
+        price: 1300000,
+        user: 'Usuario por trimestre',
+        button: "Comience ahora",
+        profiles: 'Valoración nutricional y deportiva',
+        posts: '4 rutina nutricional y de ejercicios',
+        templates: "48 controles ",
+        view: "Acceso a croa app + recetas y rutinas online",
+        support: 'Soporte online priorizado',
+        category: 'yearly'
     },
 
 
@@ -95,11 +95,11 @@ const Manage = () => {
 
     return (
         <div id="services-section">
-            <div className='mx-auto max-w-7xl sm:py-20 lg:px-8 my-16'>
+            <div className='mx-auto max-w-7xl sm:py-10 lg:px-8 my-16'>
                 <h3 className='text-center text-4xl sm:text-65xl font-black'>Tenemos diferentes planes que se ajusten a tu medida <br /> </h3>
 
 
-                <div className='md:flex md:justify-around mt-20'>
+                <div className='md:flex md:justify-around mt-10'>
                     <div className='flex gap-5 justify-center md:justify-start'>
                         <Image src="/images/manage/right.svg" alt="right-icon" width={21} height={14} />
                         <h4 className='text-lg font-semibold'>Asesoria sin costo</h4>
@@ -131,11 +131,11 @@ const Manage = () => {
                                 } inline-block h-4 w-4 transform rounded-full bg-white transition`}
                             />
                         </Switch>
-                        <h3 className='text-sm font-medium ml-5'>Planes Mensuales</h3>
+                        <h3 className='text-sm font-medium ml-5'>Planes Trimestrales</h3>
                     </div>
                 </div>
 
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16 mx-5 gap-14 manage'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-4 mx-5 gap-14 manage'>
                     {filteredData.map((items, i) => (
                         <div className='manageTabs text-center p-10' key={i}>
                             <h4 className='text-2xl font-bold mb-3'>{items.heading}</h4>

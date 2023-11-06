@@ -19,6 +19,7 @@
     "chroma-js": "^2.4.2",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
+    "font-awesome": "^4.7.0",
     "gsap": "^3.12.2",
     "next": "^13.4.9",
     "postcss": "8.4.23",

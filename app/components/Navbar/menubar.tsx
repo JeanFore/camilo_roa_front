@@ -5,7 +5,7 @@ import AnimatedSVG from './AnimatedIcon';
 import Image from 'next/image';
 import { Link as ScrollLink } from 'react-scroll';
 
-const MenuBar: React.FC = () => {
+const MenuBar: React.FC<{ onToggle: (isActive: boolean) => void }> = ({ onToggle }) => {
     const [isDropdownVisible, setDropdownVisible] = useState(false);
     const [currentSection, setCurrentSection] = useState('');
     const svgRef = useRef<SVGSVGElement>(null);
@@ -50,6 +50,7 @@ const MenuBar: React.FC = () => {
             }
             setDropdownVisible(true);
             startAnimation(svgRef); // Iniciamos la animación al mostrar el menú
+            onToggle(true);
         }
     }
 
@@ -61,6 +62,9 @@ const MenuBar: React.FC = () => {
             }, 1000);
             setMenuCloseTimeout(timeout);
             reverseAnimation(svgRef); // Revertimos la animación al esconder el menú
+            setTimeout(() => {
+                onToggle(false);
+            }, 1500);
         }
     }
 

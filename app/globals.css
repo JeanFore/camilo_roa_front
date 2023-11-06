@@ -1271,3 +1271,13 @@ body {
 body::-webkit-scrollbar {
   display: none; /* Para Chrome, Safari y Opera */
 }
+
+.social-icon {
+  transition: transform 0.3s, color 0.3s; /* Añade transición para suavizar el cambio de tamaño y color */
+  color: #004B70 !important;
+}
+
+.social-icon:hover {
+  transform: scale(1.2); /* Hace que el icono sea un 20% más grande cuando se pasa el ratón por encima */
+  color: #008FA3 !important; /* Cambia el color al pasar el ratón por encima */
+}
