@@ -58,11 +58,11 @@ const Navbar = () => {
                 <div className="flex items-center justify-between">
 
                     {/* Menu Bar */}
-                    <div className="w-1/4 flex justify-start items-center">
+                    <div className="flex justify-start items-center md:w-1/4 w-full">
                         <MenuBar onToggle={handleMenuBarToggle} />
                     </div>
                     {/* Social Icons */}
-                    <div className={`flex space-x-4 ${isMenuBarActive ? 'hidden' : 'block'}`}>
+                    <div className={`flex justify-end space-x-4 ${isMenuBarActive ? 'hidden' : 'block'}`}>
                         <a href="https://www.instagram.com/camiloroanutricionista/?hl=es" target="_blank" rel="noopener noreferrer" className="text-3xl md:text-4xl hover:text-#008FA3 social-icon">
                             <FaInstagram className="text-#004B70" />
                         </a>

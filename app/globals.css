@@ -23,7 +23,6 @@ body {
 .snap-section {
   scroll-snap-align: start;
   height: 100vh;
-  /* Asegúrate de que cada sección ocupe todo el viewport */
 }
 
 html:not([data-scroll="0"]) .navbar {
@@ -35,17 +34,9 @@ html:not([data-scroll="0"]) .navbar {
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
   transition: 0.4s linear;
   padding: 0px !important;
-  /* height: 20px; */
   z-index: 3;
 }
 
-/* html:not([data-scroll="0"]) .navbar>div>div {
-  height: 3rem;
-}
-
-html:not([data-scroll="0"]) .border-right {
-  height: 4rem;
-} */
 
 html {
   --scroll-behavior: smooth !important;
@@ -89,8 +80,6 @@ html {
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
   box-shadow: none;
-
-  /* Ajusta el tamaño del padding y el valor del border-radius según tus preferencias */
 }
 
 .form-email-input2 input {
@@ -100,8 +89,6 @@ html {
   border-radius: 0.5rem;
   margin-bottom: 0.5rem;
   box-shadow: none;
-
-  /* Ajusta el tamaño del padding y el valor del border-radius según tus preferencias */
 }
 
 .password-input-container {
@@ -119,11 +106,8 @@ html {
 }
 
 .logo {
-  /* Styles for the logo */
   width: 254px;
-  /* Adjust as necessary */
   height: auto;
-  /* Adjust as necessary */
 }
 
 .centered-button2 {
@@ -142,60 +126,50 @@ html {
 
 .btn-login2 {
   background-color: #697bad;
-  /* Ajusta el color según tus necesidades */
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
   font-size: 16px;
-  /* Ajusta el tamaño de fuente según tus necesidades */
   transition: background-color 0.2s;
 }
 
 .recover-password-link {
   text-align: right;
   margin-bottom: 5px;
-  /* Ajusta el espaciado según tus necesidades */
 }
 
 .recover-password-link a {
   color: #697bad;
-  /* Ajusta el color según tus necesidades */
   text-decoration: underline;
 }
 
 .btn-login {
   background-color: #697bad;
-  /* Ajusta el color según tus necesidades */
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
   font-size: 16px;
-  /* Ajusta el tamaño de fuente según tus necesidades */
   transition: background-color 0.2s;
 }
 
 .btn-login:hover {
   background-color: #153E90;
-  /* Ajusta el color de hover según tus necesidades */
 }
 
 .btn-register {
   background-color: #697bad;
-  /* Ajusta el color según tus necesidades */
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
   font-size: 16px;
-  /* Ajusta el tamaño de fuente según tus necesidades */
   transition: background-color 0.2s;
 }
 
 .btn-register:hover {
   background-color: #153E90;
-  /* Ajusta el color de hover según tus necesidades */
 }
 
 .divider {
@@ -212,13 +186,11 @@ html {
   flex-grow: 1;
   height: 1px;
   background-color: #ccc;
-  /* Ajusta el color según tus necesidades */
 }
 
 .divider span {
   margin: 0 10px;
   color: #ccc;
-  /* Ajusta el color según tus necesidades */
 }
 
 .social-icons {
@@ -231,17 +203,14 @@ html {
   margin: 0 5px;
   font-size: 28px;
   color: #ccc;
-  /* Ajusta el color según tus necesidades */
 }
 
 .bg-white2 {
   width: 100%;
   height: 100%;
   max-height: calc(100vh - 2rem);
-  /* Resta el margen vertical del modal */
   display: flex;
   padding: 0;
-  /* Elimina el relleno */
 }
 
 .form-section {
@@ -249,7 +218,6 @@ html {
   border-radius: 0 10px 10px 0;
   padding: 10px;
   overflow: hidden;
-  /* Para ocultar cualquier contenido que sobresalga del contenedor */
 }
 
 
@@ -257,7 +225,6 @@ html {
 .hover-underline {
   display: inline-flex;
   position: relative;
-  /* color: #ffffff; */
   justify-content: center;
   align-items: center;
 }
@@ -292,11 +259,6 @@ html {
   position: absolute;
 }
 
-@media only screen and (max-width: 1024px) {
-  .preline:before {
-    display: none;
-  }
-}
 
 .comma-pos {
   top: -40px;
@@ -309,12 +271,7 @@ html {
   padding-right: 70px;
 }
 
-@media only screen and (max-width: 1150px) {
-  .border-right {
-    height: 0px;
-    border-right: 0px solid rgba(196, 196, 196, 0.55);
-  }
-}
+
 
 .pd76 {
   padding-right: 76px !important;
@@ -350,11 +307,6 @@ html {
   margin-top: 0px;
 }
 
-@media only screen and (max-width: 700px) {
-  .marginFeature {
-    margin-top: -48px;
-  }
-}
 
 .pb-70 {
   padding-bottom: 18rem;
@@ -388,11 +340,7 @@ html {
   margin-top: -480px;
 }
 
-@media only screen and (max-width: 768px) {
-  .feature-margin {
-    margin-top: -300px;
-  }
-}
+
 
 .nextarrow {
   background-color: aqua;
@@ -410,11 +358,7 @@ html {
   background-position: 55%, 84% 26%, 12% 18%;
 }
 
-@media only screen and (max-width: 1400px) {
-  .bg-testimonial {
-    background-position: 80%, top right, top left;
-  }
-}
+
 
 
 .manageTabs {
@@ -484,38 +428,6 @@ html {
   text-align: center;
   margin-left: -340px;
 }
-
-@media only screen and (max-width: 466px) {
-  .dance-text {
-    margin-left: -265px;
-  }
-}
-
-.toggleImage {
-  position: absolute;
-  right: 47rem;
-  top: 2rem;
-}
-
-@media only screen and (max-width: 1250px) {
-  .toggleImage {
-    display: none;
-  }
-}
-
-.joinButton {
-  padding: 20px 110px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media only screen and (max-width: 1023px) {
-  .joinButton {
-    padding: 20px 92px;
-  }
-}
-
 
 /* SLICK  */
 .slick-prev,
@@ -814,31 +726,12 @@ html {
   height: 16px;
 }
 
-@media (max-width: 768px) {
-  .arrow2 svg {
-    width: 9px;
-    height: 9px;
-  }
-}
-
 .title-container {
   position: absolute;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 4em;
-}
-
-@media screen and (max-width: 768px) {
-  .desktop-title {
-    display: none;
-  }
-
-  .desktop-title::after {
-    content: "";
-    display: block;
-    height: 200px;
-  }
 }
 
 .slider-container {
@@ -1274,11 +1167,7 @@ html {
   left: -100px;
 }
 
-@media only screen and (max-width : 768px) {
-  .demo-1 .main-title {
-    font-size: 3em;
-  }
-}
+
 
 /* Icon */
 
@@ -1323,48 +1212,6 @@ html {
   stroke: #004B70;
 }
 
-@media only screen and (max-width: 768px) {
-  .menu-container {
-    flex-direction: column;
-    position: relative;
-  }
-
-  .hb {
-    width: 30px;
-    position: absolute;
-    top: 5px;
-    right: -40px;
-    margin: 10px;
-  }
-
-  .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    box-shadow: none;
-    background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-
-  .menu-icon {
-    font-size: 25px;
-    
-
-  }
-
-  .dropdown-item {
-    width: 100%; /* Ocupa todo el ancho del menú */
-    text-align: left; /* Alinea el texto a la izquierda */
-}
-
-  .statistics-container {
-    bottom: -400px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
 
 
 /*Instagram*/
@@ -1406,4 +1253,167 @@ body::-webkit-scrollbar {
   /* Hace que el icono sea un 20% más grande cuando se pasa el ratón por encima */
   color: #008FA3 !important;
   /* Cambia el color al pasar el ratón por encima */
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .preline:before {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .border-right {
+    height: 0px;
+    border-right: 0px solid rgba(196, 196, 196, 0.55);
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  .marginFeature {
+    margin-top: -48px;
+  }
+}
+
+
+@media only screen and (max-width: 1400px) {
+  .bg-testimonial {
+    background-position: 80%, top right, top left;
+  }
+}
+
+@media only screen and (max-width: 466px) {
+  .dance-text {
+    margin-left: -265px;
+  }
+}
+
+.toggleImage {
+  position: absolute;
+  right: 47rem;
+  top: 2rem;
+}
+
+@media only screen and (max-width: 1250px) {
+  .toggleImage {
+    display: none;
+  }
+}
+
+.joinButton {
+  padding: 20px 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1023px) {
+  .joinButton {
+    padding: 20px 92px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    height: 80px; /* Aumenta la altura según tus necesidades */
+    display: flex;
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: space-between; /* Espacia los elementos uniformemente */
+  }
+
+  .arrow2 svg {
+    width: 9px;
+    height: 9px;
+  }
+
+  .menu-container {
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    top: 10px;
+    width: 40%;
+    left: 5px;
+    height: auto;
+  }
+
+  .hb {
+    width: 30px;
+    position: absolute;
+    transform: translateY(-50%);
+    right: -40px;
+    
+  }
+
+  .dropdown-menu {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples filas */
+    justify-content: center; /* Centra los ítems horizontalmente */
+    background: rgba(255, 255, 255, 0.5); /* Fondo transparente */
+    padding: 1px; /* Espacio alrededor de los ítems */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para resaltar */
+    position: absolute;
+    top: 100%;
+    left: 20%;
+    transform: translateX(-50%);
+    width: auto;
+  }
+
+
+  .menu-icon {
+    font-size: 25px; /* Ajusta el tamaño del ícono si es necesario */
+  }
+
+  .dropdown-item {
+    width: 50%;
+    text-align: left;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  .statistics-container {
+    bottom: -400px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .demo-1 .main-title {
+    font-size: 3em;
+  }
+
+  .desktop-title {
+    display: none;
+  }
+
+  .desktop-title::after {
+    content: "";
+    display: block;
+    height: 200px;
+  }
+
+  .feature-margin {
+    margin-top: -300px;
+  }
+
+  .dropdown-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples filas */
+    justify-content: center;
+  }
+
+  .menu-text {
+    display: none; /* Oculta el texto de cada ítem del menú */
+}
+.logo-container {
+  margin-left: 0; /* Ajusta el margen a 0 para alinear a la izquierda */
+}
+
+.social-icon {
+  font-size: 1.4rem; /* Reduce el tamaño de los íconos */
+  position: relative;
+  left: 90px;
+}
+
 }
