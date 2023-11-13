@@ -40,6 +40,20 @@ interface DedicatedProps {
         }
     };
 
+    const mobileVideoStyles = {
+        height: '200px', // Ajustar según sea necesario
+        borderRadius: '15px', // Esquinas más redondeadas para móviles
+        transform: isVideoPlaying ? 'scale(1)' : 'scale(0.85)', // Ajustar efecto de transformación
+        transition: 'all 0.5s ease-in-out'
+    };
+    
+    const desktopVideoStyles = {
+        height: isVideoPlaying ? '435px' : '415px', 
+        borderRadius: 30,
+        transform: isVideoPlaying ? 'perspective(325px) rotateX(0deg)' : 'perspective(325px) rotateX(5deg)',
+        transition: 'height 0.5s ease-in-out'
+    };
+
     return (
         <div className={`relative ${className}`} id="home-section" style={{ backgroundImage: `url('/images/dedicated/bghomefood.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center'}}>
 
@@ -51,7 +65,7 @@ interface DedicatedProps {
                     muted 
                     style={{ 
                         
-                        height: isVideoPlaying ? '435px' : '415px', 
+                        ...isMobile ? mobileVideoStyles : desktopVideoStyles, 
                         display: 'block', 
                         marginLeft: 'auto', 
                         marginRight: 'auto',

@@ -10,18 +10,19 @@ const MenuBar: React.FC<{ onToggle: (isActive: boolean) => void }> = ({ onToggle
     const [currentSection, setCurrentSection] = useState('');
     const svgRef = useRef<SVGSVGElement>(null);
     const [menuCloseTimeout, setMenuCloseTimeout] = useState<null | ReturnType<typeof setTimeout>>(null);
+    const isMobileDevice = () => window.innerWidth <= 768;
 
     const menuItems = useMemo(() => [
         { icon: FaHome, href: "#home-section", label: "Inicio", },
         { icon: FaRegListAlt, href: "#about-us", label: "Nosotros", },
-        { icon: FaHeartbeat, href: "#how-works", label: "¿Cómo funciona?",  },
+        { icon: FaHeartbeat, href: "#how-works", label: "¿Cómo funciona?", },
         { icon: FaBook, href: "#recipes", label: "Recetas", },
         { icon: FaMoneyCheck, href: "#services-section", label: "Planes", },
-        { icon: FaQuestion, href: "#faq-section", label: "Preguntas Frecuentes"},
+        { icon: FaQuestion, href: "#faq-section", label: "Preguntas Frecuentes" },
 
-        { icon: FaRegNewspaper, href: "#join-section", label: "Suscribete"},
+        { icon: FaRegNewspaper, href: "#join-section", label: "Suscribete" },
         // { icon: FaStar, href: "#testimonial-section", label: "Testimonios" },
-    ],[]);
+    ], []);
 
     const startAnimation = (ref: React.RefObject<SVGSVGElement>) => {
         if (ref.current) {
@@ -68,7 +69,7 @@ const MenuBar: React.FC<{ onToggle: (isActive: boolean) => void }> = ({ onToggle
         }
     }
 
-    
+
 
     const getOffset = () => {
         console.log(currentSection);  // Esto imprimirá la sección actual
@@ -97,6 +98,15 @@ const MenuBar: React.FC<{ onToggle: (isActive: boolean) => void }> = ({ onToggle
         };
     }, [menuItems]);
 
+    const toggleDropdown = () => {
+        if (isMobileDevice()) {
+            const isVisible = !isDropdownVisible;
+            setDropdownVisible(isVisible);
+            isVisible ? startAnimation(svgRef) : reverseAnimation(svgRef);
+            onToggle(isVisible);
+        }
+    }
+
     return (
         <div
             className="menu-container"
@@ -116,37 +126,40 @@ const MenuBar: React.FC<{ onToggle: (isActive: boolean) => void }> = ({ onToggle
             </Link>
 
             {/* Animated Icon */}
+            <div onClick={toggleDropdown} style={{ cursor: 'pointer', marginLeft: 'auto' }}>
             <AnimatedSVG ref={svgRef} onStartAnimation={startAnimation} onReverseAnimation={reverseAnimation} isDropdownVisible={isDropdownVisible} setDropdownVisible={setDropdownVisible} />
-
-            {/* Menú desplegable */}
-            {isDropdownVisible && (
-                <div className="dropdown-menu" onMouseLeave={() => reverseAnimation(svgRef)}>
-                    <ul className="dropdown-list" role="menu" aria-orientation="vertical">
-                        {menuItems.map((item, index) => (
-                            <li key={index} className="dropdown-item menu-item">
-                                <ScrollLink
-                                    to={item.href.replace("#", "")}
-                                    smooth={true}
-                                    offset={getOffset()}  // Ajusta este valor según sea necesario
-                                    duration={100}  // Duración de la animación
-                                >
-                                    <div className="menu-link-container">
-                                        <div className="icon-container">
-                                            <item.icon className="menu-icon" style={{ color: '#008FA3' }} />
-                                        </div>
-                                        <div className="text-container">
-                                            <span className="menu-text" style={{ color: '#004B70' }}>
-                                                {item.label}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </ScrollLink>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            )}
         </div>
+            {/* Menú desplegable */ }
+    {
+        isDropdownVisible && (
+            <div className="dropdown-menu" onMouseLeave={() => reverseAnimation(svgRef)}>
+                <ul className="dropdown-list" role="menu" aria-orientation="vertical">
+                    {menuItems.map((item, index) => (
+                        <li key={index} className="dropdown-item menu-item">
+                            <ScrollLink
+                                to={item.href.replace("#", "")}
+                                smooth={true}
+                                offset={getOffset()}  // Ajusta este valor según sea necesario
+                                duration={100}  // Duración de la animación
+                            >
+                                <div className="menu-link-container">
+                                    <div className="icon-container">
+                                        <item.icon className="menu-icon" style={{ color: '#008FA3' }} />
+                                    </div>
+                                    <div className="text-container">
+                                        <span className="menu-text" style={{ color: '#004B70' }}>
+                                            {item.label}
+                                        </span>
+                                    </div>
+                                </div>
+                            </ScrollLink>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        )
+    }
+        </div >
     );
 }
 

@@ -10,6 +10,7 @@
 @import "slick-carousel/slick/slick-theme.css";
 /*Phone codes*/
 @import 'react-phone-input-2/lib/bootstrap.css';
+
 body {
   margin: 0;
   font-family: 'Urbanist', sans-serif;
@@ -21,14 +22,15 @@ body {
 /* Estilo para cada sección */
 .snap-section {
   scroll-snap-align: start;
-  height: 100vh; /* Asegúrate de que cada sección ocupe todo el viewport */
+  height: 100vh;
+  /* Asegúrate de que cada sección ocupe todo el viewport */
 }
 
 html:not([data-scroll="0"]) .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color:#d3e3f1;
+  background-color: #d3e3f1;
   opacity: 1.9;
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
   transition: 0.4s linear;
@@ -36,6 +38,7 @@ html:not([data-scroll="0"]) .navbar {
   /* height: 20px; */
   z-index: 3;
 }
+
 /* html:not([data-scroll="0"]) .navbar>div>div {
   height: 3rem;
 }
@@ -49,7 +52,8 @@ html {
   scroll-behavior: smooth !important;
 }
 
-body, html {
+body,
+html {
   background-color: #ffffff;
 }
 
@@ -59,6 +63,7 @@ body, html {
   padding: 0px !important;
   ;
 }
+
 .titulo {
   text-align: center;
   font-size: 1.5rem;
@@ -82,9 +87,9 @@ body, html {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
-  margin-bottom: 0.5rem; 
+  margin-bottom: 0.5rem;
   box-shadow: none;
-   
+
   /* Ajusta el tamaño del padding y el valor del border-radius según tus preferencias */
 }
 
@@ -93,9 +98,9 @@ body, html {
   padding: 0.5rem;
   border-right: 1px solid #a31919;
   border-radius: 0.5rem;
-  margin-bottom: 0.5rem; 
+  margin-bottom: 0.5rem;
   box-shadow: none;
-   
+
   /* Ajusta el tamaño del padding y el valor del border-radius según tus preferencias */
 }
 
@@ -115,8 +120,10 @@ body, html {
 
 .logo {
   /* Styles for the logo */
-  width: 254px; /* Adjust as necessary */
-  height: auto; /* Adjust as necessary */
+  width: 254px;
+  /* Adjust as necessary */
+  height: auto;
+  /* Adjust as necessary */
 }
 
 .centered-button2 {
@@ -125,58 +132,70 @@ body, html {
   text-align: center;
   margin-top: 10px;
 }
+
 .centered-button {
   display: block;
   margin: 0 auto;
   text-align: center;
   margin-top: 40px;
 }
+
 .btn-login2 {
-  background-color: #697bad; /* Ajusta el color según tus necesidades */
+  background-color: #697bad;
+  /* Ajusta el color según tus necesidades */
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
-  font-size: 16px; /* Ajusta el tamaño de fuente según tus necesidades */
+  font-size: 16px;
+  /* Ajusta el tamaño de fuente según tus necesidades */
   transition: background-color 0.2s;
 }
 
 .recover-password-link {
   text-align: right;
-  margin-bottom: 5px; /* Ajusta el espaciado según tus necesidades */
+  margin-bottom: 5px;
+  /* Ajusta el espaciado según tus necesidades */
 }
 
 .recover-password-link a {
-  color: #697bad; /* Ajusta el color según tus necesidades */
+  color: #697bad;
+  /* Ajusta el color según tus necesidades */
   text-decoration: underline;
 }
 
 .btn-login {
-  background-color: #697bad; /* Ajusta el color según tus necesidades */
+  background-color: #697bad;
+  /* Ajusta el color según tus necesidades */
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
-  font-size: 16px; /* Ajusta el tamaño de fuente según tus necesidades */
+  font-size: 16px;
+  /* Ajusta el tamaño de fuente según tus necesidades */
   transition: background-color 0.2s;
 }
 
 .btn-login:hover {
-  background-color: #153E90; /* Ajusta el color de hover según tus necesidades */
+  background-color: #153E90;
+  /* Ajusta el color de hover según tus necesidades */
 }
 
 .btn-register {
-  background-color: #697bad; /* Ajusta el color según tus necesidades */
+  background-color: #697bad;
+  /* Ajusta el color según tus necesidades */
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
-  font-size: 16px; /* Ajusta el tamaño de fuente según tus necesidades */
+  font-size: 16px;
+  /* Ajusta el tamaño de fuente según tus necesidades */
   transition: background-color 0.2s;
 }
 
 .btn-register:hover {
-  background-color: #153E90; /* Ajusta el color de hover según tus necesidades */
+  background-color: #153E90;
+  /* Ajusta el color de hover según tus necesidades */
 }
 
 .divider {
@@ -192,12 +211,14 @@ body, html {
   content: '';
   flex-grow: 1;
   height: 1px;
-  background-color: #ccc; /* Ajusta el color según tus necesidades */
+  background-color: #ccc;
+  /* Ajusta el color según tus necesidades */
 }
 
 .divider span {
   margin: 0 10px;
-  color: #ccc; /* Ajusta el color según tus necesidades */
+  color: #ccc;
+  /* Ajusta el color según tus necesidades */
 }
 
 .social-icons {
@@ -209,22 +230,26 @@ body, html {
 .social-icons .icon {
   margin: 0 5px;
   font-size: 28px;
-  color: #ccc; /* Ajusta el color según tus necesidades */
+  color: #ccc;
+  /* Ajusta el color según tus necesidades */
 }
 
 .bg-white2 {
   width: 100%;
   height: 100%;
-  max-height: calc(100vh - 2rem); /* Resta el margen vertical del modal */
+  max-height: calc(100vh - 2rem);
+  /* Resta el margen vertical del modal */
   display: flex;
-  padding: 0; /* Elimina el relleno */
+  padding: 0;
+  /* Elimina el relleno */
 }
 
 .form-section {
   background-color: white;
   border-radius: 0 10px 10px 0;
   padding: 10px;
-  overflow: hidden; /* Para ocultar cualquier contenido que sobresalga del contenedor */
+  overflow: hidden;
+  /* Para ocultar cualquier contenido que sobresalga del contenedor */
 }
 
 
@@ -565,16 +590,16 @@ body, html {
   display: block;
 }
 
-.manage > div:nth-child(2) {
-  background-color: #00224A!important;
+.manage>div:nth-child(2) {
+  background-color: #00224A !important;
   color: #ffffff;
 }
 
-.manage > div:nth-child(2) button {
+.manage>div:nth-child(2) button {
   color: #ffffff;
 }
 
-.manage > div:nth-child(2) h3 {
+.manage>div:nth-child(2) h3 {
   color: #747474;
 }
 
@@ -791,40 +816,40 @@ body, html {
 
 @media (max-width: 768px) {
   .arrow2 svg {
-      width: 9px;
-      height: 9px;
+    width: 9px;
+    height: 9px;
   }
 }
 
 .title-container {
   position: absolute;
-  top: 30%; 
-  left: 50%; 
+  top: 30%;
+  left: 50%;
   transform: translate(-50%, -50%);
   font-size: 4em;
 }
 
 @media screen and (max-width: 768px) {
   .desktop-title {
-      display: none;
+    display: none;
   }
-  
+
   .desktop-title::after {
-      content: "";
-      display: block;
-      height: 200px; 
+    content: "";
+    display: block;
+    height: 200px;
   }
 }
 
-  .slider-container {
-      margin-top: 50;
-  }
+.slider-container {
+  margin-top: 50;
+}
 
 
-  .center .slick-center {
-    margin-left: 20px;  
-    margin-right: 20px; 
-    transform: scale(1);
+.center .slick-center {
+  margin-left: 20px;
+  margin-right: 20px;
+  transform: scale(1);
 }
 
 .slider-card {
@@ -837,135 +862,181 @@ body, html {
   color: white;
   width: 50px;
   height: 50px;
-  line-height: 50px;  /* Esto centra el texto verticalmente */
-  text-align: center; /* Esto centra el texto horizontalmente */
-  border-radius: 50%; /* Esto hace el botón circular */
+  line-height: 50px;
+  /* Esto centra el texto verticalmente */
+  text-align: center;
+  /* Esto centra el texto horizontalmente */
+  border-radius: 50%;
+  /* Esto hace el botón circular */
   border: none;
   cursor: pointer;
-  opacity: 0.8; /* Esto hace que el botón sea un poco transparente */
-  transition: background-color 0.5s, opacity 0.5s; /* Transiciones suaves al cambiar el color de fondo y la opacidad */
+  opacity: 0.8;
+  /* Esto hace que el botón sea un poco transparente */
+  transition: background-color 0.5s, opacity 0.5s;
+  /* Transiciones suaves al cambiar el color de fondo y la opacidad */
 
   /* Permite el posicionamiento absoluto de los botones */
   position: absolute;
-  top: 70%;  /* Centra el botón verticalmente */
-  transform: translateY(-50%);  /* Centra el botón verticalmente */
+  top: 70%;
+  /* Centra el botón verticalmente */
+  transform: translateY(-50%);
+  /* Centra el botón verticalmente */
 }
 
 
 .buttonNextPrev:hover {
-  background-color: lightblue; /* Cambia el color de fondo en hover */
-  opacity: 1; /* Aumenta la opacidad en hover */
+  background-color: lightblue;
+  /* Cambia el color de fondo en hover */
+  opacity: 1;
+  /* Aumenta la opacidad en hover */
 }
 
 .buttonNextPrev:active {
-  opacity: 0.6; /* Disminuye la opacidad cuando se hace clic en el botón */
+  opacity: 0.6;
+  /* Disminuye la opacidad cuando se hace clic en el botón */
 }
 
 /* Posiciona el botón "Prev" a la izquierda del carrusel */
 .buttonNextPrev:first-child {
-  left: -25px;  /* Ajusta esto según la distancia deseada del borde */
+  left: -25px;
+  /* Ajusta esto según la distancia deseada del borde */
   z-index: 1;
 }
 
 /* Posiciona el botón "Next" a la derecha del carrusel */
 .buttonNextPrev:last-child {
-  right: -25px;  /* Ajusta esto según la distancia deseada del borde */
+  right: -25px;
+  /* Ajusta esto según la distancia deseada del borde */
   z-index: 1;
 }
 
 .carrouselContainer {
-  width: 95%;  /* Ancho del carrusel será el 90% del ancho de la página */
-  margin: 100px auto;  /* Centra el carrusel en la página */
-  padding: 24px;  /* Agrega un relleno alrededor del carrusel */
-  border-radius: 30px;  /* Agrega bordes redondeados al carrusel */
-  background-color: #f7f4f4;  /* Color de fondo claro para el carrusel */
-  position: relative;  /* Permite el posicionamiento absoluto de los elementos hijos en relación a este contenedor */
+  width: 95%;
+  /* Ancho del carrusel será el 90% del ancho de la página */
+  margin: 100px auto;
+  /* Centra el carrusel en la página */
+  padding: 24px;
+  /* Agrega un relleno alrededor del carrusel */
+  border-radius: 30px;
+  /* Agrega bordes redondeados al carrusel */
+  background-color: #f7f4f4;
+  /* Color de fondo claro para el carrusel */
+  position: relative;
+  /* Permite el posicionamiento absoluto de los elementos hijos en relación a este contenedor */
 }
 
 .abouttext {
-  font-size: 1.325rem; /* Equivalente a 'text-lg' en Tailwind CSS */
-  text-align: center; /* Centra el texto */
-  color: #1D4ED8; /* Equivalente a 'text-blue' en Tailwind CSS */
-  letter-spacing: 0.05em; /* Aumenta el espaciado entre letras, equivalente a 'tracking-widest' en Tailwind CSS */
-  font-weight: normal; /* Hace que la fuente tenga el peso normal, puedes cambiar esto si quieres que sea bold, etc. */
-  margin-bottom: 1em; /* Añade un poco de espacio debajo del heading */
+  font-size: 1.325rem;
+  /* Equivalente a 'text-lg' en Tailwind CSS */
+  text-align: center;
+  /* Centra el texto */
+  color: #1D4ED8;
+  /* Equivalente a 'text-blue' en Tailwind CSS */
+  letter-spacing: 0.05em;
+  /* Aumenta el espaciado entre letras, equivalente a 'tracking-widest' en Tailwind CSS */
+  font-weight: normal;
+  /* Hace que la fuente tenga el peso normal, puedes cambiar esto si quieres que sea bold, etc. */
+  margin-bottom: 1em;
+  /* Añade un poco de espacio debajo del heading */
 }
 
 .subabouttext {
-  font-size: 4.25rem; /* Equivalente a 'text-4xl' en Tailwind CSS */
-  text-align: center; /* Centra el texto */
-  font-weight: bold; /* Equivalente a 'font-bold' en Tailwind CSS */
-  margin-top: 0.3em; /* Añade un poco de espacio encima del heading */
-  margin-bottom: 1em; /* Añade un poco de espacio debajo del heading */
+  font-size: 4.25rem;
+  /* Equivalente a 'text-4xl' en Tailwind CSS */
+  text-align: center;
+  /* Centra el texto */
+  font-weight: bold;
+  /* Equivalente a 'font-bold' en Tailwind CSS */
+  margin-top: 0.3em;
+  /* Añade un poco de espacio encima del heading */
+  margin-bottom: 1em;
+  /* Añade un poco de espacio debajo del heading */
 }
 
 .carouselabbout {
-  display: flex;  
-  align-items: stretch;  
-  justify-content: center;  
-  width: 100%;  
-  background-color: transparent;  
-  padding: 1em;  
-  overflow: hidden; /* Permite el desplazamiento horizontal */
-  white-space: nowrap; /* Evita que los elementos se ajusten a la siguiente línea */
-  overflow-x: auto;  /* Añade desplazamiento solo horizontal y auto oculta la barra cuando no se necesita */
-  scrollbar-width: none;  /* Oculta la barra de desplazamiento en Firefox */
-  -ms-overflow-style: none;  /* Oculta la barra de desplazamiento en Internet Explorer y Edge */
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  background-color: transparent;
+  padding: 1em;
+  overflow: hidden;
+  /* Permite el desplazamiento horizontal */
+  white-space: nowrap;
+  /* Evita que los elementos se ajusten a la siguiente línea */
+  overflow-x: auto;
+  /* Añade desplazamiento solo horizontal y auto oculta la barra cuando no se necesita */
+  scrollbar-width: none;
+  /* Oculta la barra de desplazamiento en Firefox */
+  -ms-overflow-style: none;
+  /* Oculta la barra de desplazamiento en Internet Explorer y Edge */
   justify-content: space-around;
-  
+
 }
+
 .carouselabbout::-webkit-scrollbar {
   display: none;
 }
 
 .aboutcard {
   background-color: white;
-  border-radius: 1em; 
+  border-radius: 1em;
   height: 350px;
   padding: 1.25rem 0.625rem;
   transition: background-color 0.3s;
   margin: 0 10px;
-  width: calc((100% / 7) - 30px);  /* 5 es el número de tarjetas que se muestran a la vez, 30px es el margen total (15px a cada lado) */
+  width: calc((100% / 7) - 30px);
+  /* 5 es el número de tarjetas que se muestran a la vez, 30px es el margen total (15px a cada lado) */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   flex: 1 0 20%;
 }
 
-.about-card-heading, .about-card-paragraph {
-  font-size: 1rem; 
-  font-weight: 400; 
-  color: #000; 
-  margin-bottom: 1.25rem; 
-  transition: color 0.3s; 
+.about-card-heading,
+.about-card-paragraph {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
+  margin-bottom: 1.25rem;
+  transition: color 0.3s;
   word-wrap: break-word;
-  white-space: normal; 
+  white-space: normal;
 }
 
 .about-card-heading {
-  font-size: 1.875rem; /* Equivalente a 'text-3xl' en Tailwind CSS */
-  font-weight: 600; /* Equivalente a 'font-semibold' en Tailwind CSS */
-  color: #000; /* Equivalente a 'text-black' en Tailwind CSS */
-  margin-bottom: 1.25rem; /* Equivalente a 'mb-5' en Tailwind CSS */
-  transition: color 0.3s; /* Para una transición suave del color de texto */
+  font-size: 1.875rem;
+  /* Equivalente a 'text-3xl' en Tailwind CSS */
+  font-weight: 600;
+  /* Equivalente a 'font-semibold' en Tailwind CSS */
+  color: #000;
+  /* Equivalente a 'text-black' en Tailwind CSS */
+  margin-bottom: 1.25rem;
+  /* Equivalente a 'mb-5' en Tailwind CSS */
+  transition: color 0.3s;
+  /* Para una transición suave del color de texto */
 }
 
 .about-card-heading:hover {
-  color: #fff; /* Cambia el color del texto a blanco en hover */
+  color: #fff;
+  /* Cambia el color del texto a blanco en hover */
 }
 
 .aboutcard:hover {
-  background-color: rgba(45, 45, 143, 0.719); /* Cambia el color de fondo a navy en hover */
+  background-color: rgba(45, 45, 143, 0.719);
+  /* Cambia el color de fondo a navy en hover */
   /* Nota: 'group-hover:text-white' se maneja en la sección .group:hover a continuación */
 }
 
 .aboutcard:hover .text-black {
-  color: white; /* Cambia el color del texto a blanco en hover */
+  color: white;
+  /* Cambia el color del texto a blanco en hover */
 }
 
 .aboutcard:hover .text-offwhite {
-  color: #F7F7F7; /* Cambia el color del texto a off-white en hover */
+  color: #F7F7F7;
+  /* Cambia el color del texto a off-white en hover */
 }
 
 
@@ -1000,7 +1071,8 @@ body, html {
   align-items: center;
   font-family: 'Lato', sans-serif;
   position: relative;
-  
+  justify-content: space-between;
+
 }
 
 .menu-text {
@@ -1023,11 +1095,15 @@ body, html {
   z-index: 10;
   box-shadow: none;
   animation: fadeIn 0.5s forwards;
-  width: auto;  /* Esto hará que el ancho se ajuste automáticamente al contenido */
-  min-width: 50px;  /* Asegura que tenga al menos este ancho */
-  max-width: 250px;  /* Esto asegura que tenga al menos 120px de ancho, ajusta según tu necesidad */
-  transition: opacity 0.3s ease; /* Esta línea crea la transición */
-    opacity: 1; 
+  width: auto;
+  /* Esto hará que el ancho se ajuste automáticamente al contenido */
+  min-width: 50px;
+  /* Asegura que tenga al menos este ancho */
+  max-width: 250px;
+  /* Esto asegura que tenga al menos 120px de ancho, ajusta según tu necesidad */
+  transition: opacity 0.3s ease;
+  /* Esta línea crea la transición */
+  opacity: 1;
 }
 
 .dropdown-menu.fade-out {
@@ -1039,15 +1115,18 @@ body, html {
   justify-content: space-between;
   list-style-type: none;
   margin: 0;
-  padding:  0;  /* Agrega padding superior e inferior para separación */
+  padding: 0;
+  /* Agrega padding superior e inferior para separación */
   flex-direction: row;
 }
 
 .dropdown-item {
   background-color: none;
   box-shadow: none;
-  display: inline-flex;  /* Esto hará que el ítem se ajuste automáticamente al tamaño de su contenido (icono + texto) */
-  margin: 0 25px;  /* Añade un pequeño margen entre ítems para que no se toquen */
+  display: inline-flex;
+  /* Esto hará que el ítem se ajuste automáticamente al tamaño de su contenido (icono + texto) */
+  margin: 0 25px;
+  /* Añade un pequeño margen entre ítems para que no se toquen */
   position: relative;
 }
 
@@ -1060,6 +1139,7 @@ body, html {
   text-decoration: none;
   animation: fadeIn 2s forwards;
 }
+
 .menu-link-container {
   flex-direction: column;
   align-items: center;
@@ -1078,32 +1158,55 @@ body, html {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
 /* Retrasos para la aparición de los ítems */
-.menu-item:nth-child(1) {animation-delay: 0s;}
-.menu-item:nth-child(2) {animation-delay: 1s;}
-.menu-item:nth-child(3) {animation-delay: 2s;}
-.menu-item:nth-child(4) {animation-delay: 3s;}
-.menu-item:nth-child(5) {animation-delay: 4s;}
-.menu-item:nth-child(6) {animation-delay: 5s;}
-.menu-item:nth-child(7) {animation-delay: 6s;}
+.menu-item:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.menu-item:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.menu-item:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.menu-item:nth-child(4) {
+  animation-delay: 3s;
+}
+
+.menu-item:nth-child(5) {
+  animation-delay: 4s;
+}
+
+.menu-item:nth-child(6) {
+  animation-delay: 5s;
+}
+
+.menu-item:nth-child(7) {
+  animation-delay: 6s;
+}
 
 
 /* Hover effect */
 .menu-item:hover {
-  background-color: none; /* No hay fondo en hover */
-  color: #16163b; /* Cambia a tu color deseado al pasar el ratón */
+  background-color: none;
+  /* No hay fondo en hover */
+  color: #16163b;
+  /* Cambia a tu color deseado al pasar el ratón */
   text-decoration: none;
   font-size: 20px;
   width: auto;
   left: 0;
 }
 
-.menu-link-container:hover > Link {
+.menu-link-container:hover>Link {
   opacity: 1;
   transform: translateX(0);
 }
@@ -1115,45 +1218,45 @@ body, html {
 
 .dropdown-item:hover .menu-text {
   width: auto;
-    /* Ajusta este valor según el espacio que quieras entre el ícono y el texto */
+  /* Ajusta este valor según el espacio que quieras entre el ícono y el texto */
 }
 
 
 /* Header animated */
 .large-header {
-	position: relative;
-	width: 100%;
-	background: #333;
-	overflow: hidden;
-	background-size: cover;
-	background-position: center center;
-	z-index: 1;
+  position: relative;
+  width: 100%;
+  background: #333;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  z-index: 1;
 }
 
 #large-header {
-	background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
+  background-image: url('https://www.marcoguglie.it/Codepen/AnimatedHeaderBg/demo-1/img/demo-1-bg.jpg');
 }
 
 .main-title {
-	position: absolute;
-	margin: 0;
-	padding: 0;
-	color: #f9f1e9;
-	text-align: center;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate3d(-50%,-50%,0);
-	transform: translate3d(-50%,-50%,0);
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  color: #f9f1e9;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
 }
 
 .demo-1 .main-title {
-	text-transform: uppercase;
-	font-size: 4.2em;
-	letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 4.2em;
+  letter-spacing: 0.1em;
 }
 
 .main-title .thin {
-	font-weight: 200;
+  font-weight: 200;
 }
 
 .icon-container {
@@ -1166,14 +1269,15 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px; /* Ajusta según tu preferencia */
+  margin-top: 10px;
+  /* Ajusta según tu preferencia */
   left: -100px;
 }
 
 @media only screen and (max-width : 768px) {
-	.demo-1 .main-title {
-		font-size: 3em;
-	}
+  .demo-1 .main-title {
+    font-size: 3em;
+  }
 }
 
 /* Icon */
@@ -1183,19 +1287,25 @@ body, html {
   margin: 0 auto;
   display: block;
   position: absolute;
-  color: #004B70; /* Este es el color que tomará el SVG gracias a "currentColor". */
-  right: -60px; /* Alinea el SVG a la derecha */
-  top: 55%; /* Centrarlo verticalmente */
-  transform: translateY(-50%); /* Centrarlo verticalmente */
+  color: #004B70;
+  /* Este es el color que tomará el SVG gracias a "currentColor". */
+  right: -60px;
+  /* Alinea el SVG a la derecha */
+  top: 55%;
+  /* Centrarlo verticalmente */
+  transform: translateY(-50%);
+  /* Centrarlo verticalmente */
 }
 
 .hb:hover {
-  stroke-width: 1.2; /* o el valor que actives la animación */
+  stroke-width: 1.2;
+  /* o el valor que actives la animación */
   color: #4f4f50;
 }
 
 .menu-container:hover .hb {
-  stroke-width: 0.6; /* o el valor original de strokeWidth */
+  stroke-width: 0.6;
+  /* o el valor original de strokeWidth */
   stroke: #6f6f70;
 }
 
@@ -1215,42 +1325,47 @@ body, html {
 
 @media only screen and (max-width: 768px) {
   .menu-container {
-      flex-direction: column;
-      position: relative; 
+    flex-direction: column;
+    position: relative;
   }
 
   .hb {
-      position: absolute;
-      top: 0;
-      right: 10px;
-      margin: 10px;
+    width: 30px;
+    position: absolute;
+    top: 5px;
+    right: -40px;
+    margin: 10px;
   }
 
   .dropdown-menu {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      box-shadow: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: none;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
   }
 
   .menu-icon {
-      font-size: 25px;  /* Ajusta este valor según el tamaño que desees para los íconos en móvil */
-      
+    font-size: 25px;
+    
+
   }
+
+  .dropdown-item {
+    width: 100%; /* Ocupa todo el ancho del menú */
+    text-align: left; /* Alinea el texto a la izquierda */
 }
 
-@media (max-width: 768px) {
   .statistics-container {
-      bottom: -400px;
-      left: 50%;
-      transform: translateX(-50%);
+    bottom: -400px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
-/* #about-us {
-  scroll-margin-top: 100px;  
-} */
 
 /*Instagram*/
 .custom-rounded {
@@ -1260,24 +1375,35 @@ body, html {
 
 /* Este CSS ocultará la barra de desplazamiento, pero aún permitirá el desplazamiento */
 html {
-  scrollbar-width: thin; /* Para Firefox */
-  scrollbar-color: transparent transparent; /* Para Firefox */
+  scrollbar-width: thin;
+  /* Para Firefox */
+  scrollbar-color: transparent transparent;
+  /* Para Firefox */
 }
+
 body {
-  -ms-overflow-style: none; /* Para Internet Explorer y Edge */
-  scrollbar-width: thin; /* Para Firefox */
-  scrollbar-color: transparent transparent; /* Para Firefox */
+  -ms-overflow-style: none;
+  /* Para Internet Explorer y Edge */
+  scrollbar-width: thin;
+  /* Para Firefox */
+  scrollbar-color: transparent transparent;
+  /* Para Firefox */
 }
+
 body::-webkit-scrollbar {
-  display: none; /* Para Chrome, Safari y Opera */
+  display: none;
+  /* Para Chrome, Safari y Opera */
 }
 
 .social-icon {
-  transition: transform 0.3s, color 0.3s; /* Añade transición para suavizar el cambio de tamaño y color */
+  transition: transform 0.3s, color 0.3s;
+  /* Añade transición para suavizar el cambio de tamaño y color */
   color: #004B70 !important;
 }
 
 .social-icon:hover {
-  transform: scale(1.2); /* Hace que el icono sea un 20% más grande cuando se pasa el ratón por encima */
-  color: #008FA3 !important; /* Cambia el color al pasar el ratón por encima */
+  transform: scale(1.2);
+  /* Hace que el icono sea un 20% más grande cuando se pasa el ratón por encima */
+  color: #008FA3 !important;
+  /* Cambia el color al pasar el ratón por encima */
 }
