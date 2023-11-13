@@ -2,6 +2,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import RegisterForm from './formRegister';
+import { FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 
 const Register = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +12,7 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   const closeModal = () => {
     setIsOpen(false);
@@ -41,6 +43,17 @@ const Register = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const updateWindowWidth = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', updateWindowWidth);
+    updateWindowWidth(); // Llamada inicial para establecer el ancho
+
+    return () => window.removeEventListener('resize', updateWindowWidth);
+  }, []);
+
   return (
     <>
       <button
@@ -48,7 +61,7 @@ const Register = () => {
         onClick={openModal}
         className="btn-login px-3 py-2 rounded-lg text-lg font-semibold"
       >
-        Registrate
+        {windowWidth <= 768 ? <FaUserPlus  /> : 'Registrate'}
       </button>
 
       <Transition appear show={isOpen} as={Fragment}>

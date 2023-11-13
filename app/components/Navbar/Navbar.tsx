@@ -77,7 +77,13 @@ const Navbar = () => {
                         </a>
                     </div>
 
-                    {/* BUTTONS */}
+                    {/* Botones (visibles solo cuando el menú está activo en móvil) */}
+                    <div className={`flex justify-end space-x-4 ${isMenuBarActive ? 'block' : 'hidden'} md:hidden`}>
+                        <Signin />
+                        <Register />
+                    </div>
+
+                    {/* Botones (siempre visibles en escritorio) */}
                     <div className="hidden md:flex w-1/4 justify-end items-center space-x-4">
                         <Signin />
                         <Register />

@@ -1,7 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-
+import { FaSignInAlt, FaUserPlus } from 'react-icons/fa';
 import LoginForm from './formLogin';
 
 const Signin = () => {
@@ -9,6 +9,7 @@ const Signin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   const closeModal = () => {
     setIsOpen(false);
@@ -39,6 +40,17 @@ const Signin = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const updateWindowWidth = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', updateWindowWidth);
+    updateWindowWidth(); // Llamada inicial para establecer el ancho
+
+    return () => window.removeEventListener('resize', updateWindowWidth);
+  }, []);
+
   return (
     <>
       <button
@@ -46,7 +58,7 @@ const Signin = () => {
         onClick={openModal}
         className="btn-login px-3 py-2 rounded-lg text-lg font-semibold"
       >
-        Inicia Sesión
+        {windowWidth <= 768 ? <FaSignInAlt /> : 'Inicia Sesión'}
       </button>
 
       <Transition appear show={isOpen} as={Fragment}>
@@ -90,7 +102,14 @@ const Signin = () => {
                 </div>
 
                 <div className="w-1/2 px-5 py-5 form-section" >
-                  <Image src="/images/navBar/logo.png" alt="Logo" className="logoLogin" priority={true}/>
+                  <Image
+                    src="/images/navBar/logocroa.png"
+                    alt="Logo"
+                    width={254} // Ancho de la imagen en píxeles
+                    height={64} // Altura de la imagen en píxeles
+                    className="logoLogin"
+                    priority={true}
+                  />
                   <h1 className="titulo">Inicia Sesión</h1>
 
                   <div className="form-section">

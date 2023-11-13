@@ -145,7 +145,7 @@ html {
 }
 
 .btn-login {
-  background-color: #697bad;
+  background-color: #004B70;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -155,21 +155,7 @@ html {
 }
 
 .btn-login:hover {
-  background-color: #153E90;
-}
-
-.btn-register {
-  background-color: #697bad;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 16px;
-  transition: background-color 0.2s;
-}
-
-.btn-register:hover {
-  background-color: #153E90;
+  background-color: #008FA3;
 }
 
 .divider {
@@ -1255,6 +1241,13 @@ body::-webkit-scrollbar {
   /* Cambia el color al pasar el ratón por encima */
 }
 
+/* LOGIN Y REGISTER */
+.logoLogin {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 @media only screen and (max-width: 1024px) {
   .preline:before {
@@ -1410,10 +1403,25 @@ body::-webkit-scrollbar {
   margin-left: 0; /* Ajusta el margen a 0 para alinear a la izquierda */
 }
 
+
+
 .social-icon {
   font-size: 1.4rem; /* Reduce el tamaño de los íconos */
   position: relative;
   left: 90px;
 }
 
+.navbar .social-icons-and-buttons-container {
+  /* Estilos para mostrar los elementos verticalmente y con un espaciado adecuado */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
 }
+
+.btn-login{
+  position: relative;
+  left: 90px;
+}
+}
+
