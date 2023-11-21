@@ -16,12 +16,15 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
+    "axios": "^1.6.1",
     "chroma-js": "^2.4.2",
+    "dotenv": "^16.3.1",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
     "font-awesome": "^4.7.0",
     "gsap": "^3.12.2",
-    "next": "^13.4.9",
+    "jsonwebtoken": "^9.0.2",
+    "next": "^14.0.2",
     "postcss": "8.4.23",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
@@ -37,6 +40,7 @@
   },
   "devDependencies": {
     "@types/chroma-js": "^2.4.0",
+    "@types/jsonwebtoken": "^9.0.5",
     "@types/react-scroll": "^1.8.9",
     "@types/react-slick": "^0.23.10"
   }

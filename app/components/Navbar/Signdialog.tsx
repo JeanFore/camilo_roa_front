@@ -1,15 +1,60 @@
+"use client"
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment, useEffect, useRef, useState } from 'react';
+import { FC, Fragment, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { FaSignInAlt, FaUserPlus } from 'react-icons/fa';
+import { FaSignInAlt } from 'react-icons/fa';
 import LoginForm from './formLogin';
+import { login } from '@/app/services/auth/userService';
+import { useRouter } from 'next/navigation'
 
-const Signin = () => {
+interface SigninProps {
+  onLoginSuccess: () => void;
+}
+
+const Signin: React.FC<SigninProps> = ({ onLoginSuccess }) => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [hash, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
+  const [loginSuccess, setLoginSuccess] = useState(false);
+
+  useEffect(() => {
+    if (loginSuccess ) {
+      onLoginSuccess();
+    }
+  }, [loginSuccess, onLoginSuccess]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const data = await login({ email, hash });
+      console.log("response data:", data)
+      if (data.message === 'Login successful') {
+        window.location.href = 'http://localhost:3001';
+      } else {
+        // Manejar los casos de error...
+      }
+    } catch (error) {
+      console.error("Error al iniciar sesión", error);
+      // Manejar errores...
+    }
+  };
+
+
+  useEffect(() => {
+    const updateWindowWidth = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', updateWindowWidth);
+    updateWindowWidth(); // Llamada inicial para establecer el ancho
+
+    return () => {
+      window.removeEventListener('resize', updateWindowWidth);
+    };
+  }, []);
 
   const closeModal = () => {
     setIsOpen(false);
@@ -19,10 +64,9 @@ const Signin = () => {
     setIsOpen(true);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aquí van las acciones del botón de enviar
-  };
+ 
+
+
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [videoHeight, setVideoHeight] = useState(0);
 
@@ -40,22 +84,12 @@ const Signin = () => {
     }
   }, []);
 
-  useEffect(() => {
-    const updateWindowWidth = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener('resize', updateWindowWidth);
-    updateWindowWidth(); // Llamada inicial para establecer el ancho
-
-    return () => window.removeEventListener('resize', updateWindowWidth);
-  }, []);
-
   return (
     <>
       <button
         type="button"
         onClick={openModal}
+
         className="btn-login px-3 py-2 rounded-lg text-lg font-semibold"
       >
         {windowWidth <= 768 ? <FaSignInAlt /> : 'Inicia Sesión'}
@@ -116,7 +150,7 @@ const Signin = () => {
                     <LoginForm
                       email={email}
                       setEmail={setEmail}
-                      password={password}
+                      password={hash}
                       setPassword={setPassword}
                       showPassword={showPassword}
                       setShowPassword={setShowPassword}

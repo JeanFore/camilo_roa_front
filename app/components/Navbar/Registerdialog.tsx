@@ -3,6 +3,8 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import RegisterForm from './formRegister';
 import { FaSignInAlt, FaUserPlus } from 'react-icons/fa';
+import { register } from '@/app/services/auth/userService';
+import CustomModal from '../modal/customModal';
 
 const Register = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,19 +15,49 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
+  const [isCustomModalOpen, setCustomIsModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+  const [modalTitle, setModalTitle] = useState('');
 
   const closeModal = () => {
     setIsOpen(false);
+
   };
 
   const openModal = () => {
     setIsOpen(true);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí van las acciones del botón de enviar
+
+    const registerDto: RegisterDTO = {
+      name,
+      lastName,
+      phone,
+      email,
+      hash: password, // Asumiendo que 'password' es el estado para la contraseña
+      userType: 2, // Aquí estableces userType como 2
+    };
+
+    try {
+      const response = await register(registerDto);
+      console.log('Registro exitoso:', response);
+      setModalMessage('Usuario creado con éxito');
+      setModalTitle("Éxito");
+      setIsOpen(false); // Cierra el formulario de registro
+      setCustomIsModalOpen(true); // Abre el CustomModal
+
+    } catch (error) {
+      console.error('Error en el registro:', error);
+      setModalMessage('Error en el registro, el usuario ya esta registrado con número o Teléfono.');
+      setModalTitle("Error en Registro");
+      setIsOpen(false); // Cierra el formulario de registro
+      setCustomIsModalOpen(true);
+
+    }
   };
+
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [videoHeight, setVideoHeight] = useState(0);
 
@@ -61,7 +93,7 @@ const Register = () => {
         onClick={openModal}
         className="btn-login px-3 py-2 rounded-lg text-lg font-semibold"
       >
-        {windowWidth <= 768 ? <FaUserPlus  /> : 'Registrate'}
+        {windowWidth <= 768 ? <FaUserPlus /> : 'Registrate'}
       </button>
 
       <Transition appear show={isOpen} as={Fragment}>
@@ -105,7 +137,14 @@ const Register = () => {
                 </div>
 
                 <div className="w-1/2 px-5 py-5 form-section" >
-                  <Image src="/images/navBar/logo.png" alt="Logo" className="logoLogin" priority={true}/>
+                  <Image
+                    src="/images/navBar/logocroa.png"
+                    alt="Logo"
+                    width={254} // Ancho de la imagen en píxeles
+                    height={64} // Altura de la imagen en píxeles
+                    className="logoLogin"
+                    priority={true}
+                  />
                   <h1 className="titulo2">Registrate</h1>
 
                   <div className="form-section">
@@ -131,6 +170,16 @@ const Register = () => {
           </div>
         </Dialog>
       </Transition>
+
+      {/* CustomModal para mensajes */}
+      <CustomModal
+        isCustomModalOpen={isCustomModalOpen}
+        closeCustomModal={() => setCustomIsModalOpen(false)}
+        onConfirm={() => setCustomIsModalOpen(false)}
+        title="Mensaje del Sistema"
+      >
+        <p>{modalMessage}</p>
+      </CustomModal>
     </>
   );
 };

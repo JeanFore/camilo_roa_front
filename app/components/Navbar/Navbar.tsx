@@ -1,24 +1,35 @@
+"use client"
 import { Disclosure } from '@headlessui/react';
+
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { FaInstagram, FaFacebookF, FaWhatsapp, FaTiktok } from 'react-icons/fa';
 import Drawer from "./Drawer";
 import Drawerdata from "./Drawerdata";
 import Signin from './Signdialog';
 import Register from './Registerdialog';
 import MenuBar from './menubar';
+import { useRouter } from 'next/navigation'
 
-
-
-
-
-const Navbar = () => {
-
+interface NavbarProps {
+    onLoginSuccess: () => void;
+  }
+  
+  const Navbar: React.FC<NavbarProps> = ({ onLoginSuccess }) => {
+    const router = useRouter();
     const [isOpen, setIsOpen] = React.useState(false);
     const [isMenuBarActive, setIsMenuBarActive] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false); // Estado para manejar si se ha hecho scroll
-    const [lastScrollTop, setLastScrollTop] = useState(0); // Posición anterior del scroll
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [lastScrollTop, setLastScrollTop] = useState(0);
     const [showMenu, setShowMenu] = useState(true);
+    const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true); // Se establece en true una vez que el componente se monta
+  }, []);
+
+
+
 
     const handleMenuBarToggle = (isActive: boolean) => {
         setIsMenuBarActive(isActive);
@@ -51,6 +62,9 @@ const Navbar = () => {
         }
     }, [lastScrollTop]);
 
+    
+    
+
     return (
         <Disclosure as="nav" className={`${showMenu ? 'bg-navbar-white' : 'bg-navbar-dark'} navbar ${showMenu ? '' : 'hidden md:block'} p-0 m-0`}>
 
@@ -79,13 +93,13 @@ const Navbar = () => {
 
                     {/* Botones (visibles solo cuando el menú está activo en móvil) */}
                     <div className={`flex justify-end space-x-4 ${isMenuBarActive ? 'block' : 'hidden'} md:hidden`}>
-                        <Signin />
+                    <Signin onLoginSuccess={onLoginSuccess} />
                         <Register />
                     </div>
 
                     {/* Botones (siempre visibles en escritorio) */}
                     <div className="hidden md:flex w-1/4 justify-end items-center space-x-4">
-                        <Signin />
+                    <Signin onLoginSuccess={onLoginSuccess} />
                         <Register />
                     </div>
 

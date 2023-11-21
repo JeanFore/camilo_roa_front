@@ -3,6 +3,10 @@ import Navbar from './Navbar';
 import React, { useEffect } from 'react';
 
 const Navbarin: React.FC = () => {
+    const handleLoginSuccess = () => {
+        // Lógica para manejar el inicio de sesión exitoso
+        console.log('Login successful');
+    };
     useEffect(() => {
         // The debounce function receives our function as a parameter
         const debounce = (fn: Function) => {
@@ -36,7 +40,7 @@ const Navbarin: React.FC = () => {
     }, [])
     return (
         <>
-            <Navbar />
+            <Navbar onLoginSuccess={handleLoginSuccess} />
         </>
     );
 }
