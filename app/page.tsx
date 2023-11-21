@@ -55,9 +55,7 @@ export default function Home(this: any) {
 
   const [currentSection, setCurrentSection] = useState('home');
   const [headerHeight, setHeaderHeight] = useState(0);
-  const getOffset = () => {
-    return currentSection === 'home-section' ? -180 : -100;
-};
+  
   useEffect(() => {
     const updateHeaderHeight = () => {
       const headerElement = document.querySelector('.navbar') as HTMLElement;
@@ -74,6 +72,9 @@ export default function Home(this: any) {
   }, [currentSection]);  // Dependencia actualizada a currentSection
 
   useEffect(() => {
+    const getOffset = () => {
+      return currentSection === 'home-section' ? -180 : -100;
+  };
     const handleScroll = (e: WheelEvent) => {
       e.preventDefault();  // Esto deshabilitará el desplazamiento predeterminado
 
