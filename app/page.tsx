@@ -41,7 +41,7 @@ const MyModal: React.FC<ModalProps> = ({ onClose }) => {
   );
 };
 
-export default function Home(this: any) {
+export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false); // <- Estado para el modal
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
 
